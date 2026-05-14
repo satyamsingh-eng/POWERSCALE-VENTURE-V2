@@ -6,28 +6,24 @@ import Footer from '@/components/Footer';
 
 const ARTICLES = [
   {
-    title: "When distribution stops being a growth story",
-    author: "Powerscale team",
+    title: "The channel motion that breaks when the founder steps back",
     sector: "Consumer",
-    excerpt: "The question is not whether demand exists. It is whether the channel mix still works once the founder is no longer carrying the motion personally.",
+    excerpt: "Revenue can grow while channel quality decays. Two things keep founder-led pull looking healthy while managed distribution is already failing — and neither of them shows up in the top-line until the company is already committed to the wrong motion.",
   },
   {
-    title: "The financing stack is part of the product",
-    author: "Powerscale team",
+    title: "When the regulatory sequence is the risk — not the technology",
     sector: "Energy Transition",
-    excerpt: "Infrastructure companies do not scale on narrative alone. The order of contracts, debt, equity, and deployment decides what the company can survive.",
+    excerpt: "Most energy transition companies fail on financing sequence, not on project economics. The order in which capital commitments close determines what can be built and what stays permanently exposed. Getting the sequence wrong is rarely recoverable.",
   },
   {
-    title: "The first senior hire changes the company",
-    author: "Powerscale team",
+    title: "The management layer that makes a company harder to run",
     sector: "Scaling",
-    excerpt: "A senior hire is not just capacity. It changes decision rights, standards, cadence, and what the founder can no longer inspect directly.",
+    excerpt: "The transition from a ten-person team to thirty is the one that breaks the operating model. What changes is not headcount — it is decision rights, inspection cadence, and the founder's relationship to information they used to be close to.",
   },
   {
     title: "Why AI demos fail to become retained workflows",
-    author: "Powerscale team",
     sector: "AI",
-    excerpt: "A demo proves possibility. Retention proves operating value. The gap between the two is where most AI companies become legible.",
+    excerpt: "A demo proves possibility. Retention proves operating value. The gap between the two is where most AI companies become legible — and where the business model either holds or reveals itself as novelty-dependent.",
   },
 ];
 
@@ -39,10 +35,10 @@ export default function PerspectivesPage() {
           <div className="container">
             <div className="section-label reveal">Perspectives</div>
             <h1 className="persp-hero__title reveal reveal-delay-1">
-              Operator judgment,<br />written without theatre.
+              Operator judgment, written without theatre.
             </h1>
             <p className="persp-hero__desc reveal reveal-delay-2">
-              Diagnostic notes for founders facing scaling problems. No announcement copy. No category slogans.
+              Diagnostic notes on the problems founders face when a company has found its market and is now confronting the harder question of how to scale it. No announcement copy. No category slogans.
             </p>
           </div>
         </section>
@@ -54,9 +50,7 @@ export default function PerspectivesPage() {
             {ARTICLES.map((article, i) => (
               <a href="#" key={i} className={`persp-item reveal reveal-delay-${Math.min(i + 1, 5)}`}>
                 <div className="persp-item__meta">
-                  <span>{article.author}</span>
-                  <span className="persp-dot">·</span>
-                  <span>{article.sector}</span>
+                  <span className="persp-item__sector">{article.sector}</span>
                 </div>
                 <h3 className="persp-item__title">{article.title}</h3>
                 <p className="persp-item__excerpt">{article.excerpt}</p>
@@ -70,21 +64,21 @@ export default function PerspectivesPage() {
 
       <style dangerouslySetInnerHTML={{__html: `
         .persp-hero {
-          padding-top: calc(var(--nav-height) + var(--space-12));
+          padding-top: clamp(5rem, 12vw, 9rem);
           padding-bottom: var(--section-gap);
         }
 
         .persp-hero__title {
-          font-family: var(--font-primary);
           font-weight: var(--weight-medium);
           margin-bottom: var(--space-lg);
+          max-width: 20ch;
         }
 
         .persp-hero__desc {
           font-size: var(--text-body);
           line-height: 1.7;
           color: var(--color-steel);
-          max-width: 55ch;
+          max-width: 58ch;
         }
 
         .persp-list-section {
@@ -95,7 +89,7 @@ export default function PerspectivesPage() {
           display: block;
           padding: var(--space-lg) 0;
           border-bottom: 1px solid var(--color-divider);
-          transition: transform var(--duration-fast) var(--ease-out);
+          transition: opacity var(--duration-fast) var(--ease-out);
         }
 
         .persp-item:first-child {
@@ -103,7 +97,7 @@ export default function PerspectivesPage() {
         }
 
         .persp-item:hover {
-          transform: translateX(8px);
+          opacity: 0.72;
         }
 
         .persp-item:hover .persp-item__title {
@@ -111,28 +105,23 @@ export default function PerspectivesPage() {
         }
 
         .persp-item__meta {
-          font-family: var(--font-mono);
-          font-size: 0.75rem;
-          color: var(--color-steel);
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
           margin-bottom: var(--space-sm);
-          display: flex;
-          align-items: center;
-          gap: var(--space-1);
         }
 
-        .persp-dot {
-          opacity: 0.4;
+        .persp-item__sector {
+          font-size: var(--text-meta);
+          color: var(--color-signature);
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          font-weight: var(--weight-medium);
         }
 
         .persp-item__title {
-          font-family: var(--font-primary);
-          font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+          font-size: clamp(1.25rem, 2.5vw, 2rem);
           font-weight: var(--weight-medium);
           line-height: 1.2;
           margin-bottom: var(--space-sm);
-          max-width: 45ch;
+          max-width: 44ch;
           transition: color var(--duration-fast) var(--ease-out);
         }
 

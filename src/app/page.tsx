@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import OperatorIndex from "@/components/OperatorIndex";
 import SectorFocus from "@/components/SectorFocus";
 import OperatorProof from "@/components/OperatorProof";
 import HowWePartner from "@/components/HowWePartner";
@@ -16,7 +15,6 @@ export default function Home() {
       <SectorFocus />
       <OperatorProof />
       <HowWePartner />
-      <OperatorIndex />
       <PortfolioSnapshot />
       <Perspectives />
       <Footer />

@@ -5,12 +5,70 @@ import RevealWrapper from '@/components/RevealWrapper';
 import Footer from '@/components/Footer';
 
 const ALL_ENTRIES = [
-  { id: "049", decision: "Learn in a harder operating market before spending into expansion.", tradeoff: "The launch story looked less clean.", outcome: "The team found which parts of the playbook survived contact with field reality.", attribution: "Anonymized consumer note", sector: "Consumer" },
-  { id: "048", decision: "Own the infrastructure dependency instead of outsourcing it.", tradeoff: "The plan became heavier before it became stronger.", outcome: "The company reduced a constraint that would have limited every later market.", attribution: "Anonymized energy note", sector: "Energy Transition" },
-  { id: "047", decision: "Hold hiring until the manager layer could forecast cleanly.", tradeoff: "The company accepted a less aggressive hiring narrative.", outcome: "The next hiring wave had clearer territories, standards, and accountability.", attribution: "Anonymized GTM note", sector: "Scaling" },
-  { id: "046", decision: "Replace demo-led selling with workflow-led implementation.", tradeoff: "The sales process became slower and more operational.", outcome: "Retention depended less on novelty and more on embedded usage.", attribution: "Anonymized AI note", sector: "AI" },
-  { id: "045", decision: "Keep pricing discipline when incumbents tried to reset the market.", tradeoff: "Some customers walked.", outcome: "The remaining accounts forced the company to prove deployment quality.", attribution: "Anonymized infrastructure note", sector: "Deeptech" },
-  { id: "044", decision: "Renegotiate the commercial structure before scaling deployment.", tradeoff: "Momentum paused while the operating model was rebuilt.", outcome: "The company avoided compounding a weak contract into a larger problem.", attribution: "Anonymized energy note", sector: "Energy Transition" },
+  {
+    id: "049",
+    decision: "Delayed metro-market launch for two additional quarters. Ran deeper operations in a harder tier-2 environment instead.",
+    tradeoff: "The narrative looked less polished during a fundraising window.",
+    outcome: "The distribution playbook that emerged held in markets the team hadn't originally planned for.",
+    attribution: "Consumer operating note, 2024",
+    sector: "Consumer"
+  },
+  {
+    id: "048",
+    decision: "Took vertical ownership of a critical supply-chain dependency before the financing was in place to do it cleanly.",
+    tradeoff: "Capital efficiency degraded for fourteen months before the operating advantage became visible.",
+    outcome: "The constraint it removed — third-party bottleneck leverage at scale — would have been structurally irreversible.",
+    attribution: "Energy transition, 2024",
+    sector: "Energy Transition"
+  },
+  {
+    id: "047",
+    decision: "Held sales headcount flat at twelve reps for two additional quarters while the manager layer rebuilt its forecasting capability.",
+    tradeoff: "The company accepted a slower hiring narrative during a window when the board expected momentum.",
+    outcome: "The next hiring wave required fewer mid-year territory resets. The manager layer was holding forecast with less intervention by the end of year one — which was the condition for accelerating headcount again.",
+    attribution: "Go-to-market, 2024",
+    sector: "Scaling"
+  },
+  {
+    id: "046",
+    decision: "Replaced demo-driven selling with workflow implementation as the primary commercial motion.",
+    tradeoff: "Sales cycles became longer and more operationally demanding. The pipeline looked less exciting.",
+    outcome: "At twelve months, account retention had shifted from novelty-dependent to usage-dependent. Renewals held without founder involvement.",
+    attribution: "AI workflow, 2024",
+    sector: "AI"
+  },
+  {
+    id: "045",
+    decision: "Maintained pricing discipline against an incumbent who tried to reset the market floor.",
+    tradeoff: "Several accounts left. The short-term pipeline looked weaker than the board wanted to see.",
+    outcome: "The accounts that stayed required the company to prove deployment quality instead of compete on price. That margin structure is the one the business is built on today.",
+    attribution: "Deeptech infrastructure, 2023",
+    sector: "Deeptech"
+  },
+  {
+    id: "044",
+    decision: "Renegotiated the commercial terms on the anchor contract before deploying at the next scale — accepting a delayed signature in exchange for better unit economics at volume.",
+    tradeoff: "Three months of momentum paused while the operating model was rebuilt around the revised structure.",
+    outcome: "The company avoided compounding a weak contract structure into the next forty deployments. The revised terms held in most subsequent negotiations and became the reference point for the commercial team.",
+    attribution: "Energy transition, 2023",
+    sector: "Energy Transition"
+  },
+  {
+    id: "043",
+    decision: "Promoted an internal operator into the COO role over two externally sourced candidates with stronger pedigree.",
+    tradeoff: "The external search had already generated board expectations. The internal decision required explicit justification.",
+    outcome: "The hire understood the operating system well enough to improve it rather than replace it. The territory held through year one without significant resets — which gave the company room to plan the next market on a stable base.",
+    attribution: "Consumer, 2023",
+    sector: "Consumer"
+  },
+  {
+    id: "042",
+    decision: "Paused international expansion for one additional quarter to resolve a customer-facing reliability issue in the core market.",
+    tradeoff: "The team had already begun country-level hiring. The pause required those offers to be deferred.",
+    outcome: "The reliability fix reduced churn by approximately 18% in the core market and removed a credibility problem that would have compounded in a new geography.",
+    attribution: "Deeptech infrastructure, 2023",
+    sector: "Deeptech"
+  },
 ];
 
 export default function IndexPage() {
@@ -21,10 +79,10 @@ export default function IndexPage() {
           <div className="container">
             <div className="section-label reveal">Operator Index</div>
             <h1 className="index-hero__title reveal reveal-delay-1">
-              A public ledger of<br />scaling decisions.
+              A running ledger of scaling decisions.
             </h1>
             <p className="index-hero__desc reveal reveal-delay-2">
-              Numbered operating notes from decisions where the tradeoff mattered. Public attribution is added only when the company has approved it.
+              Each entry names the decision, the tradeoff accepted, and what changed after the choice. These are based on real operating situations. Public attribution is added only when the company has approved it. The point is not polish. The point is judgment.
             </p>
           </div>
         </section>
@@ -57,21 +115,21 @@ export default function IndexPage() {
 
       <style dangerouslySetInnerHTML={{__html: `
         .index-hero {
-          padding-top: calc(var(--nav-height) + 8rem);
+          padding-top: clamp(5rem, 12vw, 9rem);
           padding-bottom: var(--section-gap);
         }
 
         .index-hero__title {
-          font-family: var(--font-primary);
           font-weight: var(--weight-medium);
           margin-bottom: var(--space-lg);
+          max-width: 18ch;
         }
 
         .index-hero__desc {
-          font-size: 1.15rem;
+          font-size: var(--text-body);
           line-height: 1.7;
           color: var(--color-steel);
-          max-width: 55ch;
+          max-width: 58ch;
         }
 
         .index-list-section {
@@ -80,7 +138,7 @@ export default function IndexPage() {
 
         .index-entry {
           display: grid;
-          grid-template-columns: 180px 1fr;
+          grid-template-columns: 11rem 1fr;
           gap: var(--space-lg);
           padding: var(--space-lg) 0;
           border-bottom: 1px solid var(--color-divider);
@@ -94,17 +152,16 @@ export default function IndexPage() {
           display: flex;
           flex-direction: column;
           gap: 0.5rem;
+          flex-shrink: 0;
         }
 
         .index-entry__id {
-          font-family: var(--font-mono);
           font-size: 0.875rem;
           color: var(--color-signature);
           font-weight: 500;
         }
 
         .index-entry__sector {
-          font-family: var(--font-mono);
           font-size: 0.7rem;
           color: var(--color-steel);
           text-transform: uppercase;
@@ -112,11 +169,11 @@ export default function IndexPage() {
         }
 
         .index-entry__text {
-          font-size: 1.15rem;
-          line-height: 1.6;
+          font-size: var(--text-body);
+          line-height: 1.62;
           color: var(--color-ink);
           margin-bottom: var(--space-1);
-          max-width: 60ch;
+          max-width: 65ch;
         }
 
         .index-entry__text span {
@@ -129,12 +186,14 @@ export default function IndexPage() {
         }
 
         .index-entry__attribution {
-          font-family: var(--font-mono);
-          font-size: 0.8rem;
-          color: var(--color-steel);
+          display: block;
+          margin-top: var(--space-2);
+          font-size: var(--text-meta);
+          color: var(--color-muted);
+          font-style: italic;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 640px) {
           .index-entry {
             grid-template-columns: 1fr;
             gap: var(--space-sm);
@@ -142,6 +201,7 @@ export default function IndexPage() {
           .index-entry__left {
             flex-direction: row;
             align-items: center;
+            gap: var(--space-2);
           }
         }
       `}} />

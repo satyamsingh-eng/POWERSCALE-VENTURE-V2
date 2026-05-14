@@ -5,18 +5,18 @@ import RevealWrapper from './RevealWrapper';
 
 const ARTICLES = [
   {
-    title: "When distribution stops being a growth story",
-    author: "Powerscale team",
+    title: "The channel motion that breaks when the founder steps back",
+    excerpt: "Revenue can grow while channel quality decays. Two things keep founder-led pull looking healthy while managed distribution is already failing — and neither of them shows up in the top-line.",
     label: "Consumer",
   },
   {
-    title: "The financing stack is part of the product",
-    author: "Powerscale team",
+    title: "When the regulatory sequence is the risk — not the technology",
+    excerpt: "Most energy transition companies fail on financing sequence, not on project economics. The order in which capital commitments close determines what can be built — and what stays permanently at risk.",
     label: "Energy Transition",
   },
   {
-    title: "The first senior hire changes the company",
-    author: "Powerscale team",
+    title: "The management layer that makes a company harder to run",
+    excerpt: "The transition from a ten-person team to thirty is the one that breaks the operating model. What actually changes, and what the first manager hire signals about the company's ability to hold its growth rate.",
     label: "Scaling",
   }
 ];
@@ -25,40 +25,38 @@ export default function Perspectives() {
   return (
     <RevealWrapper>
       <section className="perspectives">
-        <div className="section-card">
-          <div className="container">
+        <div className="container">
             <div className="section-label reveal">Perspectives</div>
             <h2 className="perspectives__title reveal reveal-delay-1">
-              Operator judgment,<br />practiced in public.
+              Operator judgment, practiced in public.
             </h2>
 
-          <div className="perspectives__list">
-            {ARTICLES.map((article, i) => (
-              <a href="/perspectives" key={i} className={`perspectives__card reveal reveal-delay-${i + 2}`}>
-                <div className="perspectives__card-meta">
-                  <span>{article.author}</span>
-                  <span className="perspectives__dot">·</span>
-                  <span>{article.label}</span>
-                </div>
-                <h3 className="perspectives__card-title">{article.title}</h3>
-              </a>
-            ))}
+            <div className="perspectives__list">
+              {ARTICLES.map((article, i) => (
+                <a href="/perspectives" key={i} className={`perspectives__card reveal reveal-delay-${i + 2}`}>
+                  <div className="perspectives__card-meta">
+                    <span className="perspectives__label">{article.label}</span>
+                  </div>
+                  <h3 className="perspectives__card-title">{article.title}</h3>
+                  <p className="perspectives__card-excerpt">{article.excerpt}</p>
+                </a>
+              ))}
+            </div>
+
+            <div className="perspectives__action reveal reveal-delay-5">
+              <a href="/perspectives" className="text-link">View all perspectives →</a>
+            </div>
           </div>
 
-          <div className="perspectives__action reveal reveal-delay-5">
-            <a href="/perspectives" className="text-link">View all perspectives →</a>
-          </div>
-        </div>
-      </div>
-
-      <style dangerouslySetInnerHTML={{__html: `
-        .perspectives {
-          padding: 0;
-          background-color: transparent;
-        }
+        <style dangerouslySetInnerHTML={{__html: `
+          .perspectives {
+            padding: var(--section-gap) 0;
+            background-color: transparent;
+          }
 
           .perspectives__title {
             margin-bottom: var(--space-xl);
+            max-width: 22ch;
           }
 
           .perspectives__list {
@@ -69,7 +67,7 @@ export default function Perspectives() {
             display: block;
             padding: var(--space-lg) 0;
             border-bottom: 1px solid var(--color-divider);
-            transition: transform var(--duration-fast) var(--ease-out);
+            transition: opacity var(--duration-fast) var(--ease-out);
           }
 
           .perspectives__card:first-child {
@@ -77,7 +75,7 @@ export default function Perspectives() {
           }
 
           .perspectives__card:hover {
-            transform: translateX(8px);
+            opacity: 0.72;
           }
 
           .perspectives__card:hover .perspectives__card-title {
@@ -85,28 +83,31 @@ export default function Perspectives() {
           }
 
           .perspectives__card-meta {
-            font-family: var(--font-primary);
-            font-size: var(--text-meta);
-            color: var(--color-steel);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
             margin-bottom: var(--space-sm);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
           }
 
-          .perspectives__dot {
-            opacity: 0.4;
+          .perspectives__label {
+            font-size: var(--text-meta);
+            color: var(--color-signature);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: var(--weight-medium);
           }
 
           .perspectives__card-title {
-            font-family: var(--font-primary);
-            font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+            font-size: clamp(1.125rem, 2vw, 1.625rem);
             font-weight: var(--weight-medium);
-            line-height: 1.2;
-            max-width: 40ch;
+            line-height: 1.25;
+            max-width: 46ch;
+            margin-bottom: var(--space-sm);
             transition: color var(--duration-fast) var(--ease-out);
+          }
+
+          .perspectives__card-excerpt {
+            font-size: var(--text-body);
+            color: var(--color-steel);
+            line-height: 1.6;
+            max-width: 58ch;
           }
 
           .perspectives__action {

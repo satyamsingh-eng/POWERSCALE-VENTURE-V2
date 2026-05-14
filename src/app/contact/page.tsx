@@ -14,10 +14,13 @@ export default function ContactPage() {
               <div className="contact__intro">
                 <div className="section-label reveal">Talk to us</div>
                 <h1 className="contact__title reveal reveal-delay-1">
-                  If you're building something that fits, write to us.
+                  If your market is real and the next problem is operational, write to us.
                 </h1>
                 <p className="contact__note reveal reveal-delay-2">
-                  We are most useful after the first market is real and the next constraint is operational: hiring, channel quality, capital timing, or execution cadence.
+                  We are most useful at Series A and B — after the first customers are committed and before the operating system has to handle the next order of magnitude. The problems we work on are specific: hiring architecture, channel structure, capital timing, and management cadence.
+                </p>
+                <p className="contact__note contact__note--secondary reveal reveal-delay-3">
+                  We read every note. If there is a fit, we will respond within a week. If the timing is not right, we will say so directly.
                 </p>
               </div>
 
@@ -51,7 +54,7 @@ export default function ContactPage() {
                   </select>
                 </div>
                 <div className="form-field contact__textarea">
-                  <label htmlFor="building">What are you building?</label>
+                  <label htmlFor="building">What are you building, and what is the constraint you are trying to solve?</label>
                   <textarea id="building" name="What are you building" required />
                 </div>
                 <button className="contact__submit" type="submit">Send founder note</button>
@@ -65,32 +68,36 @@ export default function ContactPage() {
 
       <style dangerouslySetInnerHTML={{__html: `
         .contact-section {
-          padding-top: calc(var(--nav-height) + var(--space-6));
-          padding-bottom: var(--space-8);
-          min-height: 100dvh;
+          padding-top: clamp(5rem, 12vw, 9rem);
+          padding-bottom: clamp(3rem, 8vw, 6rem);
         }
 
         .contact__layout {
           display: grid;
-          grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.8fr);
+          grid-template-columns: 1fr minmax(0, 480px);
           gap: var(--space-8);
           align-items: start;
         }
 
         .contact__title {
-          font-family: var(--font-primary);
-          font-size: clamp(40px, 4.5vw, 64px);
+          font-size: clamp(1.75rem, 4vw, 3.25rem);
           font-weight: var(--weight-medium);
-          line-height: 1.08;
-          margin-bottom: var(--space-3);
-          max-width: 680px;
+          line-height: 1.1;
+          margin-bottom: var(--space-lg);
+          max-width: 22ch;
         }
 
         .contact__note {
           font-size: var(--text-body);
           line-height: 1.65;
           color: var(--color-steel);
-          max-width: 560px;
+          max-width: 50ch;
+        }
+
+        .contact__note--secondary {
+          margin-top: var(--space-md);
+          font-size: 0.9rem;
+          opacity: 0.8;
         }
 
         .contact__form {
@@ -138,10 +145,10 @@ export default function ContactPage() {
           opacity: 0.9;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 860px) {
           .contact__layout {
             grid-template-columns: 1fr;
-            gap: var(--space-8);
+            gap: var(--space-6);
           }
         }
       `}} />

@@ -45,3 +45,36 @@ next-env.d.ts
 /*.png
 /.playwright-mcp/
 /.next-stale-*/
+
+# local content and audit docs
+CURRENT-CONTENT.md
+CURRENT-CONTENT-REFINED.md
+PORTFOLIO-PROOF-SYSTEM.md
+REALISM-AUDIT.md
+
+# logo processing scripts (local tooling only)
+/scripts/
+
+# AI session state
+/.claude/
+
+# unused logo variants (only powerscale-logo-transparent.png is used in production)
+/public/images/powerscale-logo-black.png
+/public/images/powerscale-logo-white.png
+/public/images/powerscale-logo.png
+/public/images/powerscale-logo-on-dark.png
+/public/images/powerscale-favicon.png
+
+# large unused public assets removed from tracking
+/public/hero-bg.png
+/public/images/hero-image.png
+/public/images/powerscale-footer-logo.avif
+
+# dead code removed from tracking
+/src/components/OperatorIndex.tsx
+/src/components/ui/AnimatedList.tsx
+/src/components/ui/BorderGlow.css
+/src/components/ui/BorderGlow.tsx
+/src/components/ui/ScrollFloat.tsx
+/src/components/ui/flip-button.tsx
+/src/lib/

@@ -8,41 +8,41 @@ const STAGES = [
   {
     num: "01",
     title: "Stage",
-    detail: "Series A and B as primary. We look for a working market, a strained operating system, and a founder who knows the next phase is not more of the same."
+    detail: "Series A and B as primary. We look for a working market, a strained operating system, and a founder who understands that the next phase is not more of the same. The thing that got the company here will not carry it to the next order of magnitude without deliberate change — and the founders who know this are the ones we want to back."
   },
   {
     num: "02",
     title: "Diligence",
-    detail: "Our diligence is operational, not financial. We stress-test the scaling constraint — hiring velocity, channel economics, unit-level margins, working capital cycles — before we price a round."
+    detail: "Our diligence is operational before it is financial. We stress-test the scaling constraint — hiring velocity, channel economics, unit-level margins, working capital cycles, management bandwidth — before we price the round. The constraints that break companies at scale are almost always visible before they break, if you know what to look for."
   },
   {
     num: "03",
-    title: "Engagement",
-    detail: "The first phase after investment is practical: hiring diagnostic, GTM teardown, working-capital review, and the cadence required to make decisions stick."
+    title: "Post-investment",
+    detail: "The first ninety days are practical: a hiring diagnostic, a GTM teardown, a working-capital review. Not consulting deliverables — the things we know how to do because we have done them before, on our own companies, at our own cost. We are explicit about which partner takes the lead and what we are specifically responsible for."
   },
   {
     num: "04",
     title: "Hold",
-    detail: "We stay through the scaling phase. We are explicit about which partner takes the lead. Board seats are working seats, not governance theatre."
+    detail: "We stay through the scaling phase. Board seats are working seats, not governance theatre. We are most useful when the problem is operational — when the company has to hold its growth rate while rebuilding the management layer or restructuring its capital base."
   }
 ];
 
 const SECTORS = [
   {
     name: "Energy Transition",
-    thesis: "India's energy transition is a capex problem disguised as a policy problem. We invest where unit economics, regulation, and financing sequence together.",
+    thesis: "India's energy transition is a capex problem disguised as a policy problem. The companies that compound are the ones where project economics, regulatory sequencing, and financing structure move in the same direction at the same time. A mistake in that sequence is usually irreversible — which is why most investors read the growth projection before they read the power purchase agreement. We do it the other way around.",
   },
   {
     name: "Deeptech Infrastructure",
-    thesis: "Hardware companies that can also sell. Software companies that touch physical systems. We look for the binding constraint — the thing that breaks if you scale without fixing it first.",
+    thesis: "A working technical system is not the same as a repeatable commercial system. Technical risk and commercial risk do not resolve at the same speed — a company can have working hardware and no ability to sell it at scale, or strong sales and a manufacturing base that cannot keep up. We look for the binding constraint first: manufacturing readiness, deployment reliability, or sales repeatability without founder force.",
   },
   {
     name: "Consumer",
-    thesis: "The inflection point where founder-led sales must translate to managed distribution. Channel decay, market expansion, and margin structure are the problems we understand.",
+    thesis: "The inflection point where founder-led sales must translate to managed distribution is the point most consumer companies fail. Growth can look healthy while channel quality is already decaying. The moment a founder steps back from the commercial motion is when unit economics get honest — and by then most companies are already committed to the wrong motion.",
   },
   {
     name: "AI",
-    thesis: "Defensible workflow integration and fast learning loops. We are not interested in model wrappers or demo-stage products. We look for paying customers who keep using the product after the novelty fades.",
+    thesis: "Defensible workflow integration separates AI companies that compound from the ones that plateau. Demo quality and retained workflow value are different things, and investors who rely on demos do not see the difference until the renewal cycle. We are not interested in model wrappers or novelty-dependent products. We look for paying customers who keep using the product after month six — and can explain why.",
   }
 ];
 
@@ -57,9 +57,8 @@ export default function ApproachPage() {
               We make the scaling work explicit.
             </h1>
             <p className="approach-hero__desc reveal reveal-delay-2">
-              Every aspect of our engagement is structured around the scaling problem. 
-              We bring operating experience, not pattern matching. We commit to specific 
-              work, not general availability.
+              Every aspect of our engagement is structured around the operating constraint — not the product narrative.
+              We bring experience from running companies, not from watching them from board seats. We commit to specific work, at specific stages, with specific partners responsible.
             </p>
           </div>
         </section>
@@ -68,7 +67,7 @@ export default function ApproachPage() {
       <RevealWrapper>
         <section className="process-section">
           <div className="container">
-            <div className="section-label reveal">Our process</div>
+            <div className="section-label reveal">How we work</div>
             <div className="process-list">
               {STAGES.map((stage, i) => (
                 <div key={i} className={`process-item reveal reveal-delay-${i + 1}`}>
@@ -89,7 +88,7 @@ export default function ApproachPage() {
           <div className="container">
             <div className="section-label reveal">Where we invest</div>
             <h2 className="sectors-deep__title reveal reveal-delay-1">
-              Four sectors where execution<br />complexity is the moat.
+              Four sectors where execution complexity is the moat.
             </h2>
             <div className="sectors-deep__grid">
               {SECTORS.map((sector, i) => (
@@ -107,21 +106,21 @@ export default function ApproachPage() {
 
       <style dangerouslySetInnerHTML={{__html: `
         .approach-hero {
-          padding-top: calc(var(--nav-height) + 8rem);
+          padding-top: clamp(5rem, 12vw, 9rem);
           padding-bottom: var(--section-gap);
         }
 
         .approach-hero__title {
-          font-family: var(--font-primary);
           font-weight: var(--weight-medium);
           margin-bottom: var(--space-lg);
+          max-width: 20ch;
         }
 
         .approach-hero__desc {
-          font-size: 1.15rem;
+          font-size: var(--text-body);
           line-height: 1.7;
           color: var(--color-steel);
-          max-width: 55ch;
+          max-width: 58ch;
         }
 
         .process-section {
@@ -160,14 +159,13 @@ export default function ApproachPage() {
         }
 
         .process-item__num {
-          font-family: var(--font-mono);
           font-size: 0.8rem;
           color: var(--color-signature);
+          flex-shrink: 0;
         }
 
         .process-item__title {
-          font-family: var(--font-primary);
-          font-size: 1.75rem;
+          font-size: clamp(1.375rem, 2.5vw, 1.75rem);
           font-weight: var(--weight-medium);
           color: var(--color-ink);
         }
@@ -175,8 +173,8 @@ export default function ApproachPage() {
         .process-item__detail {
           color: var(--color-steel);
           line-height: 1.65;
-          max-width: 55ch;
-          padding-left: var(--space-6);
+          max-width: 58ch;
+          padding-left: calc(var(--space-md) + 1.5rem);
         }
 
         .sectors-deep {
@@ -186,6 +184,7 @@ export default function ApproachPage() {
 
         .sectors-deep__title {
           margin-bottom: var(--space-xl);
+          max-width: 22ch;
         }
 
         .sectors-deep__grid {
@@ -207,8 +206,7 @@ export default function ApproachPage() {
         }
 
         .sectors-deep__name {
-          font-family: var(--font-primary);
-          font-size: 1.75rem;
+          font-size: clamp(1.25rem, 2.5vw, 1.75rem);
           font-weight: var(--weight-medium);
           margin-bottom: var(--space-md);
         }
@@ -216,12 +214,16 @@ export default function ApproachPage() {
         .sectors-deep__thesis {
           color: var(--color-steel);
           line-height: 1.65;
-          max-width: 45ch;
+          max-width: none;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
           .sectors-deep__grid {
             grid-template-columns: 1fr;
+          }
+
+          .process-item__detail {
+            padding-left: 0;
           }
         }
       `}} />

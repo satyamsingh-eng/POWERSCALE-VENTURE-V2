@@ -1,0 +1,45 @@
+/* Base — plain animated gradient text, no decoration */
+.animated-gradient-text {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Border/badge variant — only active when showBorder={true} */
+.animated-gradient-text.with-border {
+  padding: 0.35rem 0.75rem;
+  border-radius: 1.25rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: hidden;
+  transition: box-shadow 0.5s ease-out;
+}
+
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.gradient-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background-color: #120f17;
+  z-index: -1;
+}
+
+/* The actual gradient text */
+.text-content {
+  display: inline;
+  position: relative;
+  z-index: 2;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  /* Inherits font-size, font-weight, letter-spacing, text-transform from parent */
+}

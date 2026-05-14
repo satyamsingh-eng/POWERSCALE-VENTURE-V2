@@ -13,6 +13,15 @@ const operatorLoop = [
   { node: "MANUFACTURING RISK" },
   { node: "DISTRIBUTION DECAY" },
   { node: "GTM CADENCE" },
+  { node: "COHORT BEHAVIOR" },
+  { node: "PRICING DISCIPLINE" },
+  { node: "MANAGER BANDWIDTH" },
+  { node: "BURN RATE DISCIPLINE" },
+  { node: "DEPLOYMENT CADENCE" },
+  { node: "SALES REPEATABILITY" },
+  { node: "BOARD CADENCE" },
+  { node: "HIRING DIAGNOSTIC" },
+  { node: "CASH TIMING" },
 ];
 
 export default function Marquee() {
@@ -20,7 +29,7 @@ export default function Marquee() {
     <div className="marquee-wrapper">
       <LogoLoop
         logos={operatorLoop}
-        speed={36}
+        speed={40}
         direction="left"
         logoHeight={18}
         gap={96}
@@ -33,18 +42,18 @@ export default function Marquee() {
           overflow: hidden;
           background-color: var(--color-canvas);
           color: var(--color-ink);
-          padding: var(--space-4) 0 var(--space-8);
+          padding: var(--space-4) 0 var(--space-6);
           display: flex;
           align-items: center;
           margin: 0;
         }
-        
+
         .marquee-wrapper .logoloop__node {
           font-family: var(--font-primary);
           font-weight: var(--weight-medium);
-          font-size: 13px;
-          letter-spacing: 0.12em;
-          color: color-mix(in srgb, var(--color-ink) 34%, transparent);
+          font-size: 0.75rem;
+          letter-spacing: 0.14em;
+          color: color-mix(in srgb, var(--color-ink) 28%, transparent);
           text-transform: uppercase;
         }
       `}} />

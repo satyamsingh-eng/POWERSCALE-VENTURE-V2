@@ -5,15 +5,29 @@ import RevealWrapper from './RevealWrapper';
 import FadeContent from './ui/FadeContent';
 import ShinyText from './ui/ShinyText';
 
+const FOOTER_NAV_COL1 = [
+  { href: '/about', label: 'About & Team' },
+  { href: '/approach', label: 'Approach' },
+  { href: '/index-page', label: 'Operator Index' },
+];
+
+const FOOTER_NAV_COL2 = [
+  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/perspectives', label: 'Perspectives' },
+  { href: '/contact', label: 'Talk to us' },
+];
+
 export default function Footer() {
   return (
     <RevealWrapper>
       <footer className="footer">
         <div className="container">
+
+          {/* CTA section */}
           <div className="footer__cta reveal">
             <p className="section-label">Contact</p>
             <FadeContent className="footer__headline-wrapper">
-              <h2 className="footer__headline">If you're building something that fits, write to us.</h2>
+              <h2 className="footer__headline">If you&apos;re building something that fits, write to us.</h2>
             </FadeContent>
             <a href="/contact" className="footer__email reveal reveal-delay-2">
               <ShinyText
@@ -28,22 +42,57 @@ export default function Footer() {
             </a>
           </div>
 
-          <div className="hairline footer__rule"></div>
+          {/* Divider */}
+          <div className="hairline footer__rule" />
 
-          <div className="footer__bottom reveal reveal-delay-3">
-            <div className="footer__brand">
-              <span className="footer__brand-name">Powerscale Ventures</span>
-              <span className="footer__copyright">© {new Date().getFullYear()}</span>
+          {/* Main footer body */}
+          <div className="footer__body reveal reveal-delay-2">
+
+            {/* Brand column */}
+            <div className="footer__brand-col">
+              <a href="/" className="footer__logo-link" aria-label="Powerscale Ventures — home">
+                <span className="footer__logo-badge">
+                  <img
+                    src="/images/powerscale-logo-transparent.png"
+                    alt="Powerscale Ventures"
+                    className="footer__logo-img"
+                    width={160}
+                    height={100}
+                  />
+                </span>
+              </a>
+              <p className="footer__tagline">
+                Operator-led venture capital.<br />Series A &amp; B · India.
+              </p>
             </div>
-            <nav className="footer__nav">
-              <a href="/about">About</a>
-              <a href="/approach">Approach</a>
-              <a href="/index-page">Operator Index</a>
-              <a href="/portfolio">Portfolio</a>
-              <a href="/perspectives">Perspectives</a>
-              <a href="/contact">Talk to us</a>
+
+            {/* Nav columns */}
+            <nav className="footer__nav-cols" aria-label="Footer navigation">
+              <ul className="footer__nav-col">
+                {FOOTER_NAV_COL1.map(link => (
+                  <li key={link.href}>
+                    <a href={link.href} className="footer__nav-link">{link.label}</a>
+                  </li>
+                ))}
+              </ul>
+              <ul className="footer__nav-col">
+                {FOOTER_NAV_COL2.map(link => (
+                  <li key={link.href}>
+                    <a href={link.href} className="footer__nav-link">{link.label}</a>
+                  </li>
+                ))}
+              </ul>
             </nav>
+
           </div>
+
+          {/* Copyright bar */}
+          <div className="hairline footer__bottom-rule" />
+          <div className="footer__copyright-bar reveal reveal-delay-3">
+            <span className="footer__copyright">© {new Date().getFullYear()} Powerscale Ventures</span>
+            <span className="footer__location">India</span>
+          </div>
+
         </div>
 
         <style dangerouslySetInnerHTML={{__html: `
@@ -72,10 +121,11 @@ export default function Footer() {
           }
 
           .footer__headline {
-            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-size: clamp(1.75rem, 4vw, 3.25rem);
             font-weight: var(--weight-medium);
             color: var(--color-ink-primary);
             line-height: 1.15;
+            max-width: 18ch;
           }
 
           .footer__email {
@@ -96,50 +146,108 @@ export default function Footer() {
           }
 
           .footer__rule {
-            margin: var(--space-12) 0 var(--space-6);
+            margin: clamp(2.5rem, 6vw, 5rem) 0 clamp(2.5rem, 5vw, 4rem);
           }
 
-          .footer__bottom {
+          /* Main body — brand + nav */
+          .footer__body {
             display: flex;
-            justify-content: space-between;
             align-items: flex-start;
+            justify-content: space-between;
+            gap: var(--space-8);
+            padding-bottom: clamp(2.5rem, 5vw, 4rem);
           }
 
-          .footer__brand-name {
-            font-weight: var(--weight-medium);
-            font-size: var(--text-ui);
+          /* Brand column */
+          .footer__brand-col {
+            flex-shrink: 0;
+          }
+
+          .footer__logo-link {
+            display: inline-block;
+            margin-bottom: var(--space-3);
+            transition: opacity 200ms ease;
+          }
+
+          .footer__logo-link:hover {
+            opacity: 0.8;
+          }
+
+          .footer__logo-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .footer__logo-img {
             display: block;
-            margin-bottom: 0.25rem;
+            height: 88px;
+            width: auto;
           }
 
-          .footer__copyright {
+          .footer__tagline {
             font-size: var(--text-meta);
-            color: var(--color-ink-secondary);
+            color: var(--color-muted);
+            line-height: 1.65;
+            letter-spacing: 0.01em;
           }
 
-          .footer__nav {
+          /* Nav columns */
+          .footer__nav-cols {
             display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
+            gap: clamp(2rem, 5vw, 4rem);
           }
 
-          .footer__nav a {
+          .footer__nav-col {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.875rem;
+          }
+
+          .footer__nav-link {
             font-size: var(--text-meta);
             color: var(--color-ink-secondary);
             transition: color 200ms ease;
+            white-space: nowrap;
           }
 
-          .footer__nav a:hover {
+          .footer__nav-link:hover {
             color: var(--color-ink-primary);
           }
 
-          @media (max-width: 768px) {
-            .footer__bottom {
+          /* Copyright bar */
+          .footer__bottom-rule {
+            margin-bottom: var(--space-4);
+          }
+
+          .footer__copyright-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+
+          .footer__copyright,
+          .footer__location {
+            font-size: var(--text-meta);
+            color: var(--color-muted);
+          }
+
+          /* Responsive */
+          @media (max-width: 720px) {
+            .footer__body {
               flex-direction: column;
-              gap: 2rem;
+              gap: var(--space-6);
             }
-            .footer__nav {
-              gap: 1rem;
+
+            .footer__nav-cols {
+              gap: var(--space-6);
+            }
+          }
+
+          @media (max-width: 480px) {
+            .footer__logo-img {
+              height: 68px;
             }
           }
         `}} />
