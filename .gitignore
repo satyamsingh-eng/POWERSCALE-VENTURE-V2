@@ -73,8 +73,6 @@ REALISM-AUDIT.md
 # dead code removed from tracking
 /src/components/OperatorIndex.tsx
 /src/components/ui/AnimatedList.tsx
-/src/components/ui/BorderGlow.css
-/src/components/ui/BorderGlow.tsx
 /src/components/ui/ScrollFloat.tsx
 /src/components/ui/flip-button.tsx
 /src/lib/
