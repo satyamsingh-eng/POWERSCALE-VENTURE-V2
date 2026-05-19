@@ -53,7 +53,7 @@ export default function Marquee() {
           font-weight: var(--weight-medium);
           font-size: 0.75rem;
           letter-spacing: 0.14em;
-          color: color-mix(in srgb, var(--color-ink) 28%, transparent);
+          color: var(--color-steel);
           text-transform: uppercase;
         }
       `}} />

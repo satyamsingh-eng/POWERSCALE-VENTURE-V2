@@ -49,7 +49,7 @@ export default function ArthiBPage() {
             <div className="profile-relevance">
               <span className="profile-section-label">Operating relevance</span>
               <p>
-                The founder-to-managed-distribution transition is the most common point of failure in consumer and AI companies at Series A and B. It is also the point where a partner's direct experience matters most — not because an investor can fix the transition from a board seat, but because the founder needs someone who has navigated that specific inflection point to help them see it clearly before it becomes a structural problem.
+                The founder-to-managed-distribution transition is the most common point of failure in consumer and AI companies at the growth stage. It is also the point where a partner's direct experience matters most — not because an investor can fix the transition from a board seat, but because the founder needs someone who has navigated that specific inflection point to help them see it clearly before it becomes a structural problem.
               </p>
               <p>
                 Arthi's value to portfolio companies is specific to this transition: she has been at the inflection point she is now being asked to support. That is the credential — not the investment thesis, not the portfolio.

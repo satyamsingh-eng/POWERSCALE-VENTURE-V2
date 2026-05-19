@@ -5,16 +5,23 @@ import RevealWrapper from './RevealWrapper';
 import FadeContent from './ui/FadeContent';
 import ShinyText from './ui/ShinyText';
 
-const FOOTER_NAV_COL1 = [
-  { href: '/about', label: 'About & Team' },
-  { href: '/approach', label: 'Approach' },
-  { href: '/index-page', label: 'Operator Index' },
-];
-
-const FOOTER_NAV_COL2 = [
-  { href: '/portfolio', label: 'Portfolio' },
-  { href: '/perspectives', label: 'Perspectives' },
-  { href: '/contact', label: 'Talk to us' },
+const NAV_GROUPS = [
+  {
+    label: "Company",
+    links: [
+      { href: '/about', label: 'About & Team' },
+      { href: '/approach', label: 'Approach' },
+      { href: '/approach#operator-index', label: 'Operator Index' },
+    ]
+  },
+  {
+    label: "Work",
+    links: [
+      { href: '/portfolio', label: 'Portfolio' },
+      { href: '/perspectives', label: 'Perspectives' },
+      { href: '/contact', label: 'Talk to us' },
+    ]
+  },
 ];
 
 export default function Footer() {
@@ -51,37 +58,33 @@ export default function Footer() {
             {/* Brand column */}
             <div className="footer__brand-col">
               <a href="/" className="footer__logo-link" aria-label="Powerscale Ventures — home">
-                <span className="footer__logo-badge">
-                  <img
-                    src="/images/powerscale-logo-transparent.png"
-                    alt="Powerscale Ventures"
-                    className="footer__logo-img"
-                    width={160}
-                    height={100}
-                  />
-                </span>
+                <img
+                  src="/images/powerscale-logo-transparent.png"
+                  alt="Powerscale Ventures"
+                  className="footer__logo-img"
+                  width={160}
+                  height={100}
+                />
               </a>
               <p className="footer__tagline">
-                Operator-led venture capital.<br />Series A &amp; B · India.
+                Operator-led venture capital.<br />India.
               </p>
             </div>
 
-            {/* Nav columns */}
+            {/* Nav groups */}
             <nav className="footer__nav-cols" aria-label="Footer navigation">
-              <ul className="footer__nav-col">
-                {FOOTER_NAV_COL1.map(link => (
-                  <li key={link.href}>
-                    <a href={link.href} className="footer__nav-link">{link.label}</a>
-                  </li>
-                ))}
-              </ul>
-              <ul className="footer__nav-col">
-                {FOOTER_NAV_COL2.map(link => (
-                  <li key={link.href}>
-                    <a href={link.href} className="footer__nav-link">{link.label}</a>
-                  </li>
-                ))}
-              </ul>
+              {NAV_GROUPS.map(group => (
+                <div key={group.label} className="footer__nav-group">
+                  <span className="footer__nav-label">{group.label}</span>
+                  <ul className="footer__nav-col">
+                    {group.links.map(link => (
+                      <li key={link.href}>
+                        <a href={link.href} className="footer__nav-link">{link.label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </nav>
 
           </div>
@@ -112,24 +115,24 @@ export default function Footer() {
           }
 
           .footer__cta {
-            padding-bottom: var(--space-lg);
+            padding-bottom: clamp(3rem, 6vw, 5rem);
           }
 
           .footer__headline-wrapper {
-            margin-bottom: var(--space-lg);
-            max-width: 800px;
+            margin-bottom: var(--space-xl);
           }
 
           .footer__headline {
-            font-size: clamp(1.75rem, 4vw, 3.25rem);
-            font-weight: var(--weight-medium);
+            font-size: clamp(2.25rem, 5vw, 4.25rem);
+            font-weight: var(--weight-semibold);
             color: var(--color-ink-primary);
-            line-height: 1.15;
-            max-width: 18ch;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            max-width: 16ch;
           }
 
           .footer__email {
-            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            font-size: clamp(1rem, 1.4vw, 1.25rem);
             color: var(--color-ink-primary);
             display: inline-block;
             border-bottom: 1px solid var(--color-ink-primary);
@@ -146,7 +149,7 @@ export default function Footer() {
           }
 
           .footer__rule {
-            margin: clamp(2.5rem, 6vw, 5rem) 0 clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: clamp(2.5rem, 5vw, 4rem);
           }
 
           /* Main body — brand + nav */
@@ -155,7 +158,7 @@ export default function Footer() {
             align-items: flex-start;
             justify-content: space-between;
             gap: var(--space-8);
-            padding-bottom: clamp(2.5rem, 5vw, 4rem);
+            padding-bottom: clamp(3rem, 5vw, 4.5rem);
           }
 
           /* Brand column */
@@ -165,7 +168,7 @@ export default function Footer() {
 
           .footer__logo-link {
             display: inline-block;
-            margin-bottom: var(--space-3);
+            margin-bottom: var(--space-4);
             transition: opacity 200ms ease;
           }
 
@@ -173,47 +176,55 @@ export default function Footer() {
             opacity: 0.8;
           }
 
-          .footer__logo-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-          }
-
           .footer__logo-img {
             display: block;
-            height: 88px;
+            height: 80px;
             width: auto;
           }
 
           .footer__tagline {
-            font-size: var(--text-meta);
-            color: var(--color-muted);
+            font-size: 0.9375rem;
+            color: var(--color-steel);
             line-height: 1.65;
-            letter-spacing: 0.01em;
           }
 
-          /* Nav columns */
+          /* Nav groups */
           .footer__nav-cols {
             display: flex;
-            gap: clamp(2rem, 5vw, 4rem);
+            gap: clamp(2.5rem, 5vw, 5rem);
+          }
+
+          .footer__nav-group {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .footer__nav-label {
+            display: block;
+            font-size: var(--text-meta);
+            color: var(--color-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: var(--weight-medium);
+            margin-bottom: var(--space-3);
           }
 
           .footer__nav-col {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 0.875rem;
+            gap: 0.9rem;
           }
 
           .footer__nav-link {
-            font-size: var(--text-meta);
+            font-size: var(--text-body);
             color: var(--color-ink-secondary);
             transition: color 200ms ease;
             white-space: nowrap;
           }
 
           .footer__nav-link:hover {
-            color: var(--color-ink-primary);
+            color: var(--color-signature);
           }
 
           /* Copyright bar */
@@ -237,17 +248,21 @@ export default function Footer() {
           @media (max-width: 720px) {
             .footer__body {
               flex-direction: column;
-              gap: var(--space-6);
+              gap: var(--space-8);
             }
 
             .footer__nav-cols {
-              gap: var(--space-6);
+              gap: var(--space-8);
             }
           }
 
           @media (max-width: 480px) {
             .footer__logo-img {
-              height: 68px;
+              height: 64px;
+            }
+
+            .footer__headline {
+              max-width: none;
             }
           }
         `}} />

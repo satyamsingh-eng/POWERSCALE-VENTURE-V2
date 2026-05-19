@@ -69,9 +69,9 @@ export default function SectorFocus() {
 
           .sectors__row {
             display: grid;
-            grid-template-columns: 260px 1fr;
+            grid-template-columns: 320px 1fr;
             gap: var(--space-xl);
-            padding: var(--space-lg) 0;
+            padding: clamp(var(--space-lg), 4vw, var(--space-xl)) 0;
             border-bottom: 1px solid var(--color-divider);
             align-items: start;
           }
@@ -91,10 +91,10 @@ export default function SectorFocus() {
           }
 
           .sectors__name {
-            font-size: clamp(1.25rem, 2vw, 1.75rem);
-            font-weight: var(--weight-medium);
+            font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+            font-weight: var(--weight-semibold);
             color: var(--color-ink-primary);
-            line-height: 1.15;
+            line-height: 1.1;
           }
 
           .sectors__row-right {
@@ -106,18 +106,18 @@ export default function SectorFocus() {
           .sectors__thesis {
             color: var(--color-ink);
             font-size: var(--text-body);
-            line-height: 1.65;
+            line-height: 1.72;
             max-width: none;
           }
 
           .sectors__proof {
-            font-size: var(--text-meta);
+            font-size: 0.875rem;
             color: var(--color-signature);
-            line-height: 1.5;
+            line-height: 1.55;
             font-style: italic;
           }
 
-          @media (max-width: 860px) {
+          @media (max-width: 900px) {
             .sectors__row {
               grid-template-columns: 1fr;
               gap: var(--space-md);

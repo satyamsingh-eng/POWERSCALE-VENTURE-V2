@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import FadeContent from './ui/FadeContent';
-import GradientText from './ui/GradientText';
 
 export default function Hero() {
   const [canPlayVideo, setCanPlayVideo] = useState(false);
@@ -35,16 +34,6 @@ export default function Hero() {
       </div>
       <div className="container hero__container">
         <FadeContent className="hero__content">
-          <p className="hero__eyebrow">
-            <GradientText
-              colors={["#7abdb8", "#d0edeb", "#7abdb8"]}
-              animationSpeed={6}
-              showBorder={false}
-              yoyo={true}
-            >
-              Series A &amp; B · India
-            </GradientText>
-          </p>
           <h1 className="hero__headline">
             We invest where execution decides the outcome.
           </h1>
@@ -52,8 +41,8 @@ export default function Hero() {
             For founders who have found their market and are now confronting the harder problem. We back companies in energy transition, deeptech, consumer, and AI — at the stage where operating judgment matters more than capital.
           </p>
           <div className="hero__actions">
-            <a href="#operator-index" className="hero__cta">Read the Operator Index</a>
-            <a href="/contact" className="hero__link">Talk to us →</a>
+            <a href="/approach" className="hero__link">How we invest</a>
+            <a href="/contact" className="hero__cta">Talk to us</a>
           </div>
         </FadeContent>
       </div>
@@ -89,15 +78,14 @@ export default function Hero() {
         .hero__media::before {
           content: '';
           z-index: 1;
-          background: rgba(4, 4, 4, 0.72);
+          background: rgba(4, 4, 4, 0.38);
         }
 
         .hero__media::after {
           content: '';
           z-index: 2;
           background:
-            radial-gradient(circle at 50% 42%, rgba(245, 245, 244, 0.10), transparent 32%),
-            linear-gradient(180deg, rgba(11, 11, 11, 0.34) 0%, rgba(11, 11, 11, 0.18) 44%, rgba(11, 11, 11, 0.78) 100%);
+            linear-gradient(180deg, rgba(11, 11, 11, 0.22) 0%, rgba(11, 11, 11, 0.08) 44%, rgba(11, 11, 11, 0.60) 100%);
         }
 
         .hero__video {
@@ -107,9 +95,7 @@ export default function Hero() {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          filter: saturate(0.58) blur(1.5px);
-          opacity: 0.72;
-          transform: scale(1.015);
+          opacity: 1;
         }
 
         .hero__container {
@@ -129,18 +115,6 @@ export default function Hero() {
           flex-direction: column;
           align-items: center;
           text-align: center;
-        }
-
-        .hero__eyebrow {
-          margin-bottom: var(--space-3);
-          font-size: 0.75rem;
-          font-weight: var(--weight-medium);
-          letter-spacing: 0.12em;
-          line-height: 1;
-          text-transform: uppercase;
-          max-width: none;
-          display: flex;
-          justify-content: center;
         }
 
         .hero__headline {
@@ -198,7 +172,7 @@ export default function Hero() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          color: rgba(245, 245, 244, 0.78);
+          color: rgba(245, 245, 244, 0.72);
           font-size: 0.9375rem;
           font-weight: var(--weight-medium);
           padding: 0 var(--space-3);

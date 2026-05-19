@@ -61,7 +61,16 @@ const ADVISORS = [
     linkedinLabel: "LinkedIn ↗",
     slug: "rajesh-kumar-adla",
     imageSrc: "/images/rajesh-kumar.png",
-  }
+  },
+  {
+    name: "Amit Mehta",
+    area: "Capital Markets & Institutional Finance",
+    note: "Chartered Accountant and capital markets professional associated with Sunidhi Securities & Finance Ltd., Mumbai. Brings institutional finance and capital markets perspective to portfolio companies building the financial architecture and governance infrastructure required for growth-stage and public-market readiness.",
+    linkedin: "https://www.linkedin.com/in/amit-mehta-8315681b/",
+    linkedinLabel: "LinkedIn ↗",
+    slug: "amit-mehta",
+    imageSrc: "/images/amit-mehta.jpg",
+  },
 ];
 
 export default function AboutPage() {
@@ -76,7 +85,7 @@ export default function AboutPage() {
             </h1>
             <p className="about-hero__description reveal reveal-delay-2">
               Powerscale is an India-native partnership investing in energy transition,
-              deeptech infrastructure, consumer, and AI — primarily at Series A and B.
+              deeptech infrastructure, consumer, and AI.
               Every partner has built and run a company before backing one. That is not a
               credential we list. It is the thing that determines how we evaluate companies,
               how we engage after the cheque clears, and what we are actually useful for.
@@ -274,7 +283,7 @@ export default function AboutPage() {
 
         .team-full__intro {
           font-size: var(--text-body);
-          color: var(--color-steel);
+          color: var(--color-ink);
           line-height: 1.65;
           max-width: 58ch;
           margin-bottom: var(--space-xl);
@@ -301,6 +310,28 @@ export default function AboutPage() {
         .team-full__image-wrap {
           position: sticky;
           top: calc(var(--nav-height) + var(--space-4));
+          aspect-ratio: 4/5;
+          width: 100%;
+          border-radius: 12px;
+          overflow: hidden;
+        }
+
+        .team-full__image-wrap .tc-figure {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        .team-full__image-wrap .tc-inner {
+          height: 100%;
+        }
+
+        .team-full__image-wrap .img-ph {
+          position: absolute;
+          inset: 0;
+          aspect-ratio: auto;
+          border-radius: 0;
         }
 
         .team-full__index {
@@ -314,7 +345,7 @@ export default function AboutPage() {
 
         .team-full__name {
           font-size: clamp(1.375rem, 2vw, 2rem);
-          font-weight: var(--weight-medium);
+          font-weight: var(--weight-semibold);
           margin-bottom: 0.25rem;
         }
 

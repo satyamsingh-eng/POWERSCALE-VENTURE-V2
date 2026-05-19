@@ -82,7 +82,7 @@ export default function OperatorProof() {
           }
 
           .team__intro {
-            color: var(--color-steel);
+            color: var(--color-ink);
             font-size: var(--text-body);
             line-height: 1.68;
             margin-bottom: var(--space-8);
@@ -90,25 +90,53 @@ export default function OperatorProof() {
           }
 
           .team__grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-xl);
+            display: flex;
+            flex-direction: column;
           }
 
           .team__card {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: var(--space-xl);
+            align-items: start;
             border-top: 1px solid var(--color-divider);
-            padding-top: var(--space-4);
+            padding: var(--space-lg) 0;
+          }
+
+          .team__card:last-child {
+            border-bottom: 1px solid var(--color-divider);
           }
 
           .team__image-wrap {
-            margin-bottom: var(--space-md);
+            position: sticky;
+            top: calc(var(--nav-height) + var(--space-4));
+            width: 100%;
+            aspect-ratio: 4/5;
+            border-radius: 12px;
+            overflow: hidden;
+          }
+
+          .team__image-wrap .tc-figure {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+          }
+
+          .team__image-wrap .tc-inner {
+            height: 100%;
+          }
+
+          .team__image-wrap .img-ph {
+            position: absolute;
+            inset: 0;
+            aspect-ratio: auto;
+            border-radius: 0;
           }
 
           .team__name {
-            font-size: clamp(1.25rem, 2.4vw, 2rem);
-            font-weight: var(--weight-medium);
+            font-size: clamp(1.25rem, 2vw, 1.75rem);
+            font-weight: var(--weight-semibold);
             margin-bottom: 0.25rem;
           }
 
@@ -163,9 +191,15 @@ export default function OperatorProof() {
             opacity: 0.6;
           }
 
-          @media (max-width: 700px) {
-            .team__grid {
+          @media (max-width: 600px) {
+            .team__card {
               grid-template-columns: 1fr;
+              gap: var(--space-md);
+            }
+
+            .team__image-wrap {
+              position: static;
+              max-width: 140px;
             }
           }
         `}} />

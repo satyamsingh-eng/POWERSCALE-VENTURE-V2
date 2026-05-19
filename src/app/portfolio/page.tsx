@@ -29,24 +29,6 @@ const WORK = [
   },
 ];
 
-const TIMING_SIGNALS = [
-  {
-    sector: "Energy Transition",
-    observation: "India's industrial decarbonisation pressure reached an inflection in 2023–24 — where policy alignment, electrolysis cost curves, and offtake demand moved simultaneously. Companies that had secured demand commitments before this inflection carried a structurally different risk profile than those entering after."
-  },
-  {
-    sector: "Deeptech Infrastructure",
-    observation: "The transition from lab to field is not a technology milestone. It is a manufacturing readiness milestone. The companies we examine most carefully are those where the first commercial deployment has already exposed the cost structure of the second."
-  },
-  {
-    sector: "Consumer",
-    observation: "Channel mix decisions made in the first two years of a consumer business are nearly impossible to reverse without a reset. The window to get unit economics architecture right closes before most founders know it has opened."
-  },
-  {
-    sector: "AI",
-    observation: "The meaningful AI companies in the next cycle will not be differentiated by model access. They will be differentiated by workflow depth — how far into a customer's operating process the product has embedded itself before the customer thought to evaluate alternatives."
-  },
-];
 
 const SITUATIONS = [
   {
@@ -158,30 +140,7 @@ export default function PortfolioPage() {
         </section>
       </RevealWrapper>
 
-      {/* Section 3: Market Timing Signals */}
-      <RevealWrapper>
-        <section className="port-timing-section">
-          <div className="container">
-            <div className="section-label reveal">Signals we pay attention to</div>
-            <h2 className="port-timing__title reveal reveal-delay-1">
-              Timing is not about predicting. It is about reading what has already changed.
-            </h2>
-            <div className="port-timing-grid">
-              {TIMING_SIGNALS.map((signal, i) => (
-                <div key={signal.sector} className={`port-timing-card reveal reveal-delay-${Math.min(i + 2, 5)}`}>
-                  <p className="port-timing-card__sector">{signal.sector}</p>
-                  <p className="port-timing-card__observation">{signal.observation}</p>
-                </div>
-              ))}
-            </div>
-            <div className="port-timing__graph reveal reveal-delay-5">
-              <ImagePlaceholder label="Market Timing Graph Placeholder" aspectRatio="21/9" rounded={false} />
-            </div>
-          </div>
-        </section>
-      </RevealWrapper>
-
-      {/* Section 4: What We Evaluate */}
+      {/* Section 3: What We Evaluate */}
       <RevealWrapper>
         <section className="port-list-section">
           <div className="container">
@@ -422,55 +381,6 @@ export default function PortfolioPage() {
           margin-top: var(--space-2);
         }
 
-        /* Market Timing Signals */
-        .port-timing-section {
-          padding-bottom: var(--section-gap);
-        }
-
-        .port-timing-section .section-label {
-          margin-bottom: var(--space-lg);
-        }
-
-        .port-timing__title {
-          font-size: var(--text-h2);
-          font-weight: var(--weight-medium);
-          max-width: 32ch;
-          margin-bottom: var(--space-xl);
-        }
-
-        .port-timing-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: var(--space-sm);
-          margin-bottom: var(--space-lg);
-        }
-
-        .port-timing-card {
-          border: 1px solid var(--color-divider);
-          border-radius: 16px;
-          padding: var(--space-lg);
-          background: var(--color-surface);
-        }
-
-        .port-timing-card__sector {
-          font-size: var(--text-meta);
-          text-transform: uppercase;
-          letter-spacing: 0.08em;
-          color: var(--color-signature);
-          font-weight: var(--weight-medium);
-          margin-bottom: var(--space-2);
-        }
-
-        .port-timing-card__observation {
-          font-size: var(--text-body);
-          color: var(--color-steel);
-          line-height: 1.65;
-        }
-
-        .port-timing__graph {
-          margin-top: var(--space-lg);
-        }
-
         /* What We Evaluate */
         .port-list-section {
           padding-bottom: var(--section-gap);
@@ -643,10 +553,6 @@ export default function PortfolioPage() {
           .port-conviction-grid {
             grid-template-columns: 1fr;
             gap: var(--space-lg);
-          }
-
-          .port-timing-grid {
-            grid-template-columns: 1fr;
           }
         }
 

@@ -50,14 +50,14 @@ export default function RajeshKumarAdlaPage() {
                 His operating background extends beyond his ecosystem roles into product and technology work, giving him a perspective on what early-stage founders need that is more grounded than the view from a purely institutional position. That combination of operating experience and ecosystem access gives him a place in the Powerscale advisor network that is specifically useful for sourcing and founder introductions.
               </p>
               <p>
-                At Powerscale, Rajesh Kumar Adla's primary contribution is ecosystem access: the ability to surface founder introductions, sector intelligence, and institutional network connections across India's innovation infrastructure. For a firm investing at Series A and B, having a presence at the incubation and early-stage layer of the ecosystem — where tomorrow's portfolio candidates are building their first businesses — is a sourcing advantage that compounds over time.
+                At Powerscale, Rajesh Kumar Adla's primary contribution is ecosystem access: the ability to surface founder introductions, sector intelligence, and institutional network connections across India's innovation infrastructure. For a growth-stage firm, having a presence at the incubation and early-stage layer of the ecosystem — where tomorrow's portfolio candidates are building their first businesses — is a sourcing advantage that compounds over time.
               </p>
             </div>
 
             <div className="profile-relevance">
               <span className="profile-section-label">Ecosystem relevance</span>
               <p>
-                India's startup ecosystem is concentrated in institutional nodes — T-Hub, IIT incubators, AIM programs, and the corporate accelerator networks that connect early-stage companies to their first institutional partners. Rajesh Kumar Adla's operating presence at one of those nodes gives Powerscale direct visibility into the pipeline, the people, and the problems that are forming at the stage before Series A.
+                India's startup ecosystem is concentrated in institutional nodes — T-Hub, IIT incubators, AIM programs, and the corporate accelerator networks that connect early-stage companies to their first institutional partners. Rajesh Kumar Adla's operating presence at one of those nodes gives Powerscale direct visibility into the pipeline, the people, and the problems that are forming at the early stage.
               </p>
               <p>
                 His healthcare and spacetech experience is additionally relevant for Powerscale portfolio companies navigating regulated sector commercialization — where the path from product to market requires understanding institutional buyer dynamics, regulatory timelines, and deployment complexity that is distinct from enterprise software or consumer businesses.
@@ -67,7 +67,7 @@ export default function RajeshKumarAdlaPage() {
             <div className="profile-relevance">
               <span className="profile-section-label">What this brings to Powerscale</span>
               <p>
-                The firm invests at Series A and B, but the best relationships start earlier. Rajesh Kumar Adla's position in India's startup institutional infrastructure gives Powerscale early visibility into the founders and sectors the firm will eventually want to back — before they are in a competitive fundraising process. His presence also extends the firm's reach into the healthcare and spacetech sectors, where Powerscale's portfolio relevance may expand as the firm's deployment profile matures.
+                The best relationships start before the fundraising process begins. Rajesh Kumar Adla's position in India's startup institutional infrastructure gives Powerscale early visibility into the founders and sectors the firm will eventually want to back — before they are in a competitive fundraising process. His presence also extends the firm's reach into the healthcare and spacetech sectors, where Powerscale's portfolio relevance may expand as the firm's deployment profile matures.
               </p>
             </div>
           </div>

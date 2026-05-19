@@ -65,7 +65,7 @@ export default function Perspectives() {
 
           .perspectives__card {
             display: block;
-            padding: var(--space-lg) 0;
+            padding: clamp(var(--space-lg), 4vw, var(--space-xl)) 0;
             border-bottom: 1px solid var(--color-divider);
             transition: opacity var(--duration-fast) var(--ease-out);
           }
@@ -95,9 +95,9 @@ export default function Perspectives() {
           }
 
           .perspectives__card-title {
-            font-size: clamp(1.125rem, 2vw, 1.625rem);
-            font-weight: var(--weight-medium);
-            line-height: 1.25;
+            font-size: clamp(1.25rem, 2.2vw, 1.875rem);
+            font-weight: var(--weight-semibold);
+            line-height: 1.22;
             max-width: 46ch;
             margin-bottom: var(--space-sm);
             transition: color var(--duration-fast) var(--ease-out);
@@ -105,8 +105,8 @@ export default function Perspectives() {
 
           .perspectives__card-excerpt {
             font-size: var(--text-body);
-            color: var(--color-steel);
-            line-height: 1.6;
+            color: var(--color-ink-secondary);
+            line-height: 1.7;
             max-width: 58ch;
           }
 

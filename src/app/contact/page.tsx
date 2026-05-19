@@ -17,7 +17,7 @@ export default function ContactPage() {
                   If your market is real and the next problem is operational, write to us.
                 </h1>
                 <p className="contact__note reveal reveal-delay-2">
-                  We are most useful at Series A and B — after the first customers are committed and before the operating system has to handle the next order of magnitude. The problems we work on are specific: hiring architecture, channel structure, capital timing, and management cadence.
+                  We are most useful after the first customers are committed and before the operating system has to handle the next order of magnitude. The problems we work on are specific: hiring architecture, channel structure, capital timing, and management cadence.
                 </p>
                 <p className="contact__note contact__note--secondary reveal reveal-delay-3">
                   We read every note. If there is a fit, we will respond within a week. If the timing is not right, we will say so directly.
@@ -46,9 +46,9 @@ export default function ContactPage() {
                   <label htmlFor="stage">Stage</label>
                   <select id="stage" name="Stage" defaultValue="" required>
                     <option value="" disabled>Select stage</option>
-                    <option>Pre-Series A</option>
-                    <option>Series A</option>
-                    <option>Series B</option>
+                    <option>Seed / Early Stage</option>
+                    <option>Growth — Early</option>
+                    <option>Growth — Later</option>
                     <option>Later stage</option>
                     <option>Not raising yet</option>
                   </select>

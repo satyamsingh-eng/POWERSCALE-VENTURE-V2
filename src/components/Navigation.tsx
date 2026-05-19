@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import dynamic from 'next/dynamic';
 
 const ThemeToggle = dynamic(() => import('./ThemeToggle'), { ssr: false });
@@ -9,12 +10,12 @@ const ThemeToggle = dynamic(() => import('./ThemeToggle'), { ssr: false });
 const NAV_LINKS = [
   { href: '/about', label: 'About & Team' },
   { href: '/approach', label: 'Approach' },
-  { href: '/index-page', label: 'Operator Index' },
   { href: '/portfolio', label: 'Portfolio' },
   { href: '/perspectives', label: 'Perspectives' },
 ];
 
 export default function Navigation() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -58,11 +59,20 @@ export default function Navigation() {
 
           {/* Desktop links */}
           <ul className="nav__links nav__links--desktop" aria-label="Site links">
-            {NAV_LINKS.map(link => (
-              <li key={link.href}>
-                <Link href={link.href} className="nav__link">{link.label}</Link>
-              </li>
-            ))}
+            {NAV_LINKS.map(link => {
+              const active = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={`nav__link${active ? ' nav__link--active' : ''}`}
+                    aria-current={active ? 'page' : undefined}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
             <li><Link href="/contact" className="nav__link nav__cta">Talk to us</Link></li>
             <li><ThemeToggle /></li>
           </ul>
@@ -94,17 +104,21 @@ export default function Navigation() {
         aria-label="Navigation"
       >
         <ul className="nav-overlay__list">
-          {NAV_LINKS.map((link, i) => (
-            <li key={link.href} style={{ transitionDelay: menuOpen ? `${i * 40}ms` : '0ms' }}>
-              <Link
-                href={link.href}
-                className="nav-overlay__link"
-                onClick={closeMenu}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          {NAV_LINKS.map((link, i) => {
+            const active = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
+            return (
+              <li key={link.href} style={{ transitionDelay: menuOpen ? `${i * 40}ms` : '0ms' }}>
+                <Link
+                  href={link.href}
+                  className={`nav-overlay__link${active ? ' nav-overlay__link--active' : ''}`}
+                  aria-current={active ? 'page' : undefined}
+                  onClick={closeMenu}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
           <li style={{ transitionDelay: menuOpen ? `${NAV_LINKS.length * 40}ms` : '0ms' }}>
             <Link
               href="/contact"
@@ -247,6 +261,10 @@ export default function Navigation() {
         }
 
         .nav-overlay__link:hover {
+          color: var(--color-signature);
+        }
+
+        .nav-overlay__link--active {
           color: var(--color-signature);
         }
 
