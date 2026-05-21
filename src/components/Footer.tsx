@@ -11,7 +11,6 @@ const NAV_GROUPS = [
     links: [
       { href: '/about', label: 'About & Team' },
       { href: '/approach', label: 'Approach' },
-      { href: '/approach#operator-index', label: 'Operator Index' },
     ]
   },
   {
@@ -66,9 +65,9 @@ export default function Footer() {
                   height={100}
                 />
               </a>
-              <p className="footer__tagline">
-                Operator-led venture capital.<br />India.
-              </p>
+              <a href="mailto:support@powerscaleventures.com" className="footer__contact-email">
+                support@powerscaleventures.com
+              </a>
             </div>
 
             {/* Nav groups */}
@@ -91,9 +90,13 @@ export default function Footer() {
 
           {/* Copyright bar */}
           <div className="hairline footer__bottom-rule" />
-          <div className="footer__copyright-bar reveal reveal-delay-3">
-            <span className="footer__copyright">© {new Date().getFullYear()} Powerscale Ventures</span>
-            <span className="footer__location">India</span>
+          <div className="footer__copyright-bar">
+            <span className="footer__copyright">© {new Date().getFullYear()} Powerscale Ventures. All rights reserved</span>
+            <div className="footer__legal-links">
+              <a href="/privacy-policy" className="footer__legal-link">Privacy Policy</a>
+              <span className="footer__legal-sep" aria-hidden="true">·</span>
+              <a href="/terms" className="footer__legal-link">Terms &amp; Conditions</a>
+            </div>
           </div>
 
         </div>
@@ -101,7 +104,7 @@ export default function Footer() {
         <style dangerouslySetInnerHTML={{__html: `
           .footer {
             width: 100%;
-            padding: var(--section-gap) 0 var(--space-lg);
+            padding: var(--section-gap) 0 var(--space-4);
             background-color: var(--color-canvas);
             color: var(--color-ink-primary);
           }
@@ -149,7 +152,7 @@ export default function Footer() {
           }
 
           .footer__rule {
-            margin-bottom: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: clamp(3rem, 6vw, 5rem);
           }
 
           /* Main body — brand + nav */
@@ -158,7 +161,7 @@ export default function Footer() {
             align-items: flex-start;
             justify-content: space-between;
             gap: var(--space-8);
-            padding-bottom: clamp(3rem, 5vw, 4.5rem);
+            padding-bottom: clamp(4rem, 6vw, 6rem);
           }
 
           /* Brand column */
@@ -168,7 +171,7 @@ export default function Footer() {
 
           .footer__logo-link {
             display: inline-block;
-            margin-bottom: var(--space-4);
+            margin-bottom: var(--space-3);
             transition: opacity 200ms ease;
           }
 
@@ -178,20 +181,26 @@ export default function Footer() {
 
           .footer__logo-img {
             display: block;
-            height: 80px;
-            width: auto;
+            width: clamp(160px, 16vw, 280px);
+            height: auto;
           }
 
-          .footer__tagline {
-            font-size: 0.9375rem;
-            color: var(--color-steel);
-            line-height: 1.65;
+          .footer__contact-email {
+            display: block;
+            font-size: 0.875rem;
+            color: var(--color-muted);
+            transition: color 200ms ease;
+            word-break: break-all;
+          }
+
+          .footer__contact-email:hover {
+            color: var(--color-signature);
           }
 
           /* Nav groups */
           .footer__nav-cols {
             display: flex;
-            gap: clamp(2.5rem, 5vw, 5rem);
+            gap: clamp(3rem, 6vw, 7rem);
           }
 
           .footer__nav-group {
@@ -201,47 +210,75 @@ export default function Footer() {
 
           .footer__nav-label {
             display: block;
-            font-size: var(--text-meta);
-            color: var(--color-muted);
+            font-size: 0.75rem;
+            color: var(--color-signature);
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-weight: var(--weight-medium);
-            margin-bottom: var(--space-3);
+            letter-spacing: 0.12em;
+            font-weight: 700;
+            margin-bottom: var(--space-4);
           }
 
           .footer__nav-col {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 0.9rem;
+            gap: 1.1rem;
           }
 
           .footer__nav-link {
-            font-size: var(--text-body);
+            font-size: clamp(1rem, 1.15vw, 1.125rem);
             color: var(--color-ink-secondary);
+            font-weight: 500;
             transition: color 200ms ease;
             white-space: nowrap;
           }
 
           .footer__nav-link:hover {
-            color: var(--color-signature);
+            color: var(--color-ink-primary);
           }
 
           /* Copyright bar */
           .footer__bottom-rule {
-            margin-bottom: var(--space-4);
+            margin-bottom: var(--space-3);
           }
 
           .footer__copyright-bar {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            padding-bottom: var(--space-3);
           }
 
-          .footer__copyright,
-          .footer__location {
+          .footer__copyright {
+            font-size: var(--text-meta);
+            color: var(--color-ink-secondary);
+            font-weight: 500;
+          }
+
+          .footer__legal-links {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+          }
+
+          .footer__legal-sep {
             font-size: var(--text-meta);
             color: var(--color-muted);
+            user-select: none;
+          }
+
+          .footer__legal-link {
+            font-size: var(--text-meta);
+            color: var(--color-ink-secondary);
+            font-weight: 500;
+            transition: color 200ms ease;
+            white-space: nowrap;
+          }
+
+          .footer__legal-link:hover {
+            color: var(--color-ink-primary);
           }
 
           /* Responsive */
@@ -257,10 +294,6 @@ export default function Footer() {
           }
 
           @media (max-width: 480px) {
-            .footer__logo-img {
-              height: 64px;
-            }
-
             .footer__headline {
               max-width: none;
             }

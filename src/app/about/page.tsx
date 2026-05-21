@@ -10,7 +10,7 @@ import TiltedCard from '@/components/ui/TiltedCard';
 const BELIEFS = [
   "Scaling something that already works is the harder problem.",
   "Pattern recognition is not operating insight.",
-  "The thesis can be right while the operating system fails.",
+  "Strong conviction still requires strong execution.",
   "What breaks at scale is rarely the product.",
   "We make claims concrete enough to be wrong."
 ];
@@ -19,16 +19,16 @@ const PARTNERS = [
   {
     name: "Arthi B",
     role: "Partner",
-    bio: "Arthi built and ran businesses in consumer and AI before moving to the investor side. Her work is in the transition from founder-led growth to managed distribution — when channel quality becomes visible and hiring systems start to matter. She leads consumer and AI investments at Powerscale.",
-    focus: "Consumer & AI",
+    bio: "Arthi built and ran businesses in consumer and AI before moving to the investor side. She brings a founder-first operating lens to Powerscale's work across all four focus areas. Her strength is in understanding founders, customers, GTM, brand, distribution, and the messy middle where early traction has to become a scalable company.",
+    focus: "Founder Operating · GTM · Distribution",
     slug: "arthi-b",
-    imageSrc: null,
+    imageSrc: "/images/arthi-b.png",
   },
   {
     name: "Sanjay Tolani",
     role: "Partner",
-    bio: "Sanjay Tolani's background is in infrastructure businesses where capital timing, regulatory sequencing, and deployment reliability are the actual constraints — not narrative or product quality. He has worked through project finance structures and the operating complexity that most investors understand only from a board deck. He leads energy transition and infrastructure at Powerscale.",
-    focus: "Energy Transition & Infrastructure",
+    bio: "Sanjay brings over two decades of cross-border capital and commercial execution experience across the UAE and India. At Powerscale, he helps founders think through capital access, financial structure, market expansion, and the discipline required to scale beyond the first phase of growth.",
+    focus: "Capital Access · Commercial Strategy · Investor Relationships",
     slug: "sanjay-tolani",
     imageSrc: "/images/sanjay-tolani.png",
   },
@@ -47,7 +47,7 @@ const ADVISORS = [
   {
     name: "Satya Das",
     area: "Finance & Post-Investment Systems",
-    note: "Finance leadership and business strategy background. Brings post-investment systems expertise to portfolio companies building governance infrastructure — financial controls, reporting cadence, and the compliance structure that matters between rounds.",
+    note: "Finance leadership and business strategy background. Brings post-investment systems expertise to portfolio companies building governance infrastructure: financial controls, reporting cadence, and the compliance structure that matters between rounds.",
     linkedin: "https://www.linkedin.com/posts/satyadas76_cfo-financeleadership-businessstrategy-share-7398384399563534338-aYSL?utm_source=share&utm_medium=member_ios&rcm=ACoAAABrRDcBZ9pV-qQiPgUN_iV0YS5UnZjWv7I",
     linkedinLabel: "LinkedIn reference ↗",
     slug: "satya-das",
@@ -56,7 +56,7 @@ const ADVISORS = [
   {
     name: "Rajesh Kumar Adla",
     area: "Founder Ecosystem & Incubation",
-    note: "CEO of AIC T-Hub Hyderabad and Mentor of Change at Atal Innovation Mission (NITI Aayog). Extends Powerscale's visibility into India's early-stage startup pipeline — before companies are in a competitive fundraising process.",
+    note: "CEO of AIC T-Hub Hyderabad and Mentor of Change at Atal Innovation Mission (NITI Aayog). Extends Powerscale's visibility into India's early-stage startup pipeline, before companies are in a competitive fundraising process.",
     linkedin: "https://www.linkedin.com/in/rajeshkumaradla?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     linkedinLabel: "LinkedIn ↗",
     slug: "rajesh-kumar-adla",
@@ -80,35 +80,23 @@ export default function AboutPage() {
         <section className="about-hero">
           <div className="container">
             <div className="section-label reveal">About</div>
-            <h1 className="about-hero__title reveal reveal-delay-1">
-              An operator-led venture firm built for the scaling problem.
-            </h1>
-            <p className="about-hero__description reveal reveal-delay-2">
-              Powerscale is an India-native partnership investing in energy transition,
-              deeptech infrastructure, consumer, and AI.
-              Every partner has built and run a company before backing one. That is not a
-              credential we list. It is the thing that determines how we evaluate companies,
-              how we engage after the cheque clears, and what we are actually useful for.
-            </p>
-          </div>
-        </section>
-      </RevealWrapper>
-
-      <RevealWrapper>
-        <section className="beliefs">
-          <div className="container">
-            <div className="section-label reveal">What we believe</div>
-            <div className="beliefs__list">
-              {BELIEFS.map((belief, i) => (
-                <div key={i} className={`beliefs__item reveal reveal-delay-${i + 1}`}>
-                  <span className="beliefs__number">0{i + 1}</span>
-                  <p className="beliefs__text">{belief}</p>
-                </div>
-              ))}
+            <div className="about-hero__grid">
+              <h1 className="about-hero__title reveal reveal-delay-1">
+                An operator-led venture firm built for the scaling problem.
+              </h1>
+              <div className="about-hero__desc-card reveal reveal-delay-2">
+                <p className="about-hero__description">
+                  Powerscale is an India-native partnership investing in energy transition,
+                  deeptech, consumer products, and AI.
+                  Our partners come with a mixed background of building companies and working with founders to scale companies.
+                  That mix of experience is what determines how we evaluate, how we engage after the cheque clears, and what we are actually useful for.
+                </p>
+              </div>
             </div>
           </div>
         </section>
       </RevealWrapper>
+
 
       <RevealWrapper>
         <section className="team-full">
@@ -118,7 +106,7 @@ export default function AboutPage() {
               The operating background is the firm.
             </h2>
             <p className="team-full__intro reveal reveal-delay-2">
-              We are building the firm we wished existed when we were running companies — one where the investors at the table have navigated the same problems they are being asked to help solve.
+              <strong>We are building</strong> the firm we wished existed when founders are trying to move from early traction to scale. Our team brings a mixed background across company-building, capital access, commercial execution, GTM, and working closely with founders through the hard middle of growth.
             </p>
 
             <div className="team-full__profiles">
@@ -163,7 +151,7 @@ export default function AboutPage() {
               Ecosystem depth, not decoration.
             </h2>
             <p className="advisors__intro reveal reveal-delay-2">
-              Our advisors extend the firm's operating access and sector network. They are not decorative. They work with portfolio companies on specific problems — capital introductions, regulatory navigation, market access, and the operating questions that require experience rather than pattern recognition.
+              Our advisors extend the firm's operating access and sector network. They are not decorative. They work with portfolio companies on specific problems: capital introductions, regulatory navigation, market access, and the operating questions that require experience rather than pattern recognition.
             </p>
 
             <div className="advisors__grid">
@@ -214,25 +202,43 @@ export default function AboutPage() {
 
       <style dangerouslySetInnerHTML={{__html: `
         .about-hero {
-          padding-top: clamp(5rem, 10vw, 8rem);
-          padding-bottom: var(--section-gap);
+          padding-top: clamp(7rem, 10vw, 9rem);
+          padding-bottom: clamp(3rem, 5vw, 5rem);
           background-color: transparent;
         }
 
+        .about-hero .section-label {
+          margin-bottom: clamp(2rem, 3vw, 3rem);
+        }
+
+        .about-hero__grid {
+          display: grid;
+          grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.72fr);
+          gap: clamp(2rem, 5vw, 6rem);
+          align-items: start;
+        }
+
         .about-hero__title {
-          font-size: clamp(2rem, 4vw, 3.5rem);
-          font-weight: var(--weight-medium);
-          line-height: 1.1;
-          letter-spacing: -0.02em;
-          margin-bottom: var(--space-lg);
-          max-width: 22ch;
+          font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+          font-weight: var(--weight-semibold);
+          line-height: 1.06;
+          letter-spacing: -0.03em;
+          max-width: 14ch;
+        }
+
+        .about-hero__desc-card {
+          background: var(--color-surface);
+          border: 1px solid var(--color-divider);
+          border-radius: 20px;
+          padding: clamp(1.75rem, 3vw, 2.5rem);
+          transition: background var(--duration-fast) var(--ease-out),
+                      border-color var(--duration-fast) var(--ease-out);
         }
 
         .about-hero__description {
-          font-size: var(--text-body);
-          line-height: 1.7;
-          color: var(--color-steel);
-          max-width: 58ch;
+          font-size: clamp(1rem, 1.3vw, 1.125rem);
+          line-height: 1.78;
+          color: var(--color-ink-secondary);
         }
 
         .beliefs {
@@ -272,7 +278,7 @@ export default function AboutPage() {
         }
 
         .team-full {
-          padding: var(--section-gap) 0;
+          padding: clamp(3rem, 5vw, 5rem) 0 var(--section-gap);
           background-color: transparent;
         }
 
@@ -282,9 +288,9 @@ export default function AboutPage() {
         }
 
         .team-full__intro {
-          font-size: var(--text-body);
-          color: var(--color-ink);
-          line-height: 1.65;
+          font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+          color: var(--color-ink-secondary);
+          line-height: 1.75;
           max-width: 58ch;
           margin-bottom: var(--space-xl);
         }
@@ -296,11 +302,11 @@ export default function AboutPage() {
 
         .team-full__profile {
           display: grid;
-          grid-template-columns: 220px 1fr;
-          gap: var(--space-xl);
+          grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
+          gap: clamp(2rem, 5vw, 5rem);
           align-items: start;
           border-top: 1px solid var(--color-divider);
-          padding: var(--space-lg) 0;
+          padding: clamp(2.5rem, 5vw, 4rem) 0;
         }
 
         .team-full__profile:last-child {
@@ -339,7 +345,7 @@ export default function AboutPage() {
           margin-bottom: var(--space-2);
           color: var(--color-signature);
           font-size: var(--text-meta);
-          font-weight: var(--weight-medium);
+          font-weight: 700;
           letter-spacing: 0.08em;
         }
 
@@ -351,7 +357,7 @@ export default function AboutPage() {
 
         .team-full__role {
           font-size: var(--text-meta);
-          font-weight: var(--weight-medium);
+          font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.08em;
           color: var(--color-steel);
@@ -361,8 +367,8 @@ export default function AboutPage() {
 
         .team-full__bio {
           font-size: var(--text-body);
-          color: var(--color-steel);
-          line-height: 1.65;
+          color: var(--color-ink-secondary);
+          line-height: 1.72;
           margin-bottom: var(--space-md);
           max-width: none;
         }
@@ -371,6 +377,7 @@ export default function AboutPage() {
           display: block;
           font-size: var(--text-meta);
           color: var(--color-signature);
+          font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 0.05em;
           margin-bottom: var(--space-md);
@@ -383,7 +390,7 @@ export default function AboutPage() {
           color: var(--color-signature);
           text-transform: uppercase;
           letter-spacing: 0.06em;
-          font-weight: 500;
+          font-weight: 700;
           transition: opacity 150ms ease;
         }
 
@@ -402,9 +409,9 @@ export default function AboutPage() {
         }
 
         .advisors__intro {
-          font-size: var(--text-body);
-          color: var(--color-steel);
-          line-height: 1.65;
+          font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+          color: var(--color-ink-secondary);
+          line-height: 1.75;
           max-width: 58ch;
           margin-bottom: var(--space-xl);
         }
@@ -417,8 +424,8 @@ export default function AboutPage() {
 
         .advisors__card {
           display: grid;
-          grid-template-columns: 160px 1fr;
-          gap: var(--space-8);
+          grid-template-columns: clamp(140px, 16%, 200px) 1fr;
+          gap: clamp(var(--space-lg), 4vw, var(--space-8));
           align-items: start;
           border-top: 1px solid var(--color-divider);
           padding: var(--space-lg) 0;
@@ -447,8 +454,8 @@ export default function AboutPage() {
 
         .advisors__note {
           font-size: var(--text-body);
-          color: var(--color-steel);
-          line-height: 1.65;
+          color: var(--color-ink-secondary);
+          line-height: 1.72;
           max-width: none;
           margin-bottom: var(--space-md);
         }
@@ -488,34 +495,50 @@ export default function AboutPage() {
           opacity: 0.6;
         }
 
-        @media (max-width: 860px) {
+        @media (max-width: 900px) {
+          .about-hero__grid {
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+          }
+          .about-hero__title {
+            max-width: none;
+          }
+          .about-hero__desc-card {
+            padding: var(--space-md);
+          }
           .team-full__profile {
-            grid-template-columns: 160px 1fr;
+            grid-template-columns: minmax(180px, 240px) 1fr;
+            gap: var(--space-lg);
+          }
+          .advisors__card {
+            grid-template-columns: minmax(140px, 180px) 1fr;
             gap: var(--space-lg);
           }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 760px) {
           .team-full__profile {
             grid-template-columns: 1fr;
             gap: var(--space-md);
           }
-
           .team-full__image-wrap {
             position: static;
-            max-width: 160px;
+            max-width: 300px;
           }
+        }
 
+        @media (max-width: 600px) {
+          .team-full__image-wrap {
+            max-width: 200px;
+          }
           .advisors__card {
             grid-template-columns: 1fr;
             gap: var(--space-md);
           }
-
           .advisors__image-wrap {
             position: static;
             max-width: 140px;
           }
-
           .beliefs__item {
             grid-template-columns: 2.5rem 1fr;
             gap: var(--space-2);

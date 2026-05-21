@@ -33,7 +33,7 @@ export default function RajeshKumarAdlaPage() {
                 <span className="profile-focus-tag">Healthcare & Spacetech</span>
               </div>
               <p className="profile-summary">
-                Rajesh Kumar Adla is the CEO of AIC T-Hub Hyderabad and a Mentor of Change at Atal Innovation Mission (AIM), NITI Aayog — positions that place him at the centre of India's institutional startup infrastructure.
+                Rajesh Kumar Adla is the CEO of AIC T-Hub Hyderabad and a Mentor of Change at Atal Innovation Mission (AIM), NITI Aayog. These positions place him at the centre of India's institutional startup infrastructure.
               </p>
             </div>
           </div>
@@ -44,30 +44,30 @@ export default function RajeshKumarAdlaPage() {
             <div className="profile-bio">
               <span className="profile-section-label">Background</span>
               <p>
-                His work at T-Hub — one of India's largest innovation ecosystems — puts him at the centre of the country's institutional startup infrastructure: the incubation programs, the corporate connection networks, the government linkages, and the founder community that moves through one of India's most active innovation environments. His role as Mentor of Change at the Atal Innovation Mission gives him direct visibility into India's early-stage startup pipeline across sectors, including healthcare, spacetech, and deep science.
+                His work at T-Hub, one of India's largest innovation ecosystems, puts him at the centre of the country's institutional startup infrastructure: the incubation programs, the corporate connection networks, the government linkages, and the founder community that moves through one of India's most active innovation environments. His role as Mentor of Change at the Atal Innovation Mission gives him direct visibility into India's early-stage startup pipeline across sectors, including healthcare, spacetech, and deep science.
               </p>
               <p>
                 His operating background extends beyond his ecosystem roles into product and technology work, giving him a perspective on what early-stage founders need that is more grounded than the view from a purely institutional position. That combination of operating experience and ecosystem access gives him a place in the Powerscale advisor network that is specifically useful for sourcing and founder introductions.
               </p>
               <p>
-                At Powerscale, Rajesh Kumar Adla's primary contribution is ecosystem access: the ability to surface founder introductions, sector intelligence, and institutional network connections across India's innovation infrastructure. For a growth-stage firm, having a presence at the incubation and early-stage layer of the ecosystem — where tomorrow's portfolio candidates are building their first businesses — is a sourcing advantage that compounds over time.
+                At Powerscale, Rajesh Kumar Adla's primary contribution is ecosystem access: the ability to surface founder introductions, sector intelligence, and institutional network connections across India's innovation infrastructure. For a growth-stage firm, having a presence at the incubation and early-stage layer of the ecosystem, where tomorrow's portfolio candidates are building their first businesses, is a sourcing advantage that compounds over time.
               </p>
             </div>
 
             <div className="profile-relevance">
               <span className="profile-section-label">Ecosystem relevance</span>
               <p>
-                India's startup ecosystem is concentrated in institutional nodes — T-Hub, IIT incubators, AIM programs, and the corporate accelerator networks that connect early-stage companies to their first institutional partners. Rajesh Kumar Adla's operating presence at one of those nodes gives Powerscale direct visibility into the pipeline, the people, and the problems that are forming at the early stage.
+                India's startup ecosystem is concentrated in institutional nodes: T-Hub, IIT incubators, AIM programs, and the corporate accelerator networks that connect early-stage companies to their first institutional partners. Rajesh Kumar Adla's operating presence at one of those nodes gives Powerscale direct visibility into the pipeline, the people, and the problems that are forming at the early stage.
               </p>
               <p>
-                His healthcare and spacetech experience is additionally relevant for Powerscale portfolio companies navigating regulated sector commercialization — where the path from product to market requires understanding institutional buyer dynamics, regulatory timelines, and deployment complexity that is distinct from enterprise software or consumer businesses.
+                His healthcare and spacetech experience is additionally relevant for Powerscale portfolio companies navigating regulated sector commercialization, where the path from product to market requires understanding institutional buyer dynamics, regulatory timelines, and deployment complexity that is distinct from enterprise software or consumer businesses.
               </p>
             </div>
 
             <div className="profile-relevance">
               <span className="profile-section-label">What this brings to Powerscale</span>
               <p>
-                The best relationships start before the fundraising process begins. Rajesh Kumar Adla's position in India's startup institutional infrastructure gives Powerscale early visibility into the founders and sectors the firm will eventually want to back — before they are in a competitive fundraising process. His presence also extends the firm's reach into the healthcare and spacetech sectors, where Powerscale's portfolio relevance may expand as the firm's deployment profile matures.
+                The best relationships start before the fundraising process begins. Rajesh Kumar Adla's position in India's startup institutional infrastructure gives Powerscale early visibility into the founders and sectors the firm will eventually want to back, before they are in a competitive fundraising process. His presence also extends the firm's reach into the healthcare and spacetech sectors, where Powerscale's portfolio relevance may expand as the firm's deployment profile matures.
               </p>
             </div>
           </div>

@@ -8,17 +8,17 @@ const MODULES = [
   {
     num: "01",
     title: "Stage",
-    text: "After the first market is real, we look for founders who recognise the next phase is different — that the operating system that got the company here will not carry it to the next order of magnitude without deliberate change."
+    text: "After the first market is real, we look for founders who see that the next phase is fundamentally different. The thing that got the company here will not carry it to the next order of magnitude without deliberate change. We back founders who know how to navigate that change."
   },
   {
     num: "02",
     title: "Diligence",
-    text: "We stress-test the operating plan before we price the round. Hiring load, channel economics, cash timing, management bandwidth. The constraints that break companies at scale are almost always visible before they break — if you know what to look for."
+    text: "Before we invest, we go deep on the operating plan: hiring, channel economics, cash timing, management bandwidth. The constraints that break companies at scale are almost always visible before they break. We find them early and work with founders to address them."
   },
   {
     num: "03",
     title: "Post-investment",
-    text: "The first ninety days are practical: a hiring diagnostic, a GTM teardown, a working-capital review. Not consulting deliverables — the things we know how to do because we have done them before, on our own companies, at our own cost."
+    text: "When we invest, we get to work alongside founders. Hiring diagnostic, GTM review, working capital support, market access, customer introductions, financial structuring. Practical help from people who have navigated the same problems. We stay in through the hard parts."
   }
 ];
 
@@ -33,11 +33,8 @@ export default function HowWePartner() {
           <div className="approach__header">
             <div className="section-label reveal">How we partner</div>
             <h2 className="approach__title reveal reveal-delay-1">
-              Claiming involvement is easy. Making it useful is the work.
+              <strong>We are building</strong> the firm we wished existed when we were running companies.
             </h2>
-            <p className="approach__subtitle reveal reveal-delay-2">
-              We are building the firm we wished existed when we were running companies.
-            </p>
           </div>
 
           <div className="approach__cards">
@@ -84,11 +81,9 @@ export default function HowWePartner() {
             margin-bottom: var(--space-md);
           }
 
-          .approach__subtitle {
-            font-size: var(--text-body);
+          .approach__title strong {
             color: var(--color-signature);
-            line-height: 1.6;
-            font-style: italic;
+            font-weight: inherit;
           }
 
           .approach__cards {
@@ -120,7 +115,7 @@ export default function HowWePartner() {
             display: block;
             font-size: var(--text-meta);
             color: #8abbb4;
-            font-weight: var(--weight-medium);
+            font-weight: 700;
             letter-spacing: 0.08em;
             margin-bottom: var(--space-md);
           }

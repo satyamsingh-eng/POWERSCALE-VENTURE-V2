@@ -28,12 +28,13 @@ export default function SatyaDasPage() {
               <span className="profile-role">Partner & Advisor</span>
               <h1 className="profile-name">Satya Das</h1>
               <div className="profile-focus-tags">
-                <span className="profile-focus-tag">Deeptech & AI</span>
+                <span className="profile-focus-tag">Finance Leadership</span>
+                <span className="profile-focus-tag">Post-Investment Systems</span>
                 <span className="profile-focus-tag">Finance Leadership</span>
                 <span className="profile-focus-tag">Post-Investment Systems</span>
               </div>
               <p className="profile-summary">
-                Satya Das leads deeptech and AI at Powerscale. His background in finance leadership and business strategy gives him a specific lens on post-investment operating systems — the financial controls, governance structures, and management architecture that determine whether a company scales cleanly after the round closes.
+                Satya Das brings a finance leadership and business strategy background to Powerscale. His work focuses on post-investment operating systems: the financial controls, governance structures, and management architecture that determine whether a company scales cleanly after the round closes.
               </p>
             </div>
           </div>
@@ -47,24 +48,24 @@ export default function SatyaDasPage() {
                 His background in finance leadership and business strategy gives him a specific lens on what portfolio companies need to build after the round closes: financial controls, governance structures, reporting cadence, and the compliance infrastructure that becomes relevant as companies scale toward larger institutional rounds.
               </p>
               <p>
-                At Powerscale, Satya Das contributes primarily on the post-investment side — specifically on the financial and operational systems that determine whether a company is ready for its next institutional capital event. His advisory role is most active in the period between the round closing and the company's first major scaling decision, when the internal infrastructure often has to be rebuilt to match the company's new capital profile.
+                At Powerscale, Satya Das contributes primarily on the post-investment side, specifically on the financial and operational systems that determine whether a company is ready for its next institutional capital event. His advisory role is most active in the period between the round closing and the company's first major scaling decision, when the internal infrastructure often has to be rebuilt to match the company's new capital profile.
               </p>
               <p>
-                His work with companies across technology sectors gives him context on the specific operating challenges that emerge at the growth stage — and on the pattern of where internal systems tend to fail at the transition from early-stage to institutional growth.
+                His work with companies across technology sectors gives him context on the specific operating challenges that emerge at the growth stage, and on where internal systems tend to fail at the transition from early-stage to institutional growth.
               </p>
             </div>
 
             <div className="profile-relevance">
               <span className="profile-section-label">Operating relevance</span>
               <p>
-                Post-investment infrastructure is underrated as a source of operational leverage. Companies that get the financial controls, governance, and compliance structure right after a round close have more room to operate aggressively in the market. Companies that do not find themselves spending management bandwidth on internal firefighting instead of growth. Satya Das's advisory presence in the Powerscale network directly addresses this operational risk for portfolio companies.
+                Post-investment infrastructure is underrated as a source of operational strength. Companies that get the financial controls, compliance structure, and reporting cadence right after a round close have more room to focus on growth. Companies that do not find themselves spending management bandwidth on internal firefighting instead. Satya Das's advisory presence in the Powerscale network directly addresses this for portfolio companies.
               </p>
             </div>
 
             <div className="profile-relevance">
               <span className="profile-section-label">What this brings to Powerscale</span>
               <p>
-                The firm's post-investment engagement includes a working-capital review and a financial systems assessment in the first ninety days. Satya Das's background in finance, compliance, and post-investment systems means the firm has access to specific expertise in this area — applied to a specific company's specific situation, not delivered as a consulting framework. His portfolio breadth across technically complex sectors also provides useful cross-sector pattern recognition on the governance challenges that emerge at growth stage.
+                Satya Das's background in finance, compliance, and post-investment systems means the firm has access to specific expertise in this area, applied to each company's specific situation. His experience across technically complex sectors also provides practical context on the financial and structural challenges that typically emerge when companies scale toward institutional growth.
               </p>
             </div>
           </div>

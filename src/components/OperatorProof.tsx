@@ -10,16 +10,16 @@ const PARTNERS = [
   {
     name: "Arthi B",
     role: "Partner",
-    bio: "Arthi built and ran businesses in consumer and AI before moving to the investor side. Her work is in the transition from founder-led growth to managed distribution — when channel quality becomes visible and hiring systems start to matter. She leads consumer and AI investments at Powerscale.",
-    focus: "Consumer & AI",
+    bio: "Arthi built and ran businesses in consumer and AI before moving to the investor side. She brings a founder-first operating lens to Powerscale's work across all four focus areas. Her strength is in understanding founders, customers, GTM, brand, distribution, and the messy middle where early traction has to become a scalable company.",
+    focus: "Founder Operating · GTM · Distribution",
     slug: "arthi-b",
-    imageSrc: null,
+    imageSrc: "/images/arthi-b.png",
   },
   {
     name: "Sanjay Tolani",
     role: "Partner",
-    bio: "Sanjay Tolani's background is in infrastructure businesses where capital timing, regulatory sequencing, and deployment reliability are the actual constraints — not narrative or product quality. He has worked through project finance structures and the operating complexity that most investors understand only from a board deck. He leads energy transition and infrastructure at Powerscale.",
-    focus: "Energy Transition & Infrastructure",
+    bio: "Sanjay brings over two decades of cross-border capital and commercial execution experience across the UAE and India. At Powerscale, he helps founders think through capital access, financial structure, market expansion, and the discipline required to scale beyond the first phase of growth.",
+    focus: "Capital Access · Commercial Strategy · Investor Relationships",
     slug: "sanjay-tolani",
     imageSrc: "/images/sanjay-tolani.png",
   },
@@ -35,7 +35,7 @@ export default function OperatorProof() {
             The operating background is the firm.
           </h2>
           <p className="team__intro reveal reveal-delay-2">
-            Every partner at Powerscale has built and run a company before investing in one. That is not a claim we make in copy — it is the fact that determines how we evaluate companies, how we engage after the cheque clears, and what we are actually useful for.
+            Our partners come from a mixed background of building companies, working with founders, opening capital access, and helping companies scale. Arthi and Sanjay bring different strengths, but they work across all four of Powerscale's focus areas together.
           </p>
 
           <div className="team__grid">
@@ -96,11 +96,11 @@ export default function OperatorProof() {
 
           .team__card {
             display: grid;
-            grid-template-columns: 160px 1fr;
-            gap: var(--space-xl);
+            grid-template-columns: minmax(200px, 300px) minmax(0, 1fr);
+            gap: clamp(2rem, 5vw, 5rem);
             align-items: start;
             border-top: 1px solid var(--color-divider);
-            padding: var(--space-lg) 0;
+            padding: clamp(2.5rem, 5vw, 4rem) 0;
           }
 
           .team__card:last-child {
@@ -145,7 +145,7 @@ export default function OperatorProof() {
             margin-bottom: var(--space-2);
             color: var(--color-signature);
             font-size: var(--text-meta);
-            font-weight: var(--weight-medium);
+            font-weight: 700;
             letter-spacing: 0.08em;
           }
 
@@ -183,7 +183,7 @@ export default function OperatorProof() {
             color: var(--color-signature);
             text-transform: uppercase;
             letter-spacing: 0.06em;
-            font-weight: 500;
+            font-weight: 700;
             transition: opacity 150ms ease;
           }
 
@@ -191,15 +191,21 @@ export default function OperatorProof() {
             opacity: 0.6;
           }
 
-          @media (max-width: 600px) {
+          @media (max-width: 860px) {
+            .team__card {
+              grid-template-columns: minmax(160px, 220px) 1fr;
+              gap: var(--space-lg);
+            }
+          }
+
+          @media (max-width: 640px) {
             .team__card {
               grid-template-columns: 1fr;
               gap: var(--space-md);
             }
-
             .team__image-wrap {
               position: static;
-              max-width: 140px;
+              max-width: 240px;
             }
           }
         `}} />

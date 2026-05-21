@@ -6,24 +6,28 @@ import RevealWrapper from './RevealWrapper';
 const SECTORS = [
   {
     name: "Energy Transition",
-    thesis: "Capex-heavy infrastructure where the financing stack, regulatory timeline, and deployment plan have to move in the right sequence — and where a mistake in that sequence is usually irreversible.",
-    proof: "We read the power purchase agreement before we read the growth projection."
+    body: (<><strong className="text-highlight">Policy, manufacturing, financing, and project execution</strong> move at different speeds. The companies we back understand that coordinating across those variables is the actual job, not just building the technology.</>),
+    imageSrc: "/images/sectors/energy-transition.png",
+    imageAlt: "Energy Transition",
   },
   {
-    name: "Deeptech Infrastructure",
-    thesis: "Technical risk and commercial risk don't resolve at the same speed. Companies can have working hardware and no ability to sell it at scale, or strong sales and a manufacturing base that can't keep up.",
-    proof: "We look for the binding constraint first — manufacturing readiness, deployment reliability, or sales repeatability."
+    name: "Deeptech",
+    body: (<><strong className="text-highlight">Technical depth</strong> creates a real moat. But navigating it alongside sales repeatability and institutional capital is the harder problem. We back founders who can hold all three without letting any one of them slip.</>),
+    imageSrc: "/images/sectors/deeptech.png",
+    imageAlt: "Deeptech",
   },
   {
-    name: "Consumer",
-    thesis: "Growth can look healthy while channel quality is already decaying. The moment when a founder stops personally carrying the sales motion is when the unit economics get honest.",
-    proof: "We read cohort behavior and SKU-level margins before we discuss expansion into the next market."
+    name: "Consumer Products",
+    body: (<>Growth can mask poor channel quality until the company is already committed to the wrong motion. The brands we back have the <strong className="text-highlight">distribution architecture, supply chain thinking, and capital structure</strong> to scale beyond what the founder can personally manage.</>),
+    imageSrc: "/images/sectors/consumer-products.png",
+    imageAlt: "Consumer Products",
   },
   {
-    name: "AI",
-    thesis: "The gap between demo quality and retained workflow value is where most AI companies lose years. The ones that compound have the best account retention — not the best demo.",
-    proof: "We look at implementation depth and account-level usage at six months, not at the launch week."
-  }
+    name: "AI and AI Infrastructure",
+    body: (<>From product promise to <strong className="text-highlight">retained workflow</strong> is a longer road than most AI demos suggest. We back founders who understand the difference and are building for the latter, not the former.</>),
+    imageSrc: "/images/sectors/ai-infrastructure.png",
+    imageAlt: "AI and AI Infrastructure",
+  },
 ];
 
 export default function SectorFocus() {
@@ -33,19 +37,25 @@ export default function SectorFocus() {
         <div className="container">
           <div className="section-label reveal">Where we invest</div>
           <h2 className="sectors__title reveal reveal-delay-1">
-            Four sectors where execution complexity is the moat.
+            Four sectors where execution decides the outcome
           </h2>
 
-          <div className="sectors__table">
+          <div className="sectors__grid">
             {SECTORS.map((sector, i) => (
-              <div key={i} className={`sectors__row reveal reveal-delay-${i + 2}`}>
-                <div className="sectors__row-left">
-                  <span className="sectors__index">0{i + 1}</span>
-                  <h3 className="sectors__name">{sector.name}</h3>
+              <div key={i} className={`sectors__card reveal reveal-delay-${i + 2}`}>
+                <div className="sectors__card-visual">
+                  <img
+                    src={sector.imageSrc}
+                    alt={sector.imageAlt}
+                    className="sectors__card-img"
+                    loading={i < 2 ? 'eager' : 'lazy'}
+                    draggable={false}
+                  />
                 </div>
-                <div className="sectors__row-right">
-                  <p className="sectors__thesis">{sector.thesis}</p>
-                  <span className="sectors__proof">{sector.proof}</span>
+                <div className="sectors__card-body">
+                  <span className="sectors__card-index">0{i + 1}</span>
+                  <h3 className="sectors__card-name">{sector.name}</h3>
+                  <p className="sectors__card-text sectors__card-text--rich">{sector.body}</p>
                 </div>
               </div>
             ))}
@@ -55,7 +65,6 @@ export default function SectorFocus() {
         <style dangerouslySetInnerHTML={{__html: `
           .sectors {
             padding: var(--section-gap) 0;
-            background-color: transparent;
           }
 
           .sectors__title {
@@ -63,64 +72,84 @@ export default function SectorFocus() {
             max-width: 24ch;
           }
 
-          .sectors__table {
-            border-top: 1px solid var(--color-divider);
-          }
-
-          .sectors__row {
+          .sectors__grid {
             display: grid;
-            grid-template-columns: 320px 1fr;
-            gap: var(--space-xl);
-            padding: clamp(var(--space-lg), 4vw, var(--space-xl)) 0;
-            border-bottom: 1px solid var(--color-divider);
-            align-items: start;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(var(--space-md), 3vw, var(--space-xl));
           }
 
-          .sectors__row-left {
+          .sectors__card {
             display: flex;
             flex-direction: column;
-            gap: var(--space-1);
-            padding-top: 0.1rem;
+            border: 1px solid var(--color-divider);
+            border-radius: var(--radius-section);
+            overflow: hidden;
+            background: var(--color-surface);
+            transition: border-color var(--duration-fast) var(--ease-out);
           }
 
-          .sectors__index {
-            font-size: var(--text-meta);
-            color: var(--color-signature);
-            font-weight: var(--weight-medium);
-            letter-spacing: 0.08em;
+          .sectors__card:hover {
+            border-color: color-mix(in srgb, var(--color-signature) 30%, transparent);
           }
 
-          .sectors__name {
-            font-size: clamp(1.5rem, 2.5vw, 2.25rem);
-            font-weight: var(--weight-semibold);
-            color: var(--color-ink-primary);
-            line-height: 1.1;
+          .sectors__card-visual {
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: var(--color-canvas-alt);
           }
 
-          .sectors__row-right {
+          .sectors__card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform var(--duration-slow) var(--ease-out);
+          }
+
+          .sectors__card:hover .sectors__card-img {
+            transform: scale(1.03);
+          }
+
+          .sectors__card-body {
+            padding: var(--space-lg) clamp(var(--space-md), 3vw, var(--space-xl));
             display: flex;
             flex-direction: column;
             gap: var(--space-sm);
+            flex: 1;
           }
 
-          .sectors__thesis {
-            color: var(--color-ink);
-            font-size: var(--text-body);
-            line-height: 1.72;
-            max-width: none;
-          }
-
-          .sectors__proof {
-            font-size: 0.875rem;
+          .sectors__card-index {
+            font-size: var(--text-meta);
             color: var(--color-signature);
-            line-height: 1.55;
-            font-style: italic;
+            font-weight: 700;
+            letter-spacing: 0.08em;
           }
 
-          @media (max-width: 900px) {
-            .sectors__row {
+          .sectors__card-name {
+            font-size: clamp(1.25rem, 2vw, 1.75rem);
+            font-weight: var(--weight-semibold);
+            color: var(--color-ink-primary);
+            line-height: 1.12;
+            letter-spacing: -0.02em;
+          }
+
+          .sectors__card-text {
+            font-size: var(--text-body);
+            color: var(--color-steel);
+            line-height: 1.68;
+          }
+
+          @media (max-width: 860px) {
+            .sectors__grid {
               grid-template-columns: 1fr;
-              gap: var(--space-md);
+            }
+          }
+
+          @media (max-width: 640px) {
+            .sectors__card-visual {
+              aspect-ratio: 16 / 9;
             }
           }
         `}} />

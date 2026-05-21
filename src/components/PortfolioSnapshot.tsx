@@ -17,10 +17,13 @@ export default function PortfolioSnapshot() {
         <div className="container">
           <div className="section-label reveal">Portfolio</div>
           <h2 className="portfolio__title reveal reveal-delay-1">
-            Selective conviction. Evidence-led.
+            We back the outliers, doers and execution-focused founders
           </h2>
           <p className="portfolio__intro reveal reveal-delay-1">
-            The companies we back have found their first market. The question we help them answer is what breaks next — and how to fix it before it becomes irreversible.
+            Not what impresses the crowd. What works. We do not aggregate logos. The companies we back have found their first market and are navigating the harder problem.
+          </p>
+          <p className="portfolio__pipeline reveal reveal-delay-2">
+            Two more companies are in pipeline, yet to make a press release.
           </p>
 
           <div className="portfolio__featured reveal reveal-delay-2">
@@ -62,7 +65,16 @@ export default function PortfolioSnapshot() {
             color: var(--color-ink-secondary);
             line-height: 1.7;
             max-width: 58ch;
+            margin-bottom: var(--space-sm);
+          }
+
+          .portfolio__pipeline {
+            font-size: var(--text-body);
+            color: var(--color-muted);
+            line-height: 1.7;
+            max-width: 58ch;
             margin-bottom: var(--space-xl);
+            font-style: italic;
           }
 
           .portfolio__featured {
@@ -95,7 +107,7 @@ export default function PortfolioSnapshot() {
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: #8abbb4;
-            font-weight: var(--weight-medium);
+            font-weight: 700;
             margin-bottom: var(--space-1);
           }
 

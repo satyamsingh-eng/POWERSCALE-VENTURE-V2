@@ -5,13 +5,11 @@ import HowWePartner from "@/components/HowWePartner";
 import PortfolioSnapshot from "@/components/PortfolioSnapshot";
 import Perspectives from "@/components/Perspectives";
 import Footer from "@/components/Footer";
-import Marquee from "@/components/Marquee";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Marquee />
       <SectorFocus />
       <OperatorProof />
       <HowWePartner />

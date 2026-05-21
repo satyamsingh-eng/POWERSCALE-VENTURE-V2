@@ -8,42 +8,46 @@ const STAGES = [
   {
     num: "01",
     title: "Stage",
-    detail: "We look for a working market, a strained operating system, and a founder who understands that the next phase is not more of the same. The thing that got the company here will not carry it to the next order of magnitude without deliberate change — and the founders who know this are the ones we want to back."
+    detail: "We look for a working market and a founder who understands that the next phase is not more of the same. The thing that got the company here will not carry it to the next order of magnitude without deliberate change. The founders who know this are the ones we want to back."
   },
   {
     num: "02",
     title: "Diligence",
-    detail: "Our diligence is operational before it is financial. We stress-test the scaling constraint — hiring velocity, channel economics, unit-level margins, working capital cycles, management bandwidth — before we price the round. The constraints that break companies at scale are almost always visible before they break, if you know what to look for."
+    detail: "Our diligence starts with operations, not financials. We go deep on hiring velocity, channel economics, unit-level margins, working capital cycles, and management bandwidth before we price the round. The constraints that break companies at scale are almost always visible before they break, if you know what to look for."
   },
   {
     num: "03",
     title: "Post-investment",
-    detail: "The first ninety days are practical: a hiring diagnostic, a GTM teardown, a working-capital review. Not consulting deliverables — the things we know how to do because we have done them before, on our own companies, at our own cost. We are explicit about which partner takes the lead and what we are specifically responsible for."
+    detail: "When we invest, we get to work. Hiring diagnostic, GTM review, working capital support, market access, customer introductions, financial structuring. Practical help from people who have navigated the same situations. We are explicit about which partner leads and what we are specifically responsible for."
   },
   {
     num: "04",
     title: "Hold",
-    detail: "We stay through the scaling phase. Board seats are working seats, not governance theatre. We are most useful when the problem is operational — when the company has to hold its growth rate while rebuilding the management layer or restructuring its capital base."
+    detail: "We stay through the scaling phase and remain actively involved. We are most useful when the problem is operational, when the company has to hold its growth rate while rebuilding the management layer or restructuring its capital base."
   }
 ];
 
-const SECTORS = [
+const SUPPORT_MATRIX = [
   {
     name: "Energy Transition",
-    thesis: "India's energy transition is a capex problem disguised as a policy problem. The companies that compound are the ones where project economics, regulatory sequencing, and financing structure move in the same direction at the same time. A mistake in that sequence is usually irreversible — which is why most investors read the growth projection before they read the power purchase agreement. We do it the other way around.",
+    challenge: "Founders are managing projects, policy, manufacturing, and capital structure simultaneously. The sequence that breaks companies is almost always financing, not technology.",
+    support: "Market access, capital structure thinking, project finance navigation, and practical execution support through the build-out phase.",
   },
   {
-    name: "Deeptech Infrastructure",
-    thesis: "A working technical system is not the same as a repeatable commercial system. Technical risk and commercial risk do not resolve at the same speed — a company can have working hardware and no ability to sell it at scale, or strong sales and a manufacturing base that cannot keep up. We look for the binding constraint first: manufacturing readiness, deployment reliability, or sales repeatability without founder force.",
+    name: "Deeptech",
+    challenge: "Technical founders are moving between product depth, field validation, commercial sales, and new institutional rounds. The structural bottleneck is usually sales repeatability without the founder in the room.",
+    support: "GTM architecture, customer access, sales process design, and preparation for the next institutional round.",
   },
   {
-    name: "Consumer",
-    thesis: "The inflection point where founder-led sales must translate to managed distribution is the point most consumer companies fail. Growth can look healthy while channel quality is already decaying. The moment a founder steps back from the commercial motion is when unit economics get honest — and by then most companies are already committed to the wrong motion.",
+    name: "Consumer Products",
+    challenge: "Founders are scaling brands, channels, supply chains, and repeat purchase behaviour at the same time. Channel quality degrades quietly before the top-line shows it.",
+    support: "Distribution diagnostics, channel economics, founder GTM support, and capital structure for the next growth phase.",
   },
   {
-    name: "AI",
-    thesis: "Defensible workflow integration separates AI companies that compound from the ones that plateau. Demo quality and retained workflow value are different things, and investors who rely on demos do not see the difference until the renewal cycle. We are not interested in model wrappers or novelty-dependent products. We look for paying customers who keep using the product after month six — and can explain why.",
-  }
+    name: "AI and AI Infrastructure",
+    challenge: "Founders are moving from product promise to real customer adoption. Retention and workflow depth matter more than demo quality. Most AI products have strong launch weeks and weak six-month cohorts.",
+    support: "Workflow use case framing, account retention architecture, GTM structure, and investor readiness for the transition from early traction to scale.",
+  },
 ];
 
 const OPERATOR_ENTRIES = [
@@ -61,7 +65,7 @@ const OPERATOR_ENTRIES = [
     constraint: "Critical supply-chain dependency on a third-party bottleneck",
     decision: "Took vertical ownership of a critical supply-chain dependency before the financing was in place to do it cleanly.",
     tradeoff: "Capital efficiency degraded for fourteen months before the operating advantage became visible.",
-    outcome: "The constraint it removed — third-party bottleneck leverage at scale — would have been structurally irreversible.",
+    outcome: "The constraint it removed was third-party bottleneck leverage at scale. Leaving it unaddressed would have been structurally irreversible.",
     attribution: "Energy transition, 2024",
     sector: "Energy Transition"
   },
@@ -95,7 +99,7 @@ const OPERATOR_ENTRIES = [
   {
     id: "044",
     constraint: "Anchor contract economics would not hold at deployment volume",
-    decision: "Renegotiated the commercial terms on the anchor contract before deploying at the next scale — accepting a delayed signature in exchange for better unit economics at volume.",
+    decision: "Renegotiated the commercial terms on the anchor contract before deploying at the next scale. Accepted a delayed signature in exchange for better unit economics at volume.",
     tradeoff: "Three months of momentum paused while the operating model was rebuilt around the revised structure.",
     outcome: "The company avoided compounding a weak contract structure into the next forty deployments. The revised terms held in most subsequent negotiations.",
     attribution: "Energy transition, 2023",
@@ -121,6 +125,39 @@ const OPERATOR_ENTRIES = [
   },
 ];
 
+const SUPPORT_AREAS = [
+  {
+    area: "Hiring and GTM",
+    items: [
+      "Hiring Diagnostic",
+      "Org Structure",
+      "Head Hunting",
+      "GTM Tear Down",
+      "New Channels",
+      "Customer Introductions",
+      "Strengthening Founder GTM"
+    ]
+  },
+  {
+    area: "Financial Support",
+    items: [
+      "Financial Diligence Help",
+      "Financial Structuring",
+      "Access to Capital",
+      "Working Capital Support"
+    ]
+  },
+  {
+    area: "Market and Founder Support",
+    items: [
+      "Market Access",
+      "GTM Partnerships",
+      "Fundraising Support",
+      "Founder-Focused Investment Team"
+    ]
+  }
+];
+
 export default function ApproachPage() {
   return (
     <>
@@ -133,13 +170,12 @@ export default function ApproachPage() {
               We make the scaling work explicit.
             </h1>
             <p className="approach-hero__desc reveal reveal-delay-2">
-              Every aspect of our engagement is structured around the operating constraint — not the product narrative.
-              We bring experience from running companies, not from watching them from board seats. We commit to specific work, at specific stages, with specific partners responsible.
+              Every aspect of our engagement is structured around the operating challenge, not the product narrative.
+              We bring experience from running companies and working with founders through hard scaling moments. We commit to specific work, at specific stages, with specific partners responsible.
             </p>
             <nav className="approach-subnav reveal reveal-delay-3" aria-label="Page sections">
               <a href="#how-we-work" className="approach-subnav__link">How We Work</a>
               <a href="#what-we-evaluate" className="approach-subnav__link">What We Evaluate</a>
-              <a href="#operator-index" className="approach-subnav__link">Operator Index</a>
             </nav>
           </div>
         </section>
@@ -165,19 +201,52 @@ export default function ApproachPage() {
         </section>
       </RevealWrapper>
 
-      {/* ── Section 3: What We Evaluate ── */}
+      {/* ── Section 2b: How We Help (Support Areas) ── */}
+      <RevealWrapper>
+        <section className="support-section">
+          <div className="container">
+            <div className="section-label reveal">How we help</div>
+            <h2 className="support-title reveal reveal-delay-1">
+              Practical support across the areas that matter most
+            </h2>
+            <p className="support-intro reveal reveal-delay-2">
+              We work alongside founders on the specific problems that come with scaling. Not generic advice. Hands-on support in the areas where we have done the work ourselves.
+            </p>
+            <div className="support-grid">
+              {SUPPORT_AREAS.map((area, i) => (
+                <div key={i} className={`support-col reveal reveal-delay-${i + 2}`}>
+                  <h3 className="support-col__title">{area.area}</h3>
+                  <ul className="support-col__list">
+                    {area.items.map((item, j) => (
+                      <li key={j} className="support-col__item">{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </RevealWrapper>
+
+      {/* ── Section 3: Support Matrix ── */}
       <RevealWrapper>
         <section className="evaluate-section" id="what-we-evaluate">
           <div className="container">
-            <div className="section-label reveal">Where we invest</div>
+            <div className="section-label reveal">Where we help</div>
             <h2 className="evaluate-title reveal reveal-delay-1">
-              Four sectors where execution complexity is the moat.
+              Where we support founders through scale
             </h2>
+            <div className="evaluate-matrix-header reveal reveal-delay-2">
+              <span className="evaluate-col-label">Sector</span>
+              <span className="evaluate-col-label">What founders navigate</span>
+              <span className="evaluate-col-label">Where Powerscale helps</span>
+            </div>
             <div className="evaluate-rows">
-              {SECTORS.map((sector, i) => (
+              {SUPPORT_MATRIX.map((row, i) => (
                 <div key={i} className={`evaluate-row reveal reveal-delay-${i + 1}`}>
-                  <h3 className="evaluate-sector-name">{sector.name}</h3>
-                  <p className="evaluate-thesis">{sector.thesis}</p>
+                  <h3 className="evaluate-sector-name">{row.name}</h3>
+                  <p className="evaluate-challenge">{row.challenge}</p>
+                  <p className="evaluate-support">{row.support}</p>
                 </div>
               ))}
             </div>
@@ -185,63 +254,7 @@ export default function ApproachPage() {
         </section>
       </RevealWrapper>
 
-      {/* ── Section 4: Transition into Operator Index ── */}
-      <section className="index-bridge" id="operator-index">
-        <div className="container">
-          <RevealWrapper>
-            <div className="bridge-inner">
-              <div className="section-label reveal">Operator Index</div>
-              <h2 className="bridge-statement reveal reveal-delay-1">
-                What scaling decisions actually look like.
-              </h2>
-              <div className="bridge-body reveal reveal-delay-2">
-                <p className="bridge-desc">
-                  Investors talk about operating experience. The Operator Index is what that means in practice — a running ledger of real decisions made at real operating inflection points. Not case studies. Not retrospectives packaged for a board deck. Each entry names the constraint that created the choice, what was decided, what was accepted as the cost of that decision, and what the operating system looked like afterward.
-                </p>
-                <p className="bridge-desc">
-                  Most investment narratives describe what was built. This describes what was decided — and why the decision that looked wrong at the time turned out to be the one that held. Public attribution is added only when the company has approved it. The point is not polish. The point is judgment.
-                </p>
-              </div>
-            </div>
-          </RevealWrapper>
-        </div>
-      </section>
-
-      {/* ── Section 5: Operator Index Entries ── */}
-      <RevealWrapper>
-        <section className="oi-section">
-          <div className="container">
-            <div className="oi-entries">
-              {OPERATOR_ENTRIES.map((entry, i) => (
-                <div key={entry.id} className={`oi-entry reveal reveal-delay-${Math.min(i + 1, 5)}`}>
-                  <div className="oi-meta">
-                    <span className="oi-num">№ {entry.id}</span>
-                    <span className="oi-sector">{entry.sector}</span>
-                  </div>
-                  <div className="oi-content">
-                    <div className="oi-constraint-row">
-                      <span className="oi-tag">Constraint</span>
-                      <span className="oi-constraint-text">{entry.constraint}</span>
-                    </div>
-                    <p className="oi-decision">{entry.decision}</p>
-                    <div className="oi-outcomes-grid">
-                      <div className="oi-outcome-block">
-                        <span className="oi-label">Tradeoff</span>
-                        <p className="oi-value">{entry.tradeoff}</p>
-                      </div>
-                      <div className="oi-outcome-block">
-                        <span className="oi-label">Outcome</span>
-                        <p className="oi-value">{entry.outcome}</p>
-                      </div>
-                    </div>
-                    <span className="oi-attribution">— {entry.attribution}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </RevealWrapper>
+      {/* Operator Index hidden */}
 
       <Footer />
 
@@ -249,7 +262,7 @@ export default function ApproachPage() {
 
         /* ── Hero ─────────────────────────────── */
         .approach-hero {
-          padding-top: clamp(5rem, 12vw, 9rem);
+          padding-top: clamp(7rem, 10vw, 9rem);
           padding-bottom: var(--section-gap);
         }
         .approach-hero__title {
@@ -346,14 +359,77 @@ export default function ApproachPage() {
           max-width: 62ch;
         }
 
-        /* ── What We Evaluate ─────────────────── */
+        /* ── How We Help (Support Areas) ─────── */
+        .support-section {
+          padding: var(--section-gap) 0;
+          border-top: 1px solid var(--color-divider);
+          background-color: var(--color-canvas);
+        }
+        .support-section .section-label {
+          margin-bottom: var(--space-8);
+        }
+        .support-title {
+          font-size: var(--text-h2);
+          font-weight: var(--weight-medium);
+          letter-spacing: -0.02em;
+          line-height: 1.1;
+          margin-bottom: var(--space-md);
+          max-width: 28ch;
+        }
+        .support-intro {
+          font-size: var(--text-body);
+          line-height: 1.72;
+          color: var(--color-ink-secondary);
+          max-width: 58ch;
+          margin-bottom: var(--space-xl);
+        }
+        .support-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: clamp(var(--space-lg), 5vw, var(--space-2xl));
+          border-top: 1px solid var(--color-divider);
+          padding-top: var(--space-lg);
+        }
+        .support-col__title {
+          font-size: clamp(1rem, 1.5vw, 1.25rem);
+          font-weight: var(--weight-semibold);
+          color: var(--color-ink-primary);
+          letter-spacing: -0.01em;
+          margin-bottom: var(--space-md);
+        }
+        .support-col__list {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-2);
+        }
+        .support-col__item {
+          font-size: var(--text-body);
+          color: var(--color-ink-secondary);
+          line-height: 1.5;
+          padding-left: 1rem;
+          position: relative;
+        }
+        .support-col__item::before {
+          content: '—';
+          position: absolute;
+          left: 0;
+          color: var(--color-signature);
+          font-size: 0.75rem;
+          top: 0.2em;
+        }
+        @media (max-width: 900px) {
+          .support-grid {
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+          }
+        }
+
+        /* ── Support Matrix ────────────────────── */
         .evaluate-section {
           padding: var(--section-gap) 0;
           background-color: var(--color-canvas-alt);
           border-top: 1px solid var(--color-divider);
-        }
-        .evaluate-section .section-label {
-          margin-bottom: var(--space-8);
         }
         .evaluate-title {
           font-size: var(--text-h2);
@@ -361,7 +437,21 @@ export default function ApproachPage() {
           letter-spacing: -0.02em;
           line-height: 1.1;
           margin-bottom: var(--space-xl);
-          max-width: 22ch;
+          max-width: 24ch;
+        }
+        .evaluate-matrix-header {
+          display: grid;
+          grid-template-columns: clamp(160px, 22%, 240px) 1fr 1fr;
+          gap: clamp(var(--space-md), 4vw, var(--space-xl));
+          padding-bottom: var(--space-sm);
+          border-bottom: 1px solid var(--color-divider);
+        }
+        .evaluate-col-label {
+          font-size: var(--text-meta);
+          color: var(--color-muted);
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          font-weight: var(--weight-medium);
         }
         .evaluate-rows {
           display: flex;
@@ -369,28 +459,29 @@ export default function ApproachPage() {
         }
         .evaluate-row {
           display: grid;
-          grid-template-columns: clamp(200px, 28%, 300px) 1fr;
-          gap: clamp(var(--space-lg), 5vw, var(--space-2xl));
+          grid-template-columns: clamp(160px, 22%, 240px) 1fr 1fr;
+          gap: clamp(var(--space-md), 4vw, var(--space-xl));
           align-items: start;
           padding: clamp(var(--space-lg), 4vw, var(--space-xl)) 0;
           border-bottom: 1px solid var(--color-divider);
         }
-        .evaluate-row:first-child {
-          border-top: 1px solid var(--color-divider);
-        }
         .evaluate-sector-name {
-          font-size: clamp(1.25rem, 2.2vw, 1.625rem);
+          font-size: clamp(1rem, 1.6vw, 1.25rem);
           font-weight: var(--weight-semibold);
           color: var(--color-ink-primary);
           letter-spacing: -0.01em;
           line-height: 1.2;
-          padding-top: 0.15em;
+          padding-top: 0.1em;
         }
-        .evaluate-thesis {
+        .evaluate-challenge {
           font-size: var(--text-body);
-          line-height: 1.72;
+          line-height: 1.68;
           color: var(--color-ink-secondary);
-          max-width: 65ch;
+        }
+        .evaluate-support {
+          font-size: var(--text-body);
+          line-height: 1.68;
+          color: var(--color-signature);
         }
 
         /* ── Index Bridge ──────────────────────── */
@@ -534,12 +625,16 @@ export default function ApproachPage() {
             grid-template-columns: 1fr;
             gap: var(--space-md);
           }
+          .evaluate-matrix-header {
+            display: none;
+          }
           .evaluate-row {
             grid-template-columns: 1fr;
-            gap: var(--space-md);
+            gap: var(--space-sm);
           }
           .evaluate-sector-name {
             padding-top: 0;
+            font-size: 1.125rem;
           }
           .bridge-body {
             grid-template-columns: 1fr;

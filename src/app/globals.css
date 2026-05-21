@@ -9,7 +9,7 @@
   --color-ink: #111110;
   --color-ink-primary: #111110;
   --color-ink-secondary: #252522;
-  --color-steel: #3e3e3b;
+  --color-steel: #2d2d2a;
   --color-muted: #686865;
   --color-divider: rgba(16, 16, 16, 0.1);
   --color-button-bg: #e6e8e8;
@@ -23,7 +23,7 @@
   --text-hero: clamp(2.75rem, 7vw, 5.5rem);
   --text-h2: clamp(2rem, 4.5vw, 3.75rem);
   --text-h3: clamp(1.375rem, 2.2vw, 2.25rem);
-  --text-body: clamp(1rem, 1.2vw, 1.125rem);
+  --text-body: clamp(1.0625rem, 1.35vw, 1.25rem);
   --text-ui: 1rem;
   --text-meta: 0.8125rem;
 
@@ -46,8 +46,8 @@
   --space-xl: var(--space-8);
   --space-2xl: var(--space-12);
 
-  --container-padding: clamp(1.25rem, 4vw, 3rem);
-  --container-max: 1280px;
+  --container-padding: clamp(1.25rem, 5vw, 5rem);
+  --container-max: 1440px;
   --section-gap: clamp(4rem, 7.5vw, 7rem);
   --nav-height: 80px;
 
@@ -85,6 +85,7 @@
 html {
   overflow-x: hidden;
   scroll-behavior: smooth;
+  scroll-padding-top: 120px;
   background: var(--color-canvas);
   font-size: 16px;
 }
@@ -101,6 +102,7 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   transition: background-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
 }
 
@@ -110,11 +112,16 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: var(--weight-semibold);
   letter-spacing: -0.02em;
   line-height: 1.08;
+  text-wrap: balance;
 }
 
 h1 { font-size: var(--text-hero); }
 h2 { font-size: var(--text-h2); }
 h3 { font-size: var(--text-h3); font-weight: var(--weight-semibold); }
+
+p {
+  text-wrap: pretty;
+}
 
 a {
   color: inherit;
@@ -124,6 +131,10 @@ a {
 section {
   position: relative;
   width: 100%;
+}
+
+section[id] {
+  scroll-margin-top: 120px;
 }
 
 .container {
@@ -311,23 +322,34 @@ section {
 .section-label {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-1);
+  gap: 0.55rem;
   margin-bottom: var(--space-4);
-  color: var(--color-muted);
-  font-size: var(--text-meta);
-  font-weight: var(--weight-medium);
-  letter-spacing: 0.08em;
+  color: var(--color-signature);
+  font-size: clamp(0.72rem, 0.85vw, 0.875rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
   line-height: 1;
   text-transform: uppercase;
 }
 
 .section-label::before {
   content: '';
-  width: 4px;
-  height: 4px;
+  width: 0.32rem;
+  height: 0.32rem;
   border-radius: 50%;
-  background: var(--color-signature);
+  background: currentColor;
   flex-shrink: 0;
+}
+
+/* ── Utility highlight classes ── */
+.text-highlight {
+  color: var(--color-ink-primary);
+  font-weight: 700;
+}
+
+.highlight-soft {
+  color: var(--color-signature);
+  font-weight: 700;
 }
 
 /* ── Reveal animation ── */

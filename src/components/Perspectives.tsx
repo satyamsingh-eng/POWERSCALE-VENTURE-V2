@@ -6,12 +6,12 @@ import RevealWrapper from './RevealWrapper';
 const ARTICLES = [
   {
     title: "The channel motion that breaks when the founder steps back",
-    excerpt: "Revenue can grow while channel quality decays. Two things keep founder-led pull looking healthy while managed distribution is already failing — and neither of them shows up in the top-line.",
+    excerpt: "Revenue can grow while channel quality decays. Two things keep founder-led pull looking healthy while managed distribution is already failing, and neither shows up in the top-line.",
     label: "Consumer",
   },
   {
-    title: "When the regulatory sequence is the risk — not the technology",
-    excerpt: "Most energy transition companies fail on financing sequence, not on project economics. The order in which capital commitments close determines what can be built — and what stays permanently at risk.",
+    title: "When the regulatory sequence is the risk, not the technology",
+    excerpt: "Most energy transition companies fail on financing sequence, not on project economics. The order in which capital commitments close determines what can be built, and what stays permanently at risk.",
     label: "Energy Transition",
   },
   {

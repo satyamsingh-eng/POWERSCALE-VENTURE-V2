@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import FadeContent from './ui/FadeContent';
 
 export default function Hero() {
   const [canPlayVideo, setCanPlayVideo] = useState(false);
@@ -33,22 +32,35 @@ export default function Hero() {
         )}
       </div>
       <div className="container hero__container">
-        <FadeContent className="hero__content">
+        <div className="hero__content">
           <h1 className="hero__headline">
             We invest where execution decides the outcome.
           </h1>
           <p className="hero__subhead">
-            For founders who have found their market and are now confronting the harder problem. We back companies in energy transition, deeptech, consumer, and AI — at the stage where operating judgment matters more than capital.
+            For founders who have found their market and are now confronting the harder problem. We back companies in Energy Transition, Deeptech, Consumer Products, and AI and AI Infrastructure, at the stage where operating judgment matters more than capital.
           </p>
           <div className="hero__actions">
             <a href="/approach" className="hero__link">How we invest</a>
             <a href="/contact" className="hero__cta">Talk to us</a>
           </div>
-        </FadeContent>
+        </div>
       </div>
       <div className="hero__scroll" aria-hidden="true" />
 
       <style dangerouslySetInnerHTML={{__html: `
+        @keyframes heroReveal {
+          from {
+            opacity: 0;
+            transform: translateY(28px);
+            filter: blur(4px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+          }
+        }
+
         .hero {
           min-height: 100dvh;
           width: 100%;
@@ -118,22 +130,27 @@ export default function Hero() {
         }
 
         .hero__headline {
-          max-width: 780px;
+          max-width: 820px;
           color: #f5f5f4;
           font-size: var(--text-hero);
           font-weight: var(--weight-medium);
           line-height: 1.06;
           letter-spacing: -0.02em;
           margin-bottom: var(--space-4);
+          text-shadow: 0 2px 32px rgba(0, 0, 0, 0.55), 0 0 80px rgba(0, 0, 0, 0.25);
+          animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+          animation-delay: 80ms;
         }
 
         .hero__subhead {
-          max-width: 580px;
-          color: rgba(245, 245, 244, 0.68);
-          font-size: clamp(1rem, 1.4vw, 1.0625rem);
-          line-height: 1.68;
+          max-width: 620px;
+          color: rgba(245, 245, 244, 0.92);
+          font-size: clamp(1.0625rem, 1.7vw, 1.25rem);
+          line-height: 1.7;
           margin-bottom: var(--space-6);
-          max-width: none;
+          text-shadow: 0 1px 16px rgba(0, 0, 0, 0.5);
+          animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+          animation-delay: 260ms;
         }
 
         .hero__actions {
@@ -142,6 +159,8 @@ export default function Hero() {
           justify-content: center;
           gap: var(--space-2);
           flex-wrap: wrap;
+          animation: heroReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+          animation-delay: 440ms;
         }
 
         .hero__cta {
@@ -209,6 +228,14 @@ export default function Hero() {
         @media (prefers-reduced-motion: reduce) {
           .hero__video {
             display: none;
+          }
+          .hero__headline,
+          .hero__subhead,
+          .hero__actions {
+            animation: none;
+            opacity: 1;
+            transform: none;
+            filter: none;
           }
         }
 

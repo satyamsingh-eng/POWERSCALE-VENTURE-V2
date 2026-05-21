@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
-import ImagePlaceholder from '@/components/ui/ImagePlaceholder';
+import TiltedCard from '@/components/ui/TiltedCard';
 
 export default function ArthiBPage() {
   return (
@@ -15,17 +15,25 @@ export default function ArthiBPage() {
 
           <div className="profile-header">
             <div className="profile-image-wrap">
-              <ImagePlaceholder label="Image — Arthi B" aspectRatio="4/5" />
+              <TiltedCard
+                imageSrc="/images/arthi-b.png"
+                altText="Arthi B"
+                rotateAmplitude={6}
+                scaleOnHover={1.04}
+                showTooltip={false}
+                borderRadius="16px"
+              />
             </div>
             <div className="profile-info">
               <span className="profile-role">Partner</span>
               <h1 className="profile-name">Arthi B</h1>
               <div className="profile-focus-tags">
-                <span className="profile-focus-tag">Consumer</span>
-                <span className="profile-focus-tag">AI</span>
+                <span className="profile-focus-tag">Founder Operating</span>
+                <span className="profile-focus-tag">GTM</span>
+                <span className="profile-focus-tag">Distribution</span>
               </div>
               <p className="profile-summary">
-                Arthi built and ran businesses in consumer and AI before moving to the investor side. Her background is in the mechanics of distribution — specifically, what happens when a company has found its market but has not yet built the operating system required to serve it at scale.
+                Arthi built and ran businesses in consumer and AI before moving to the investor side. She brings a founder-first operating lens to Powerscale's work across all four focus areas. Her strength is in understanding founders, customers, GTM, brand, distribution, and the messy middle where early traction has to become a scalable company.
               </p>
             </div>
           </div>
@@ -36,30 +44,30 @@ export default function ArthiBPage() {
             <div className="profile-bio">
               <span className="profile-section-label">Background</span>
               <p>
-                That transition — from a business the founder carries personally to one that runs without them — is where channel quality becomes visible, where hiring systems start to matter, and where the gap between top-line growth and genuine commercial health either closes or widens. Arthi's operating background is in that specific window: the companies that have found their market and are now confronting the harder problem of building the system that can hold it.
+                That transition, from a business the founder carries personally to one that runs without them, is where channel quality becomes visible, where hiring systems start to matter, and where the gap between top-line growth and genuine commercial health either closes or widens. Arthi's operating background is in that specific window: the companies that have found their market and are now confronting the harder problem of building the system that can hold it.
               </p>
               <p>
-                At Powerscale, Arthi leads the firm's consumer and AI investments. The question she works from is consistent across both sectors: when the founder steps back from the commercial motion, what happens? In consumer businesses, the answer is almost always visible in the channel mix and cohort behavior — the two signals that reveal whether a distribution system is healthy or just busy. In AI businesses, the question shows up in implementation depth and month-six account usage: whether the product has earned its renewal by becoming embedded in the customer's operating process, or whether early growth was novelty-dependent.
+                At Powerscale, Arthi works across all four of the firm's focus areas. The question she brings to every company is the same: when the founder steps back from the commercial motion, what happens? In consumer businesses, the answer is almost always visible in the channel mix and cohort behavior. These are the two signals that reveal whether a distribution system is healthy or just busy. In AI businesses, the question shows up in implementation depth and month-six account usage: whether the product has earned its renewal by becoming embedded in the customer's operating process, or whether early growth was novelty-dependent.
               </p>
               <p>
-                Her diligence work is operational before it is financial. She reads cohort behavior and SKU-level margins before she discusses expansion into the next market. She looks at implementation depth and account-level usage at six and twelve months — the moments when a company's actual commercial health becomes legible, after the early enthusiasm has cleared.
+                Her diligence work is operational before it is financial. She reads cohort behavior and SKU-level margins before she discusses expansion into the next market. She looks at implementation depth and account-level usage at six and twelve months. That is when a company's actual commercial health becomes legible, after the early enthusiasm has cleared.
               </p>
             </div>
 
             <div className="profile-relevance">
               <span className="profile-section-label">Operating relevance</span>
               <p>
-                The founder-to-managed-distribution transition is the most common point of failure in consumer and AI companies at the growth stage. It is also the point where a partner's direct experience matters most — not because an investor can fix the transition from a board seat, but because the founder needs someone who has navigated that specific inflection point to help them see it clearly before it becomes a structural problem.
+                The founder-to-managed-distribution transition is the most common point of failure in consumer and AI companies at the growth stage. It is also the point where a partner's direct experience matters most, because the founder needs someone who has navigated that specific inflection point to help them see it clearly before it becomes a structural problem.
               </p>
               <p>
-                Arthi's value to portfolio companies is specific to this transition: she has been at the inflection point she is now being asked to support. That is the credential — not the investment thesis, not the portfolio.
+                Arthi's value to portfolio companies is specific to this transition: she has been at the inflection point she is now being asked to support. That is the credential. Not the investment thesis, not the portfolio.
               </p>
             </div>
 
             <div className="profile-relevance">
               <span className="profile-section-label">What this brings to Powerscale</span>
               <p>
-                The firm's consumer and AI thesis — that growth can look healthy while channel quality is already decaying, and that the gap between demo quality and retained workflow value is where most AI companies lose years — is Arthi's diagnostic lens in practice. Her presence means the firm can have precise conversations with founders about what actually breaks in these businesses, without relying on secondhand pattern recognition.
+                The firm's consumer and AI thesis is Arthi's diagnostic lens in practice: growth can look healthy while channel quality is already decaying, and the gap between demo quality and retained workflow value is where most AI companies lose years. Her presence means the firm can have precise conversations with founders about what actually breaks in these businesses, without relying on secondhand pattern recognition.
               </p>
             </div>
           </div>

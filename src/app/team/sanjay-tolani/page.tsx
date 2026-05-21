@@ -28,13 +28,12 @@ export default function SanjayTolaniPage() {
               <span className="profile-role">Partner & Advisor</span>
               <h1 className="profile-name">Sanjay Tolani</h1>
               <div className="profile-focus-tags">
-                <span className="profile-focus-tag">Energy Transition</span>
-                <span className="profile-focus-tag">Infrastructure</span>
-                <span className="profile-focus-tag">Financial Services</span>
-                <span className="profile-focus-tag">Capital Networks</span>
+                <span className="profile-focus-tag">Capital Access</span>
+                <span className="profile-focus-tag">Commercial Strategy</span>
+                <span className="profile-focus-tag">Cross-Border Finance</span>
               </div>
               <p className="profile-summary">
-                Sanjay Tolani leads energy transition and infrastructure at Powerscale. His background in financial services — structured products, institutional client relationships, and cross-border capital access — gives him a specific lens on the financing complexity that defines infrastructure and energy businesses.
+                Sanjay brings over two decades of cross-border capital and commercial execution experience across the UAE and India. At Powerscale, he helps founders think through capital access, financial structure, market expansion, and the discipline required to scale beyond the first phase of growth.
               </p>
             </div>
           </div>
@@ -45,27 +44,30 @@ export default function SanjayTolaniPage() {
             <div className="profile-bio">
               <span className="profile-section-label">Background</span>
               <p>
-                His career has been built in financial services — structured products, client relationships, and the capital networks that connect investors and capital sources across borders. His work in the UAE financial sector gives him access to capital relationships and investor networks that are relevant to companies managing capital-intensive growth phases: infrastructure projects, consumer businesses seeking strategic capital, and AI companies at the point where their funding profile has to broaden beyond early-stage VC.
+                Sanjay Tolani has built his career across UAE and India capital corridors over more than two decades. He is currently Chief Commercial Officer at BCD Global, and has previously served as Director, Real Estate Investments at the Private Office of HH Sheikh Ahmed bin Faisal Al Qassimi.
               </p>
               <p>
-                The work of a financial services professional in this space is not advisory in the general sense. It is relational and transactional — knowing which capital sources are relevant to a specific company at a specific moment, and having the relationships to facilitate those introductions. That specificity is what distinguishes his presence in the Powerscale ecosystem from a generic advisory role.
+                His work spans real estate investments, structured capital, portfolio development, investor engagement, commercial systems, and market expansion. He has worked extensively with UHNW, family office, and institutional capital relationships across borders, giving him direct access to the kind of investor networks that are relevant when founders need to think beyond early-stage VC.
               </p>
               <p>
-                At Powerscale, Sanjay Tolani extends the firm's capital access into the UAE and Gulf investor ecosystem, with particular relevance to portfolio companies in energy transition and infrastructure — sectors where the financing structure is part of the operating challenge, and where cross-border capital relationships determine what is possible.
+                At Powerscale, Sanjay works across all four of the firm's focus areas. His contribution is most direct when a company has moved past early traction and needs the discipline, relationships, and capital structure to scale. He helps founders think through investor readiness, financial structuring, market expansion, and the commercial systems that turn growth into something that holds.
               </p>
             </div>
 
             <div className="profile-relevance">
-              <span className="profile-section-label">Ecosystem relevance</span>
+              <span className="profile-section-label">Operating relevance</span>
               <p>
-                Capital access in energy transition and infrastructure is not simply a function of investor interest — it requires the right relationships at the right stage, structured appropriately for the risk profile of each transaction. Sanjay Tolani's presence in the Powerscale network gives the firm direct access to UAE and Gulf capital relationships for portfolio companies where that access is operationally relevant.
+                Capital access is not just a function of investor interest. It requires the right relationships at the right stage, structured appropriately for each company's risk profile and growth plan. Sanjay's presence in the Powerscale network gives portfolio companies access to UAE and Gulf capital relationships that would otherwise take years to build independently.
+              </p>
+              <p>
+                His background in commercial strategy and CRM systems also means he understands the operating side of growth, not just the financing side. That combination is useful when a company's capital plan and its commercial plan need to move together.
               </p>
             </div>
 
             <div className="profile-relevance">
               <span className="profile-section-label">What this brings to Powerscale</span>
               <p>
-                The firm invests in sectors where capital structure is part of the competitive position. Sanjay Tolani's relationships — in financial services, family office, and structured product markets — extend the firm's ability to support portfolio companies through capital-intensive phases that go beyond what early-stage VC alone can address. For energy transition companies in particular, the ability to make credible introductions into the UAE investor community is a material advantage at the growth stage.
+                The firm backs companies where capital structure is part of the operating challenge, not a separate conversation. Sanjay's relationships across financial services, family office, and structured product markets extend the firm's ability to support founders through capital-intensive phases. His experience building commercial systems and managing cross-border transactions gives the firm a direct line to that expertise for portfolio companies navigating the same problems.
               </p>
             </div>
 

@@ -44,27 +44,27 @@ export default function ParthaPemmarajuPage() {
             <div className="profile-bio">
               <span className="profile-section-label">Background</span>
               <p>
-                His background as a founder and operator, and his experience across global markets, gives him a specific operating perspective: what it actually takes to build a technically sophisticated business that also has to sell, deploy, and support at scale. He understands the gap between research-quality technology and market-ready product — and the operational complexity of moving a company through that gap in markets that have different infrastructure, regulatory, and customer acquisition dynamics.
+                His background as a founder and operator, and his experience across global markets, gives him a specific operating perspective: what it actually takes to build a technically sophisticated business that also has to sell, deploy, and support at scale. He understands the gap between research-quality technology and market-ready product, and the operational complexity of moving a company through that gap in markets that have different infrastructure, regulatory, and customer acquisition dynamics.
               </p>
               <p>
                 At Powerscale, Partha Pemmaraju serves as an advisor with particular relevance to portfolio companies in deeptech and consumer sectors navigating the technical-to-commercial transition. His value is operator-to-operator: he has navigated the specific problems that arise when a company's commercial system has to grow faster than its technical infrastructure was designed to support.
               </p>
               <p>
-                His experience with global operations provides context for companies expanding across geographies with different deployment profiles, regulatory environments, and customer expectations. For deeptech companies in Powerscale's portfolio, this kind of operating guidance is most useful at the stage when the company is moving from proof-of-deployment to proof-of-repeatability — when the question changes from "does this work?" to "can we do this consistently, at scale, without the founder in every room?"
+                His experience with global operations provides context for companies expanding across geographies with different deployment profiles, regulatory environments, and customer expectations. For deeptech companies in Powerscale's portfolio, this kind of operating guidance is most useful at the stage when the company is moving from proof-of-deployment to proof-of-repeatability, when the question changes from "does this work?" to "can we do this consistently, at scale, without the founder in every room?"
               </p>
             </div>
 
             <div className="profile-relevance">
               <span className="profile-section-label">Operating relevance</span>
               <p>
-                The technical-to-commercial transition is the point where most deeptech companies stall. Building the technology is the problem the founders were trained to solve. Building the commercial system around it — sales repeatability, implementation reliability, customer success structure — is a different kind of problem, requiring a different kind of experience. Partha Pemmaraju's two-plus decades of entrepreneurial experience across deeptech and global markets is directly relevant at this specific stage.
+                The technical-to-commercial transition is the point where most deeptech companies stall. Building the technology is the problem the founders were trained to solve. Building the commercial system around it is a different kind of problem: sales repeatability, implementation reliability, customer success structure. It requires a different kind of experience. Partha Pemmaraju's two-plus decades of entrepreneurial experience across deeptech and global markets is directly relevant at this specific stage.
               </p>
             </div>
 
             <div className="profile-relevance">
               <span className="profile-section-label">What this brings to Powerscale</span>
               <p>
-                The firm's deeptech thesis is built on identifying the structural bottleneck — the single thing that limits the system. Partha Pemmaraju's operating background gives the firm direct access to a perspective that has encountered that bottleneck from the inside, as a builder rather than an observer. For portfolio companies in deeptech and consumer sectors, his advisory presence means access to operator-to-operator conversations rather than board-level pattern recognition.
+                The firm's deeptech thesis is built on identifying the structural bottleneck: the single thing that limits the system. Partha Pemmaraju's operating background gives the firm direct access to a perspective that has encountered that bottleneck from the inside, as a builder rather than an observer. For portfolio companies in deeptech and consumer sectors, his advisory presence means access to operator-to-operator conversations rather than board-level pattern recognition.
               </p>
             </div>
 
