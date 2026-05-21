@@ -37,7 +37,7 @@ export default function Hero() {
             We invest where execution decides the outcome.
           </h1>
           <p className="hero__subhead">
-            For founders who have found their market and are now confronting the harder problem. We back companies in Energy Transition, Deeptech, Consumer Products, and AI and AI Infrastructure, at the stage where operating judgment matters more than capital.
+            We back ambitious founders building the next generation of companies in AI Applications and Infrastructure, Deep Tech, Energy Transition, and Consumer Products, at the stage where operating judgment matters more than capital.
           </p>
           <div className="hero__actions">
             <a href="/approach" className="hero__link">How we invest</a>

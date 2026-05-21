@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 
 const ARTICLES = [
   {
-    category: 'Consumer',
+    category: 'Consumer Products',
     title: 'The channel motion that breaks when the founder steps back',
     body: 'Revenue can grow while channel quality decays. Two things keep founder-led pull looking healthy while managed distribution is already failing, and neither shows up in the top-line until the company is already committed to the wrong motion.',
   },
@@ -21,7 +21,7 @@ const ARTICLES = [
     body: 'The transition from a ten-person team to thirty is the one that breaks the operating model. What changes is not headcount. It is decision rights, inspection cadence, and the founder\'s relationship to information they used to be close to.',
   },
   {
-    category: 'AI',
+    category: 'AI Applications and Infrastructure',
     title: 'Why AI demos fail to become retained workflows',
     body: 'A demo proves possibility. Retention proves operating value. The gap between the two is where most AI companies become legible, and where the business model either holds or reveals itself as novelty-dependent.',
   },
@@ -74,7 +74,7 @@ export default function PerspectivesPage() {
         /* ── Hero ── */
         .persp-hero {
           padding-top: clamp(7rem, 10vw, 9rem);
-          padding-bottom: var(--section-gap);
+          padding-bottom: var(--inner-hero-bottom);
         }
 
         .persp-hero .section-label {

@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 const STAGES = [
   {
     num: "01",
-    title: "Stage",
+    title: "Early Stage Investment",
     detail: "We look for a working market and a founder who understands that the next phase is not more of the same. The thing that got the company here will not carry it to the next order of magnitude without deliberate change. The founders who know this are the ones we want to back."
   },
   {
@@ -29,24 +29,24 @@ const STAGES = [
 
 const SUPPORT_MATRIX = [
   {
+    name: "AI Applications and Infrastructure",
+    challenge: "Founders are moving from AI demos to agents, workflow automation, self-learning systems, and real customer adoption. The companies that hold are the ones where the product becomes part of how customers operate, not just something they evaluated.",
+    support: "GTM architecture, customer access, agent and workflow implementation framing, investor readiness, and the execution work needed to turn AI innovation into retained usage.",
+  },
+  {
+    name: "Deep Tech",
+    challenge: "Technical founders are moving between product depth, field validation, commercial sales, and new institutional rounds. The structural bottleneck is usually sales repeatability without the founder in the room.",
+    support: "GTM architecture, customer access, sales process design, and preparation for the next institutional round.",
+  },
+  {
     name: "Energy Transition",
     challenge: "Founders are managing projects, policy, manufacturing, and capital structure simultaneously. The sequence that breaks companies is almost always financing, not technology.",
     support: "Market access, capital structure thinking, project finance navigation, and practical execution support through the build-out phase.",
   },
   {
-    name: "Deeptech",
-    challenge: "Technical founders are moving between product depth, field validation, commercial sales, and new institutional rounds. The structural bottleneck is usually sales repeatability without the founder in the room.",
-    support: "GTM architecture, customer access, sales process design, and preparation for the next institutional round.",
-  },
-  {
     name: "Consumer Products",
     challenge: "Founders are scaling brands, channels, supply chains, and repeat purchase behaviour at the same time. Channel quality degrades quietly before the top-line shows it.",
     support: "Distribution diagnostics, channel economics, founder GTM support, and capital structure for the next growth phase.",
-  },
-  {
-    name: "AI and AI Infrastructure",
-    challenge: "Founders are moving from product promise to real customer adoption. Retention and workflow depth matter more than demo quality. Most AI products have strong launch weeks and weak six-month cohorts.",
-    support: "Workflow use case framing, account retention architecture, GTM structure, and investor readiness for the transition from early traction to scale.",
   },
 ];
 
@@ -66,7 +66,7 @@ const OPERATOR_ENTRIES = [
     decision: "Took vertical ownership of a critical supply-chain dependency before the financing was in place to do it cleanly.",
     tradeoff: "Capital efficiency degraded for fourteen months before the operating advantage became visible.",
     outcome: "The constraint it removed was third-party bottleneck leverage at scale. Leaving it unaddressed would have been structurally irreversible.",
-    attribution: "Energy transition, 2024",
+    attribution: "Energy Transition, 2024",
     sector: "Energy Transition"
   },
   {
@@ -84,8 +84,8 @@ const OPERATOR_ENTRIES = [
     decision: "Replaced demo-driven selling with workflow implementation as the primary commercial motion.",
     tradeoff: "Sales cycles became longer and more operationally demanding. The pipeline looked less exciting.",
     outcome: "At twelve months, account retention had shifted from novelty-dependent to usage-dependent. Renewals held without founder involvement.",
-    attribution: "AI workflow, 2024",
-    sector: "AI"
+    attribution: "AI Applications and Infrastructure, 2024",
+    sector: "AI Applications and Infrastructure"
   },
   {
     id: "045",
@@ -93,8 +93,8 @@ const OPERATOR_ENTRIES = [
     decision: "Maintained pricing discipline against an incumbent who tried to reset the market floor.",
     tradeoff: "Several accounts left. The short-term pipeline looked weaker than the board wanted to see.",
     outcome: "The accounts that stayed required the company to prove deployment quality instead of compete on price. That margin structure is the one the business is built on today.",
-    attribution: "Deeptech infrastructure, 2023",
-    sector: "Deeptech"
+    attribution: "Deep Tech, 2023",
+    sector: "Deep Tech"
   },
   {
     id: "044",
@@ -102,7 +102,7 @@ const OPERATOR_ENTRIES = [
     decision: "Renegotiated the commercial terms on the anchor contract before deploying at the next scale. Accepted a delayed signature in exchange for better unit economics at volume.",
     tradeoff: "Three months of momentum paused while the operating model was rebuilt around the revised structure.",
     outcome: "The company avoided compounding a weak contract structure into the next forty deployments. The revised terms held in most subsequent negotiations.",
-    attribution: "Energy transition, 2023",
+    attribution: "Energy Transition, 2023",
     sector: "Energy Transition"
   },
   {
@@ -111,8 +111,8 @@ const OPERATOR_ENTRIES = [
     decision: "Promoted an internal operator into the COO role over two externally sourced candidates with stronger pedigree.",
     tradeoff: "The external search had already generated board expectations. The internal decision required explicit justification.",
     outcome: "The hire understood the operating system well enough to improve it rather than replace it. The territory held through year one without significant resets.",
-    attribution: "Consumer, 2023",
-    sector: "Consumer"
+    attribution: "Consumer Products, 2023",
+    sector: "Consumer Products"
   },
   {
     id: "042",
@@ -120,8 +120,8 @@ const OPERATOR_ENTRIES = [
     decision: "Paused international expansion for one additional quarter to resolve a customer-facing reliability issue in the core market.",
     tradeoff: "The team had already begun country-level hiring. The pause required those offers to be deferred.",
     outcome: "The reliability fix reduced churn by approximately 18% in the core market and removed a credibility problem that would have compounded in a new geography.",
-    attribution: "Deeptech infrastructure, 2023",
-    sector: "Deeptech"
+    attribution: "Deep Tech, 2023",
+    sector: "Deep Tech"
   },
 ];
 
@@ -263,7 +263,7 @@ export default function ApproachPage() {
         /* ── Hero ─────────────────────────────── */
         .approach-hero {
           padding-top: clamp(7rem, 10vw, 9rem);
-          padding-bottom: var(--section-gap);
+          padding-bottom: var(--inner-hero-bottom);
         }
         .approach-hero__title {
           font-size: var(--text-hero);
@@ -278,13 +278,13 @@ export default function ApproachPage() {
           line-height: 1.72;
           color: var(--color-ink-secondary);
           max-width: 58ch;
-          margin-bottom: var(--space-xl);
+          margin-bottom: var(--space-md);
         }
         .approach-subnav {
           display: flex;
           align-items: center;
           gap: clamp(var(--space-lg), 4vw, var(--space-2xl));
-          padding-top: var(--space-lg);
+          padding-top: var(--space-md);
           border-top: 1px solid var(--color-divider);
         }
         .approach-subnav__link {
@@ -311,7 +311,7 @@ export default function ApproachPage() {
 
         /* ── How We Work ──────────────────────── */
         .hww-section {
-          padding: var(--section-gap) 0;
+          padding: var(--section-top) 0 var(--section-gap);
           border-top: 1px solid var(--color-divider);
         }
         .hww-section .section-label {
@@ -361,7 +361,7 @@ export default function ApproachPage() {
 
         /* ── How We Help (Support Areas) ─────── */
         .support-section {
-          padding: var(--section-gap) 0;
+          padding: var(--section-top) 0 var(--section-gap);
           border-top: 1px solid var(--color-divider);
           background-color: var(--color-canvas);
         }
@@ -427,7 +427,7 @@ export default function ApproachPage() {
 
         /* ── Support Matrix ────────────────────── */
         .evaluate-section {
-          padding: var(--section-gap) 0;
+          padding: var(--section-top) 0 var(--section-gap);
           background-color: var(--color-canvas-alt);
           border-top: 1px solid var(--color-divider);
         }

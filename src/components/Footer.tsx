@@ -23,30 +23,32 @@ const NAV_GROUPS = [
   },
 ];
 
-export default function Footer() {
+export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
   return (
     <RevealWrapper>
       <footer className="footer">
         <div className="container">
 
           {/* CTA section */}
-          <div className="footer__cta reveal">
-            <p className="section-label">Contact</p>
-            <FadeContent className="footer__headline-wrapper">
-              <h2 className="footer__headline">If you&apos;re building something that fits, write to us.</h2>
-            </FadeContent>
-            <a href="/contact" className="footer__email reveal reveal-delay-2">
-              <ShinyText
-                text="Start a founder note"
-                speed={1.4}
-                delay={5}
-                color="var(--color-ink-primary)"
-                shineColor="var(--color-signature)"
-                spread={115}
-                direction="left"
-              />
-            </a>
-          </div>
+          {!hideCta && (
+            <div className="footer__cta reveal">
+              <p className="section-label">Contact</p>
+              <FadeContent className="footer__headline-wrapper">
+                <h2 className="footer__headline">If you&apos;re building something that fits, write to us.</h2>
+              </FadeContent>
+              <a href="/contact" className="footer__email reveal reveal-delay-2">
+                <ShinyText
+                  text="Start a founder note"
+                  speed={1.4}
+                  delay={5}
+                  color="var(--color-ink-primary)"
+                  shineColor="var(--color-signature)"
+                  spread={115}
+                  direction="left"
+                />
+              </a>
+            </div>
+          )}
 
           {/* Divider */}
           <div className="hairline footer__rule" />
@@ -60,7 +62,14 @@ export default function Footer() {
                 <img
                   src="/images/powerscale-logo-transparent.png"
                   alt="Powerscale Ventures"
-                  className="footer__logo-img"
+                  className="footer__logo-img footer__logo-img--light"
+                  width={160}
+                  height={100}
+                />
+                <img
+                  src="/images/powerscale-logo-on-dark.png"
+                  alt="Powerscale Ventures"
+                  className="footer__logo-img footer__logo-img--dark"
                   width={160}
                   height={100}
                 />
@@ -183,6 +192,18 @@ export default function Footer() {
             display: block;
             width: clamp(160px, 16vw, 280px);
             height: auto;
+          }
+
+          .footer__logo-img--dark {
+            display: none;
+          }
+
+          :root[data-theme='dark'] .footer__logo-img--light {
+            display: none;
+          }
+
+          :root[data-theme='dark'] .footer__logo-img--dark {
+            display: block;
           }
 
           .footer__contact-email {

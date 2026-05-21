@@ -7,7 +7,7 @@ import BorderGlow from '@/components/ui/BorderGlow';
 const MODULES = [
   {
     num: "01",
-    title: "Stage",
+    title: "Early Stage Investment",
     text: "After the first market is real, we look for founders who see that the next phase is fundamentally different. The thing that got the company here will not carry it to the next order of magnitude without deliberate change. We back founders who know how to navigate that change."
   },
   {

@@ -49,12 +49,19 @@ export default function Navigation() {
               <img
                 src="/images/powerscale-logo-transparent.png"
                 alt=""
-                className="nav__logo"
+                className="nav__logo nav__logo--light"
+                width={80}
+                height={50}
+              />
+              <img
+                src="/images/powerscale-logo-on-dark.png"
+                alt=""
+                className="nav__logo nav__logo--dark"
                 width={80}
                 height={50}
               />
             </span>
-            <span className="nav__brand-text">Powerscale</span>
+            <span className="nav__brand-text">Powerscale Ventures</span>
           </Link>
 
           {/* Desktop links */}
@@ -145,9 +152,21 @@ export default function Navigation() {
           width: auto;
         }
 
+        .nav__logo--dark {
+          display: none;
+        }
+
+        :root[data-theme='dark'] .nav__logo--light {
+          display: none;
+        }
+
+        :root[data-theme='dark'] .nav__logo--dark {
+          display: block;
+        }
+
         .nav__brand-text {
-          font-size: 0.9375rem;
-          font-weight: var(--weight-medium);
+          font-size: 1.0625rem;
+          font-weight: var(--weight-semibold);
           letter-spacing: -0.02em;
           color: var(--color-ink);
           white-space: nowrap;

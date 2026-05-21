@@ -23,6 +23,7 @@ const PARTNERS = [
     focus: "Founder Operating · GTM · Distribution",
     slug: "arthi-b",
     imageSrc: "/images/arthi-b.png",
+    imagePosition: "center 42%",
   },
   {
     name: "Sanjay Tolani",
@@ -31,13 +32,14 @@ const PARTNERS = [
     focus: "Capital Access · Commercial Strategy · Investor Relationships",
     slug: "sanjay-tolani",
     imageSrc: "/images/sanjay-tolani.png",
+    imagePosition: "center top",
   },
 ];
 
 const ADVISORS = [
   {
     name: "Partha Pemmaraju",
-    area: "Deeptech & Global Operations",
+    area: "Deep Tech & Global Operations",
     note: "Operator with over two decades of company-building across deeptech and consumer sectors. Brings operator-to-operator context for portfolio companies navigating the technical-to-commercial transition and global market deployment.",
     linkedin: "https://www.linkedin.com/in/parthapemmaraju/",
     linkedinLabel: "LinkedIn ↗",
@@ -77,28 +79,6 @@ export default function AboutPage() {
   return (
     <>
       <RevealWrapper>
-        <section className="about-hero">
-          <div className="container">
-            <div className="section-label reveal">About</div>
-            <div className="about-hero__grid">
-              <h1 className="about-hero__title reveal reveal-delay-1">
-                An operator-led venture firm built for the scaling problem.
-              </h1>
-              <div className="about-hero__desc-card reveal reveal-delay-2">
-                <p className="about-hero__description">
-                  Powerscale is an India-native partnership investing in energy transition,
-                  deeptech, consumer products, and AI.
-                  Our partners come with a mixed background of building companies and working with founders to scale companies.
-                  That mix of experience is what determines how we evaluate, how we engage after the cheque clears, and what we are actually useful for.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </RevealWrapper>
-
-
-      <RevealWrapper>
         <section className="team-full">
           <div className="container">
             <div className="section-label reveal">Team</div>
@@ -111,7 +91,15 @@ export default function AboutPage() {
 
             <div className="team-full__profiles">
               {PARTNERS.map((partner, i) => (
-                <div key={i} className={`team-full__profile reveal reveal-delay-${i + 2}`}>
+                <div
+                  key={i}
+                  className={`team-full__profile reveal reveal-delay-${i + 2}`}
+                  onPointerMove={(e: React.PointerEvent<HTMLDivElement>) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    e.currentTarget.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                    e.currentTarget.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+                  }}
+                >
                   <div className="team-full__image-wrap">
                     {partner.imageSrc ? (
                       <TiltedCard
@@ -121,6 +109,7 @@ export default function AboutPage() {
                         scaleOnHover={1.04}
                         showTooltip={false}
                         borderRadius="12px"
+                        imagePosition={partner.imagePosition}
                       />
                     ) : (
                       <ImagePlaceholder label={`Image — ${partner.name}`} aspectRatio="4/5" />
@@ -201,46 +190,6 @@ export default function AboutPage() {
       <Footer />
 
       <style dangerouslySetInnerHTML={{__html: `
-        .about-hero {
-          padding-top: clamp(7rem, 10vw, 9rem);
-          padding-bottom: clamp(3rem, 5vw, 5rem);
-          background-color: transparent;
-        }
-
-        .about-hero .section-label {
-          margin-bottom: clamp(2rem, 3vw, 3rem);
-        }
-
-        .about-hero__grid {
-          display: grid;
-          grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.72fr);
-          gap: clamp(2rem, 5vw, 6rem);
-          align-items: start;
-        }
-
-        .about-hero__title {
-          font-size: clamp(2.25rem, 4.5vw, 3.75rem);
-          font-weight: var(--weight-semibold);
-          line-height: 1.06;
-          letter-spacing: -0.03em;
-          max-width: 14ch;
-        }
-
-        .about-hero__desc-card {
-          background: var(--color-surface);
-          border: 1px solid var(--color-divider);
-          border-radius: 20px;
-          padding: clamp(1.75rem, 3vw, 2.5rem);
-          transition: background var(--duration-fast) var(--ease-out),
-                      border-color var(--duration-fast) var(--ease-out);
-        }
-
-        .about-hero__description {
-          font-size: clamp(1rem, 1.3vw, 1.125rem);
-          line-height: 1.78;
-          color: var(--color-ink-secondary);
-        }
-
         .beliefs {
           padding: var(--section-gap) 0;
           background-color: transparent;
@@ -278,7 +227,7 @@ export default function AboutPage() {
         }
 
         .team-full {
-          padding: clamp(3rem, 5vw, 5rem) 0 var(--section-gap);
+          padding: clamp(6rem, 10vw, 8rem) 0 var(--section-gap);
           background-color: transparent;
         }
 
@@ -307,10 +256,32 @@ export default function AboutPage() {
           align-items: start;
           border-top: 1px solid var(--color-divider);
           padding: clamp(2.5rem, 5vw, 4rem) 0;
+          position: relative;
+          isolation: isolate;
         }
 
         .team-full__profile:last-child {
           border-bottom: 1px solid var(--color-divider);
+        }
+
+        .team-full__profile::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          opacity: 0;
+          transition: opacity 600ms ease;
+          background: radial-gradient(
+            800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+            rgba(19, 253, 251, 0.055) 0%,
+            rgba(0, 255, 171, 0.03) 40%,
+            transparent 70%
+          );
+          pointer-events: none;
+          z-index: -1;
+        }
+
+        .team-full__profile:hover::after {
+          opacity: 1;
         }
 
         .team-full__image-wrap {
@@ -496,16 +467,6 @@ export default function AboutPage() {
         }
 
         @media (max-width: 900px) {
-          .about-hero__grid {
-            grid-template-columns: 1fr;
-            gap: var(--space-lg);
-          }
-          .about-hero__title {
-            max-width: none;
-          }
-          .about-hero__desc-card {
-            padding: var(--space-md);
-          }
           .team-full__profile {
             grid-template-columns: minmax(180px, 240px) 1fr;
             gap: var(--space-lg);
@@ -520,6 +481,9 @@ export default function AboutPage() {
           .team-full__profile {
             grid-template-columns: 1fr;
             gap: var(--space-md);
+          }
+          .team-full__profile::after {
+            display: none;
           }
           .team-full__image-wrap {
             position: static;
@@ -542,6 +506,12 @@ export default function AboutPage() {
           .beliefs__item {
             grid-template-columns: 2.5rem 1fr;
             gap: var(--space-2);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .team-full__profile::after {
+            transition: none;
           }
         }
       `}} />

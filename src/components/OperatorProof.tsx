@@ -14,6 +14,7 @@ const PARTNERS = [
     focus: "Founder Operating · GTM · Distribution",
     slug: "arthi-b",
     imageSrc: "/images/arthi-b.png",
+    imagePosition: "center 42%",
   },
   {
     name: "Sanjay Tolani",
@@ -22,6 +23,7 @@ const PARTNERS = [
     focus: "Capital Access · Commercial Strategy · Investor Relationships",
     slug: "sanjay-tolani",
     imageSrc: "/images/sanjay-tolani.png",
+    imagePosition: "center top",
   },
 ];
 
@@ -30,17 +32,32 @@ export default function OperatorProof() {
     <RevealWrapper>
       <section className="team">
         <div className="container">
-          <div className="section-label reveal">Team</div>
-          <h2 className="team__title reveal reveal-delay-1">
-            The operating background is the firm.
-          </h2>
-          <p className="team__intro reveal reveal-delay-2">
-            Our partners come from a mixed background of building companies, working with founders, opening capital access, and helping companies scale. Arthi and Sanjay bring different strengths, but they work across all four of Powerscale's focus areas together.
-          </p>
+          <div className="team__header">
+            <div className="team__header-text">
+              <div className="section-label reveal">Team</div>
+              <h2 className="team__title reveal reveal-delay-1">
+                The operating background is the firm.
+              </h2>
+              <p className="team__intro reveal reveal-delay-2">
+                Our partners come from a mixed background of building companies, working with founders, opening capital access, and helping companies scale. Arthi and Sanjay bring different strengths, but they work across all four of Powerscale's focus areas together.
+              </p>
+            </div>
+            <Link href="/about" className="team__cta-link reveal reveal-delay-2">
+              View full team →
+            </Link>
+          </div>
 
           <div className="team__grid">
             {PARTNERS.map((partner, i) => (
-              <div key={i} className={`team__card reveal reveal-delay-${i + 2}`}>
+              <div
+                key={i}
+                className={`team__card reveal reveal-delay-${i + 2}`}
+                onPointerMove={(e: React.PointerEvent<HTMLDivElement>) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  e.currentTarget.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                  e.currentTarget.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+                }}
+              >
                 <div className="team__image-wrap">
                   {partner.imageSrc ? (
                     <TiltedCard
@@ -50,6 +67,7 @@ export default function OperatorProof() {
                       scaleOnHover={1.04}
                       showTooltip={false}
                       borderRadius="12px"
+                      imagePosition={partner.imagePosition}
                     />
                   ) : (
                     <ImagePlaceholder label={`Image — ${partner.name}`} aspectRatio="4/5" />
@@ -76,6 +94,19 @@ export default function OperatorProof() {
             background-color: transparent;
           }
 
+          .team__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: var(--space-8);
+            margin-bottom: var(--space-8);
+          }
+
+          .team__header-text {
+            flex: 1;
+            min-width: 0;
+          }
+
           .team__title {
             margin-bottom: var(--space-lg);
             max-width: 22ch;
@@ -85,8 +116,27 @@ export default function OperatorProof() {
             color: var(--color-ink);
             font-size: var(--text-body);
             line-height: 1.68;
-            margin-bottom: var(--space-8);
+            margin-bottom: 0;
             max-width: 60ch;
+          }
+
+          .team__cta-link {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+            flex-shrink: 0;
+            font-size: var(--text-meta);
+            font-weight: 700;
+            color: var(--color-ink-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 0.15rem;
+            transition: color 150ms ease;
+          }
+
+          .team__cta-link:hover {
+            color: var(--color-signature);
           }
 
           .team__grid {
@@ -101,10 +151,32 @@ export default function OperatorProof() {
             align-items: start;
             border-top: 1px solid var(--color-divider);
             padding: clamp(2.5rem, 5vw, 4rem) 0;
+            position: relative;
+            isolation: isolate;
           }
 
           .team__card:last-child {
             border-bottom: 1px solid var(--color-divider);
+          }
+
+          .team__card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 600ms ease;
+            background: radial-gradient(
+              800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+              rgba(19, 253, 251, 0.055) 0%,
+              rgba(0, 255, 171, 0.03) 40%,
+              transparent 70%
+            );
+            pointer-events: none;
+            z-index: -1;
+          }
+
+          .team__card:hover::after {
+            opacity: 1;
           }
 
           .team__image-wrap {
@@ -198,6 +270,17 @@ export default function OperatorProof() {
             }
           }
 
+          @media (max-width: 760px) {
+            .team__header {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 0;
+            }
+            .team__cta-link {
+              margin-top: var(--space-md);
+            }
+          }
+
           @media (max-width: 640px) {
             .team__card {
               grid-template-columns: 1fr;
@@ -206,6 +289,15 @@ export default function OperatorProof() {
             .team__image-wrap {
               position: static;
               max-width: 240px;
+            }
+            .team__card::after {
+              display: none;
+            }
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .team__card::after {
+              transition: none;
             }
           }
         `}} />

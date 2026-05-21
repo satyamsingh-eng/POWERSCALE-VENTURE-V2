@@ -5,28 +5,28 @@ import RevealWrapper from './RevealWrapper';
 
 const SECTORS = [
   {
+    name: "AI Applications and Infrastructure",
+    body: (<>We back ambitious founders building the next generation of autonomous systems, adaptive intelligence, and <strong className="text-highlight">foundational AI infrastructure</strong> designed for long-term impact and scale.</>),
+    imageSrc: "/images/sectors/ai-infrastructure.png",
+    imageAlt: "AI applications and infrastructure visual",
+  },
+  {
+    name: "Deep Tech",
+    body: (<><strong className="text-highlight">Technical depth</strong> creates a real moat. But navigating it alongside sales repeatability and institutional capital is the harder problem. We back founders who can hold all three without letting any one of them slip.</>),
+    imageSrc: "/images/sectors/deeptech.png",
+    imageAlt: "Deep Tech",
+  },
+  {
     name: "Energy Transition",
     body: (<><strong className="text-highlight">Policy, manufacturing, financing, and project execution</strong> move at different speeds. The companies we back understand that coordinating across those variables is the actual job, not just building the technology.</>),
     imageSrc: "/images/sectors/energy-transition.png",
     imageAlt: "Energy Transition",
   },
   {
-    name: "Deeptech",
-    body: (<><strong className="text-highlight">Technical depth</strong> creates a real moat. But navigating it alongside sales repeatability and institutional capital is the harder problem. We back founders who can hold all three without letting any one of them slip.</>),
-    imageSrc: "/images/sectors/deeptech.png",
-    imageAlt: "Deeptech",
-  },
-  {
     name: "Consumer Products",
     body: (<>Growth can mask poor channel quality until the company is already committed to the wrong motion. The brands we back have the <strong className="text-highlight">distribution architecture, supply chain thinking, and capital structure</strong> to scale beyond what the founder can personally manage.</>),
     imageSrc: "/images/sectors/consumer-products.png",
     imageAlt: "Consumer Products",
-  },
-  {
-    name: "AI and AI Infrastructure",
-    body: (<>From product promise to <strong className="text-highlight">retained workflow</strong> is a longer road than most AI demos suggest. We back founders who understand the difference and are building for the latter, not the former.</>),
-    imageSrc: "/images/sectors/ai-infrastructure.png",
-    imageAlt: "AI and AI Infrastructure",
   },
 ];
 

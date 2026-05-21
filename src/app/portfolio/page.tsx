@@ -4,44 +4,23 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import RevealWrapper from '@/components/RevealWrapper';
 import Footer from '@/components/Footer';
-import ImagePlaceholder from '@/components/ui/ImagePlaceholder';
-
-const WORK = [
-  {
-    sector: "Energy Transition",
-    claim: "Project economics, regulatory sequencing, and financing structure have to move in the same direction. A project that works technically can still fail if the debt path closes before the offtake is signed. That failure is usually irreversible.",
-    evidence: "Before we invest: signed demand commitments, a credible path to project debt, a project timeline with built-in buffer, and the assumptions that break first if timelines move."
-  },
-  {
-    sector: "Deeptech",
-    claim: "A working technical system is not a repeatable commercial system. The structural bottleneck is almost always one of three things: manufacturing reliability at the volumes the plan requires, implementation burden per customer, or sales repeatability without the founder in the room.",
-    evidence: "Before we invest: field deployment reliability data, average implementation time and cost per customer, and evidence that sales has closed at least one cycle without founder force."
-  },
-  {
-    sector: "Consumer Products",
-    claim: "Growth can hide poor channel quality until the company is already committed to the wrong motion. The moment a founder steps back from the sales process is when unit economics get honest. By then, the wrong channel structure is already baked in.",
-    evidence: "Before we invest: retention curves by acquisition channel, SKU-level contribution margins, cohort behavior in the second and third market, and what changed in channel mix when the founder was not closing deals."
-  },
-  {
-    sector: "AI and AI Infrastructure",
-    claim: "Most AI products have strong launch weeks and weak month-six cohorts. Retained workflow value is different from demonstrated capability. The companies that compound are the ones where customers build the product into their operating process, not the ones with the strongest demo.",
-    evidence: "Before we invest: account-level usage at six and twelve months, implementation depth and time-to-value per account, expansion logic, and the reason customers renew without founder involvement."
-  },
-];
-
 
 const SITUATIONS = [
   {
-    sector: "Consumer Products",
-    description: "A company at ₹200 Cr in revenue was running sales and delivery on infrastructure designed for ₹50 Cr. The org had scaled headcount without scaling systems. The fix was rebuilding the commercial operations layer, not the product or the team, before the next growth phase was accessible."
+    sector: "AI Applications and Infrastructure",
+    description: "A company with strong demo-week numbers had weak month-six cohorts. Retention was novelty-dependent. The fix was shifting the commercial motion from demo-driven selling to workflow and agent implementation. Sales cycles became longer, but the product became part of how customers operated — and renewals held without founder involvement."
   },
   {
-    sector: "Deeptech",
+    sector: "Deep Tech",
     description: "A company with a working field system had closed its first three customers through founder-led sales. The fourth and fifth required the same process but the founder was now three layers removed from it. The sales architecture had to be rebuilt around the technical deployment process, not around the founder's relationships."
   },
   {
     sector: "Energy Transition",
     description: "An infrastructure company entered commissioning with a capital structure built for one timeline and a build-out reality that required another. The gap between financial close and first revenue was longer than modelled. Managing that gap required a specific kind of investor involvement: practical working capital support, not cheerleading."
+  },
+  {
+    sector: "Consumer Products",
+    description: "A company at ₹200 Cr in revenue was running sales and delivery on infrastructure designed for ₹50 Cr. The org had scaled headcount without scaling systems. The fix was rebuilding the commercial operations layer, not the product or the team, before the next growth phase was accessible."
   },
 ];
 
@@ -103,9 +82,23 @@ export default function PortfolioPage() {
             <div className="port-conviction-grid">
               <div className="port-conviction__visuals">
                 <GH2LogoCard />
-                {/* TODO: Replace with approved GH2 Solar plant / green hydrogen image once provided */}
-                <div className="reveal reveal-delay-2">
-                  <ImagePlaceholder label="GH2 Solar — Plant Image" aspectRatio="16/9" />
+                <div className="gh2-media-grid reveal reveal-delay-2">
+                  <div className="gh2-img-wrap">
+                    <img
+                      src="/images/portfolio/gh2-green-hydrogen.png"
+                      alt="GH2 Solar green hydrogen infrastructure"
+                      className="gh2-img"
+                    />
+                    <span className="gh2-img-caption">Green Hydrogen Infrastructure</span>
+                  </div>
+                  <div className="gh2-img-wrap">
+                    <img
+                      src="/images/portfolio/gh2-solar-energy.png"
+                      alt="GH2 Solar solar energy deployment"
+                      className="gh2-img"
+                    />
+                    <span className="gh2-img-caption">Solar Energy Deployment</span>
+                  </div>
                 </div>
               </div>
               <div className="port-conviction__thesis reveal reveal-delay-2">
@@ -147,37 +140,7 @@ export default function PortfolioPage() {
         </section>
       </RevealWrapper>
 
-      {/* Section 3: Investment Lens */}
-      <RevealWrapper>
-        <section className="port-list-section">
-          <div className="container">
-            <div className="section-label reveal">Investment lens</div>
-            <h2 className="port-list__title reveal reveal-delay-1">
-              Where our conviction shows up
-            </h2>
-            <p className="port-list__intro reveal reveal-delay-2">
-              One standard across all four sectors: the operating constraint has to be nameable before we price a round.
-            </p>
-            {WORK.map((item, i) => (
-              <div key={item.sector} className={`port-item reveal reveal-delay-${Math.min(i + 2, 5)}`}>
-                <div className="port-item__left">
-                  <span className="port-item__num">0{i + 1}</span>
-                  <h3 className="port-item__name">{item.sector}</h3>
-                </div>
-                <div className="port-item__right">
-                  <p className="port-item__claim">{item.claim}</p>
-                  <div className="port-item__evidence-block">
-                    <span className="port-item__evidence-label">Before we invest</span>
-                    <p className="port-item__evidence">{item.evidence.replace(/^Before we invest:\s*/i, '')}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      </RevealWrapper>
-
-      {/* Section 5: Operating Complexity — Anonymized Situations */}
+      {/* Section 3: Operating Complexity — Anonymized Situations */}
       <RevealWrapper>
         <section className="port-situations-section">
           <div className="container">
@@ -247,7 +210,7 @@ export default function PortfolioPage() {
         /* Hero */
         .port-hero {
           padding-top: clamp(7rem, 10vw, 9rem);
-          padding-bottom: var(--section-gap);
+          padding-bottom: var(--inner-hero-bottom);
         }
 
         .port-hero__title {
@@ -338,9 +301,44 @@ export default function PortfolioPage() {
           .gh2-logo-card__glow { animation: none; }
         }
 
+        /* GH2 image grid */
+        .gh2-media-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 0.625rem;
+          margin-top: 0.625rem;
+        }
+
+        .gh2-img-wrap {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .gh2-img {
+          display: block;
+          width: 100%;
+          height: auto;
+          aspect-ratio: 16 / 10;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 12px;
+          border: 1px solid var(--color-divider);
+          background: var(--color-canvas-alt);
+        }
+
+        .gh2-img-caption {
+          display: block;
+          font-size: 0.7rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: var(--color-signature);
+          font-weight: 700;
+        }
+
         /* Conviction Signal */
         .port-conviction-section {
-          padding-bottom: var(--section-gap);
+          padding-bottom: var(--inner-hero-bottom);
         }
 
         .port-conviction-section .section-label {
@@ -419,99 +417,11 @@ export default function PortfolioPage() {
           border-top: 1px solid var(--color-divider);
         }
 
-        /* What We Evaluate */
-        .port-list-section {
-          padding-bottom: var(--section-gap);
-          border-top: 1px solid var(--color-divider);
-          padding-top: var(--section-gap);
-        }
-
-        .port-list-section .section-label {
-          margin-bottom: var(--space-md);
-        }
-
-        .port-list__title {
-          font-size: var(--text-h2);
-          font-weight: var(--weight-medium);
-          letter-spacing: -0.02em;
-          line-height: 1.1;
-          margin-bottom: var(--space-md);
-          max-width: 22ch;
-        }
-
-        .port-list__intro {
-          font-size: var(--text-body);
-          color: var(--color-steel);
-          line-height: 1.65;
-          max-width: 56ch;
-          margin-bottom: var(--space-xl);
-        }
-
-        .port-item {
-          display: grid;
-          grid-template-columns: clamp(180px, 24%, 280px) 1fr;
-          gap: clamp(var(--space-lg), 4vw, var(--space-xl));
-          padding: clamp(var(--space-lg), 4vw, var(--space-xl)) 0;
-          border-bottom: 1px solid var(--color-divider);
-          align-items: start;
-        }
-
-        .port-item:first-of-type {
-          border-top: 1px solid var(--color-divider);
-        }
-
-        .port-item__left {
-          display: flex;
-          flex-direction: column;
-          gap: var(--space-1);
-        }
-
-        .port-item__num {
-          font-size: var(--text-meta);
-          color: var(--color-signature);
-          font-weight: 700;
-          letter-spacing: 0.08em;
-        }
-
-        .port-item__name {
-          font-size: clamp(1.125rem, 2vw, 1.625rem);
-          font-weight: var(--weight-semibold);
-          letter-spacing: -0.01em;
-          line-height: 1.15;
-        }
-
-        .port-item__claim {
-          color: var(--color-ink-secondary);
-          line-height: 1.68;
-          margin-bottom: var(--space-3);
-          font-size: var(--text-body);
-        }
-
-        .port-item__evidence-block {
-          margin-top: var(--space-4);
-          border-left: 2px solid var(--color-signature);
-          padding-left: var(--space-4);
-        }
-
-        .port-item__evidence-label {
-          display: block;
-          font-size: 0.7rem;
-          text-transform: uppercase;
-          letter-spacing: 0.12em;
-          color: var(--color-signature);
-          font-weight: 700;
-          margin-bottom: var(--space-1);
-        }
-
-        .port-item__evidence {
-          color: var(--color-ink-secondary);
-          font-size: var(--text-body);
-          line-height: 1.65;
-        }
-
         /* Operating Situations */
         .port-situations-section {
+          padding-top: var(--section-top);
           padding-bottom: var(--section-gap);
+          border-top: 1px solid var(--color-divider);
         }
 
         .port-situations-section .section-label {
@@ -535,7 +445,7 @@ export default function PortfolioPage() {
 
         .port-situations-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: clamp(1rem, 2vw, 1.5rem);
           margin-bottom: var(--space-lg);
         }
@@ -649,15 +559,9 @@ export default function PortfolioPage() {
         }
 
         @media (max-width: 700px) {
-          .port-item {
-            grid-template-columns: 1fr;
-            gap: var(--space-sm);
-          }
-
           .port-situations-grid {
             grid-template-columns: 1fr;
           }
-
           .port-support-modules {
             grid-template-columns: 1fr;
           }

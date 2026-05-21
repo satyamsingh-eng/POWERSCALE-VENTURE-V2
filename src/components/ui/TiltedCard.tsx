@@ -16,6 +16,7 @@ interface TiltedCardProps {
   displayOverlayContent?: boolean;
   overlayContent?: React.ReactNode;
   borderRadius?: string;
+  imagePosition?: string;
 }
 
 const springConfig = { damping: 32, stiffness: 120, mass: 1.8 };
@@ -33,6 +34,7 @@ export default function TiltedCard({
   overlayContent = null,
   displayOverlayContent = false,
   borderRadius = '16px',
+  imagePosition = 'center top',
 }: TiltedCardProps) {
   const ref = useRef<HTMLElement>(null);
 
@@ -97,6 +99,7 @@ export default function TiltedCard({
           className="tc-img"
           loading="lazy"
           draggable={false}
+          style={{ objectPosition: imagePosition }}
         />
 
         {displayOverlayContent && overlayContent && (

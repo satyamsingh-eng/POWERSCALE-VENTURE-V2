@@ -22,6 +22,7 @@ export default function ArthiBPage() {
                 scaleOnHover={1.04}
                 showTooltip={false}
                 borderRadius="16px"
+                imagePosition="center 42%"
               />
             </div>
             <div className="profile-info">

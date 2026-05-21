@@ -132,7 +132,7 @@ export default function TermsPage() {
       <style dangerouslySetInnerHTML={{__html: `
         .legal-page {
           padding-top: clamp(7rem, 10vw, 10rem);
-          padding-bottom: clamp(5rem, 8vw, 8rem);
+          padding-bottom: clamp(2rem, 4vw, 3rem);
           padding-left: var(--container-padding);
           padding-right: var(--container-padding);
         }

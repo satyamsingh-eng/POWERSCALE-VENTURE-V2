@@ -28,7 +28,7 @@ export default function ParthaPemmarajuPage() {
               <span className="profile-role">Advisor</span>
               <h1 className="profile-name">Partha Pemmaraju</h1>
               <div className="profile-focus-tags">
-                <span className="profile-focus-tag">Deeptech</span>
+                <span className="profile-focus-tag">Deep Tech</span>
                 <span className="profile-focus-tag">Entrepreneurship</span>
                 <span className="profile-focus-tag">Global Operations</span>
               </div>

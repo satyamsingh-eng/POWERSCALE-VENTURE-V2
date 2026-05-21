@@ -7,7 +7,7 @@ const ARTICLES = [
   {
     title: "The channel motion that breaks when the founder steps back",
     excerpt: "Revenue can grow while channel quality decays. Two things keep founder-led pull looking healthy while managed distribution is already failing, and neither shows up in the top-line.",
-    label: "Consumer",
+    label: "Consumer Products",
   },
   {
     title: "When the regulatory sequence is the risk, not the technology",

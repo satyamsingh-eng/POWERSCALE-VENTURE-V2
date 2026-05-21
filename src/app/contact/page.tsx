@@ -4,11 +4,199 @@ import React, { useState, FormEvent } from 'react';
 import RevealWrapper from '@/components/RevealWrapper';
 import Footer from '@/components/Footer';
 
+type Intent = 'founders' | 'ecosystem' | 'general';
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
+const INTENTS: { id: Intent; label: string; helper: string }[] = [
+  {
+    id: 'founders',
+    label: 'Founders',
+    helper: 'For founders building across our focus areas',
+  },
+  {
+    id: 'ecosystem',
+    label: 'Ecosystem Collaboration',
+    helper: 'For partners, operators, advisors, and networks',
+  },
+  {
+    id: 'general',
+    label: 'General Queries',
+    helper: 'For anything else that should reach us',
+  },
+];
+
+const FORM_META = {
+  founders: {
+    title: 'Founder note',
+    subtitle: 'Send us the company, stage, and the scaling question you are working through',
+    subject: 'Founder note from Powerscale website',
+    submitLabel: 'Send founder note',
+    successTitle: 'Founder note received',
+    successMsg: 'Thanks. We received your founder note and will review it carefully. If there is a fit, we will respond directly.',
+    inquiryLabel: 'Founders',
+  },
+  ecosystem: {
+    title: 'Ecosystem collaboration',
+    subtitle: 'For operators, advisors, capital partners, sector experts, and networks that can support founders',
+    subject: 'Ecosystem collaboration note from Powerscale website',
+    submitLabel: 'Send collaboration note',
+    successTitle: 'Collaboration note received',
+    successMsg: 'Thanks. We received your collaboration note. We will review the context and come back if there is a useful next step.',
+    inquiryLabel: 'Ecosystem Collaboration',
+  },
+  general: {
+    title: 'General query',
+    subtitle: 'For anything that does not fit the founder or ecosystem route',
+    subject: 'General query from Powerscale website',
+    submitLabel: 'Send message',
+    successTitle: 'Message received',
+    successMsg: 'Thanks. Your message has been sent.',
+    inquiryLabel: 'General Queries',
+  },
+};
+
+function FoundersForm() {
+  return (
+    <>
+      <div className="cf-row cf-row--2">
+        <div className="form-field">
+          <label htmlFor="cf-name">Name</label>
+          <input id="cf-name" name="Name" type="text" autoComplete="name" required placeholder="Your name" />
+        </div>
+        <div className="form-field">
+          <label htmlFor="cf-email">Email</label>
+          <input id="cf-email" name="Email" type="email" autoComplete="email" required placeholder="you@company.com" />
+        </div>
+      </div>
+      <div className="cf-row cf-row--2">
+        <div className="form-field">
+          <label htmlFor="cf-company">Company</label>
+          <input id="cf-company" name="Company" type="text" autoComplete="organization" required placeholder="Company name" />
+        </div>
+        <div className="form-field">
+          <label htmlFor="cf-stage">Stage</label>
+          <select id="cf-stage" name="Stage" defaultValue="" required>
+            <option value="" disabled>Select stage</option>
+            <option>Pre-Series A</option>
+            <option>Series A</option>
+            <option>Series B</option>
+            <option>Later stage</option>
+            <option>Not raising yet</option>
+          </select>
+        </div>
+      </div>
+      <div className="cf-row cf-row--2">
+        <div className="form-field">
+          <label htmlFor="cf-sector">Sector</label>
+          <select id="cf-sector" name="Sector" defaultValue="" required>
+            <option value="" disabled>Select sector</option>
+            <option>AI Applications and Infrastructure</option>
+            <option>Deep Tech</option>
+            <option>Energy Transition</option>
+            <option>Consumer Products</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div className="form-field">
+          <label htmlFor="cf-website">Website or deck link <span className="cf-optional">optional</span></label>
+          <input id="cf-website" name="Website or deck link" type="text" placeholder="https://" />
+        </div>
+      </div>
+      <div className="form-field">
+        <label htmlFor="cf-building">What are you building, and what is the next scaling challenge?</label>
+        <textarea id="cf-building" name="What are you building" required placeholder="Tell us about the company and the constraint you are working through." />
+      </div>
+    </>
+  );
+}
+
+function EcosystemForm() {
+  return (
+    <>
+      <div className="cf-row cf-row--2">
+        <div className="form-field">
+          <label htmlFor="cf-name">Name</label>
+          <input id="cf-name" name="Name" type="text" autoComplete="name" required placeholder="Your name" />
+        </div>
+        <div className="form-field">
+          <label htmlFor="cf-email">Email</label>
+          <input id="cf-email" name="Email" type="email" autoComplete="email" required placeholder="you@organisation.com" />
+        </div>
+      </div>
+      <div className="cf-row cf-row--2">
+        <div className="form-field">
+          <label htmlFor="cf-org">Organisation <span className="cf-optional">optional</span></label>
+          <input id="cf-org" name="Organisation" type="text" autoComplete="organization" placeholder="Organisation name" />
+        </div>
+        <div className="form-field">
+          <label htmlFor="cf-collab">Collaboration type</label>
+          <select id="cf-collab" name="Collaboration type" defaultValue="" required>
+            <option value="" disabled>Select type</option>
+            <option>Operator / Advisor</option>
+            <option>Capital Partner</option>
+            <option>Corporate / Market Access</option>
+            <option>Founder Referral</option>
+            <option>Sector Expert</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div className="form-field">
+        <label htmlFor="cf-focus">Focus area <span className="cf-optional">optional</span></label>
+        <select id="cf-focus" name="Focus area" defaultValue="">
+          <option value="">Select focus area</option>
+          <option>AI Applications and Infrastructure</option>
+          <option>Deep Tech</option>
+          <option>Energy Transition</option>
+          <option>Consumer Products</option>
+          <option>Cross-sector</option>
+        </select>
+      </div>
+      <div className="form-field">
+        <label htmlFor="cf-collaborate">How would you like to collaborate?</label>
+        <textarea id="cf-collaborate" name="How would you like to collaborate" required placeholder="Describe what you have in mind and how it connects to what Powerscale does." />
+      </div>
+    </>
+  );
+}
+
+function GeneralForm() {
+  return (
+    <>
+      <div className="cf-row cf-row--2">
+        <div className="form-field">
+          <label htmlFor="cf-name">Name</label>
+          <input id="cf-name" name="Name" type="text" autoComplete="name" required placeholder="Your name" />
+        </div>
+        <div className="form-field">
+          <label htmlFor="cf-email">Email</label>
+          <input id="cf-email" name="Email" type="email" autoComplete="email" required placeholder="you@example.com" />
+        </div>
+      </div>
+      <div className="form-field">
+        <label htmlFor="cf-subject">Subject</label>
+        <input id="cf-subject" name="Message subject" type="text" required placeholder="What is this about?" />
+      </div>
+      <div className="form-field">
+        <label htmlFor="cf-message">Message</label>
+        <textarea id="cf-message" name="Message" required placeholder="Write your message here." />
+      </div>
+    </>
+  );
+}
+
 export default function ContactPage() {
+  const [intent, setIntent] = useState<Intent>('founders');
   const [status, setStatus] = useState<Status>('idle');
   const [errorMsg, setErrorMsg] = useState('');
+
+  const meta = FORM_META[intent];
+
+  function handleIntentChange(next: Intent) {
+    setIntent(next);
+    setStatus('idle');
+    setErrorMsg('');
+  }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -29,11 +217,11 @@ export default function ContactPage() {
         form.reset();
       } else {
         setStatus('error');
-        setErrorMsg(json.message || 'Something went wrong. Please try again.');
+        setErrorMsg(json.message || 'Something went wrong. Please try again or write to support@powerscaleventures.com.');
       }
     } catch {
       setStatus('error');
-      setErrorMsg('Could not send your note. Please check your connection and try again.');
+      setErrorMsg('Something went wrong. Please try again or write to support@powerscaleventures.com.');
     }
   }
 
@@ -42,264 +230,423 @@ export default function ContactPage() {
       <RevealWrapper>
         <section className="contact-section">
           <div className="container">
-            <div className="contact__layout">
-              <div className="contact__intro">
+            <div className="contact-layout">
+
+              {/* ── Left column ── */}
+              <div className="contact-left">
                 <div className="section-label reveal">Talk to us</div>
-                <h1 className="contact__title reveal reveal-delay-1">
+                <h1 className="contact-headline reveal reveal-delay-1">
                   If your market is real and the next problem is operational, write to us
                 </h1>
-                <p className="contact__note reveal reveal-delay-2">
-                  We are most useful after the first customers are committed and before the next phase of scale begins. The problems we work on are specific: hiring, channel structure, capital timing, and market access.
+                <p className="contact-subhead reveal reveal-delay-2">
+                  We are most useful after the first customers are committed and before the next phase of scale begins. Choose the note that fits best, and send us the context we need.
                 </p>
-                <p className="contact__note contact__note--secondary reveal reveal-delay-3">
-                  We read every note. If there is a fit, we will respond within a week. If the timing is not right, we will say so directly.
+
+                <div className="intent-selector reveal reveal-delay-3">
+                  {INTENTS.map((item) => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      aria-pressed={intent === item.id}
+                      className={`intent-btn${intent === item.id ? ' intent-btn--active' : ''}`}
+                      onClick={() => handleIntentChange(item.id)}
+                    >
+                      <span className="intent-btn__body">
+                        <span className="intent-btn__label">{item.label}</span>
+                        <span className="intent-btn__helper">{item.helper}</span>
+                      </span>
+                      <span className="intent-btn__arrow" aria-hidden="true">→</span>
+                    </button>
+                  ))}
+                </div>
+
+                <p className="contact-email-line reveal reveal-delay-4">
+                  Or write directly:{' '}
+                  <a href="mailto:support@powerscaleventures.com" className="contact-email-link">
+                    support@powerscaleventures.com
+                  </a>
                 </p>
               </div>
 
-              {status === 'success' ? (
-                <div className="contact__success">
-                  <div className="contact__success-check" aria-hidden="true">
-                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="14" cy="14" r="13" stroke="currentColor" strokeWidth="1.5"/>
-                      <path d="M8.5 14.5L12.5 18.5L19.5 10.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
+              {/* ── Right column — dynamic form ── */}
+              <div className="contact-right">
+                {status === 'success' ? (
+                  <div className="contact-success">
+                    <div className="contact-success__check" aria-hidden="true">
+                      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="14" cy="14" r="13" stroke="currentColor" strokeWidth="1.5" />
+                        <path d="M8.5 14.5L12.5 18.5L19.5 10.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
+                    <h2 className="contact-success__title">{meta.successTitle}</h2>
+                    <p className="contact-success__body">{meta.successMsg}</p>
+                    <div className="contact-success__divider" />
+                    <p className="contact-success__sub">
+                      Learn more about how we work on the{' '}
+                      <a href="/approach" className="contact-success__link">Approach page</a>.
+                    </p>
+                    <button className="contact-success__reset" onClick={() => setStatus('idle')}>
+                      Send another note
+                    </button>
                   </div>
-                  <h2 className="contact__success-title">We&apos;ve got your note</h2>
-                  <p className="contact__success-body">
-                    Thank you for reaching out. We read every message personally. If there is a fit, we will be in touch within a week. If the timing is not right, we will still say so directly.
-                  </p>
-                  <div className="contact__success-divider" />
-                  <p className="contact__success-sub">
-                    In the meantime, you can learn more about how we work on the{' '}
-                    <a href="/approach" className="contact__success-link">Approach page</a>.
-                  </p>
-                  <button
-                    className="contact__success-reset"
-                    onClick={() => setStatus('idle')}
+                ) : (
+                  <form
+                    key={intent}
+                    className="contact-form"
+                    onSubmit={handleSubmit}
+                    noValidate
                   >
-                    Send another note
-                  </button>
-                </div>
-              ) : (
-                <form
-                  className="contact__form reveal reveal-delay-3"
-                  onSubmit={handleSubmit}
-                  noValidate
-                >
-                  <input type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY} />
-                  <input type="hidden" name="subject" value="New founder note — Powerscale Ventures" />
-                  {/* Honeypot anti-spam */}
-                  <input type="checkbox" name="botcheck" className="contact__honeypot" aria-hidden="true" tabIndex={-1} />
+                    {/* Web3Forms configuration */}
+                    <input type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY} />
+                    <input type="hidden" name="subject" value={meta.subject} />
+                    <input type="hidden" name="inquiry_type" value={meta.inquiryLabel} />
+                    <input type="checkbox" name="botcheck" style={{ display: 'none' }} aria-hidden="true" tabIndex={-1} />
 
-                  <div className="form-field">
-                    <label htmlFor="category">I am reaching out as</label>
-                    <select id="category" name="Category" defaultValue="" required>
-                      <option value="" disabled>Select one</option>
-                      <option>Founders</option>
-                      <option>Ecosystem Collaboration</option>
-                      <option>General Queries</option>
-                    </select>
-                  </div>
-                  <div className="form-field">
-                    <label htmlFor="name">Name</label>
-                    <input id="name" name="Name" type="text" autoComplete="name" required />
-                  </div>
-                  <div className="form-field">
-                    <label htmlFor="email">Email</label>
-                    <input id="email" name="Email" type="email" autoComplete="email" required />
-                  </div>
-                  <div className="form-field">
-                    <label htmlFor="company">Company</label>
-                    <input id="company" name="Company" type="text" autoComplete="organization" required />
-                  </div>
-                  <div className="form-field">
-                    <label htmlFor="stage">Stage</label>
-                    <select id="stage" name="Stage" defaultValue="" required>
-                      <option value="" disabled>Select stage</option>
-                      <option>Seed / Early Stage</option>
-                      <option>Growth — Early</option>
-                      <option>Growth — Later</option>
-                      <option>Later stage</option>
-                      <option>Not raising yet</option>
-                    </select>
-                  </div>
-                  <div className="form-field contact__textarea">
-                    <label htmlFor="building">What are you building, and what is the constraint you are trying to solve?</label>
-                    <textarea id="building" name="What are you building" required />
-                  </div>
+                    <div className="contact-form__header">
+                      <h2 className="contact-form__title">{meta.title}</h2>
+                      <p className="contact-form__subtitle">{meta.subtitle}</p>
+                    </div>
 
-                  {status === 'error' && (
-                    <p className="contact__error" role="alert">{errorMsg}</p>
-                  )}
+                    <div className="contact-form__fields">
+                      {intent === 'founders' && <FoundersForm />}
+                      {intent === 'ecosystem' && <EcosystemForm />}
+                      {intent === 'general' && <GeneralForm />}
+                    </div>
 
-                  <button
-                    className="contact__submit"
-                    type="submit"
-                    disabled={status === 'submitting'}
-                  >
-                    {status === 'submitting' ? 'Sending…' : 'Send founder note'}
-                  </button>
-                </form>
-              )}
+                    {status === 'error' && (
+                      <p className="contact-form__error" role="alert">{errorMsg}</p>
+                    )}
+
+                    <button
+                      type="submit"
+                      className="contact-form__submit"
+                      disabled={status === 'submitting'}
+                    >
+                      {status === 'submitting' ? 'Sending…' : meta.submitLabel}
+                    </button>
+                  </form>
+                )}
+              </div>
+
             </div>
           </div>
         </section>
       </RevealWrapper>
 
-      <Footer />
+      <Footer hideCta />
 
       <style dangerouslySetInnerHTML={{__html: `
         .contact-section {
-          padding-top: clamp(7rem, 10vw, 9rem);
-          padding-bottom: clamp(3rem, 8vw, 6rem);
+          padding-top: clamp(5rem, 7vw, 7rem);
+          padding-bottom: clamp(3rem, 6vw, 5rem);
         }
 
-        .contact__layout {
+        .contact-layout {
           display: grid;
-          grid-template-columns: 1fr minmax(0, 480px);
-          gap: var(--space-8);
+          grid-template-columns: minmax(320px, 0.9fr) minmax(480px, 1.1fr);
+          gap: clamp(2.5rem, 5vw, 5rem);
           align-items: start;
         }
 
-        .contact__title {
-          font-size: clamp(1.75rem, 4vw, 3.25rem);
+        /* ── Left column ── */
+        .contact-left {
+          position: sticky;
+          top: calc(var(--nav-height) + var(--space-4));
+        }
+
+        .contact-left .section-label {
+          margin-bottom: clamp(0.875rem, 1.5vw, 1.25rem);
+        }
+
+        .contact-headline {
+          font-size: clamp(1.375rem, 2vw, 2rem);
           font-weight: var(--weight-medium);
-          line-height: 1.1;
-          margin-bottom: var(--space-lg);
-          max-width: 22ch;
+          line-height: 1.18;
+          letter-spacing: -0.022em;
+          color: var(--color-ink-primary);
+          max-width: none;
+          margin-bottom: var(--space-sm);
         }
 
-        .contact__note {
+        .contact-subhead {
           font-size: var(--text-body);
-          line-height: 1.65;
           color: var(--color-ink-secondary);
-          max-width: 50ch;
+          line-height: 1.65;
+          max-width: none;
+          margin-bottom: var(--space-md);
         }
 
-        .contact__note--secondary {
-          margin-top: var(--space-md);
-          font-size: 0.9rem;
-          opacity: 0.8;
+        /* ── Intent selector ── */
+        .intent-selector {
+          display: flex;
+          flex-direction: column;
+          gap: 0.375rem;
+          margin-bottom: var(--space-md);
         }
 
-        .contact__form {
+        .intent-btn {
           display: grid;
-          gap: 12px;
+          grid-template-columns: 1fr auto;
+          align-items: center;
+          gap: 0.75rem;
+          width: 100%;
+          background: transparent;
           border: 1px solid var(--color-divider);
-          border-radius: var(--radius-section);
+          border-radius: 12px;
+          padding: 0.8rem 1rem;
+          cursor: pointer;
+          text-align: left;
+          transition: border-color 200ms ease, background 200ms ease;
+          font: inherit;
+        }
+
+        .intent-btn:hover {
+          border-color: var(--color-signature);
+          background: rgba(47, 111, 106, 0.04);
+        }
+
+        .intent-btn--active {
+          border-color: var(--color-signature);
+          background: rgba(47, 111, 106, 0.05);
+        }
+
+        :root[data-theme='dark'] .intent-btn:hover,
+        :root[data-theme='dark'] .intent-btn--active {
+          background: rgba(138, 187, 180, 0.07);
+        }
+
+        .intent-btn__body {
+          display: flex;
+          flex-direction: column;
+          gap: 0.2rem;
+        }
+
+        .intent-btn__label {
+          display: block;
+          font-size: 0.9375rem;
+          font-weight: var(--weight-semibold);
+          color: var(--color-ink-primary);
+          line-height: 1.3;
+        }
+
+        .intent-btn__helper {
+          display: block;
+          font-size: 0.8125rem;
+          color: var(--color-muted);
+          line-height: 1.4;
+        }
+
+        .intent-btn__arrow {
+          color: var(--color-signature);
+          font-size: 1rem;
+          opacity: 0.25;
+          flex-shrink: 0;
+          transition: opacity 200ms ease;
+        }
+
+        .intent-btn--active .intent-btn__arrow {
+          opacity: 1;
+        }
+
+        .intent-btn:hover .intent-btn__arrow {
+          opacity: 0.65;
+        }
+
+        .contact-email-line {
+          font-size: 0.8125rem;
+          color: var(--color-muted);
+          line-height: 1.6;
+        }
+
+        .contact-email-link {
+          color: var(--color-signature);
+          border-bottom: 1px solid currentColor;
+          transition: opacity 150ms ease;
+        }
+
+        .contact-email-link:hover {
+          opacity: 0.7;
+        }
+
+        /* ── Form card ── */
+        .contact-right {
+          /* no sticky — form scrolls naturally */
+        }
+
+        .contact-form {
           background: var(--color-surface);
-          padding: var(--space-3);
+          border: 1px solid var(--color-divider);
+          border-radius: 1.5rem;
+          padding: clamp(1.75rem, 3vw, 2.5rem);
         }
 
-        .contact__honeypot {
-          display: none !important;
+        .contact-form__header {
+          padding-bottom: 1.25rem;
+          border-bottom: 1px solid var(--color-divider);
+          margin-bottom: 1.25rem;
         }
 
-        .contact__form .form-field {
-          gap: 6px;
+        .contact-form__title {
+          font-size: clamp(1.25rem, 2vw, 1.625rem);
+          font-weight: var(--weight-semibold);
+          color: var(--color-ink-primary);
+          letter-spacing: -0.02em;
+          margin-bottom: 0.375rem;
         }
 
-        .contact__form input,
-        .contact__form select {
-          min-height: 44px;
-          padding: 10px var(--space-2);
+        .contact-form__subtitle {
+          font-size: 0.875rem;
+          color: var(--color-muted);
+          line-height: 1.55;
         }
 
-        .contact__form textarea {
-          min-height: 136px;
+        /* Field grid system */
+        .contact-form__fields {
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
         }
 
-        .contact__textarea {
-          margin-top: 0;
+        .cf-row {
+          display: grid;
+          gap: 0.75rem;
         }
 
-        .contact__error {
+        .cf-row--2 {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        /* Form field overrides within form card */
+        .contact-form .form-field label {
+          font-size: 0.725rem;
+          letter-spacing: 0.08em;
+          font-weight: 600;
+          color: var(--color-ink-secondary);
+        }
+
+        .contact-form .form-field input,
+        .contact-form .form-field select,
+        .contact-form .form-field textarea {
+          min-height: 3.1rem;
+          padding: 0.75rem 1rem;
+          border-radius: 10px;
+          font-size: 1rem;
+          background: var(--color-canvas);
+          border-color: var(--color-divider);
+          color: var(--color-ink-primary);
+        }
+
+        .contact-form .form-field textarea {
+          min-height: 9.5rem;
+          resize: vertical;
+        }
+
+        .contact-form .form-field input::placeholder,
+        .contact-form .form-field textarea::placeholder {
+          color: var(--color-muted);
+          opacity: 0.7;
+        }
+
+        .cf-optional {
+          font-weight: 400;
+          color: var(--color-muted);
+          font-size: 0.7rem;
+          text-transform: none;
+          letter-spacing: 0;
+          margin-left: 0.25rem;
+        }
+
+        .contact-form__error {
           font-size: var(--text-meta);
           color: #c0392b;
           line-height: 1.5;
-          padding: var(--space-1) 0;
+          margin-top: 0.25rem;
         }
 
-        .contact__submit {
+        :root[data-theme='dark'] .contact-form__error {
+          color: #e97878;
+        }
+
+        .contact-form__submit {
           width: 100%;
-          min-height: 52px;
+          min-height: 3.25rem;
+          margin-top: 0.5rem;
           border: 0;
           border-radius: var(--radius-pill);
           background: var(--color-ink);
           color: var(--color-canvas);
           cursor: pointer;
           font: inherit;
+          font-size: 0.9375rem;
           font-weight: var(--weight-medium);
-          transition: transform var(--duration-fast) var(--ease-out), opacity var(--duration-fast) var(--ease-out);
+          transition: transform var(--duration-fast) var(--ease-out),
+                      opacity var(--duration-fast) var(--ease-out);
         }
 
-        .contact__submit:hover:not(:disabled) {
+        .contact-form__submit:hover:not(:disabled) {
           transform: translateY(-1px);
           opacity: 0.9;
         }
 
-        .contact__submit:disabled {
+        .contact-form__submit:disabled {
           opacity: 0.55;
           cursor: not-allowed;
         }
 
-        /* Success state */
-        .contact__success {
-          border: 1px solid var(--color-divider);
-          border-radius: var(--radius-section);
+        /* ── Success state ── */
+        .contact-success {
           background: var(--color-surface);
-          padding: var(--space-8) var(--space-lg);
+          border: 1px solid var(--color-divider);
+          border-radius: 1.5rem;
+          padding: clamp(2rem, 4vw, 3rem) clamp(1.75rem, 3vw, 2.5rem);
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           gap: var(--space-md);
         }
 
-        .contact__success-check {
+        .contact-success__check {
           color: var(--color-signature);
-          display: flex;
-          align-items: center;
-          margin-bottom: var(--space-1);
         }
 
-        .contact__success-title {
-          font-size: clamp(1.5rem, 3vw, 2.25rem);
+        .contact-success__title {
+          font-size: clamp(1.5rem, 3vw, 2rem);
           font-weight: var(--weight-medium);
           color: var(--color-ink-primary);
           letter-spacing: -0.02em;
         }
 
-        .contact__success-body {
+        .contact-success__body {
           font-size: var(--text-body);
           color: var(--color-ink-secondary);
           line-height: 1.65;
-          max-width: 40ch;
+          max-width: 38ch;
         }
 
-        .contact__success-divider {
+        .contact-success__divider {
           width: 100%;
           height: 1px;
           background: var(--color-divider);
           margin: var(--space-1) 0;
         }
 
-        .contact__success-sub {
+        .contact-success__sub {
           font-size: var(--text-meta);
           color: var(--color-muted);
           line-height: 1.6;
         }
 
-        .contact__success-link {
+        .contact-success__link {
           color: var(--color-signature);
           border-bottom: 1px solid currentColor;
           transition: opacity 150ms ease;
         }
 
-        .contact__success-link:hover {
+        .contact-success__link:hover {
           opacity: 0.7;
         }
 
-        .contact__success-reset {
+        .contact-success__reset {
           background: none;
           border: none;
           padding: 0;
@@ -313,14 +660,25 @@ export default function ContactPage() {
           transition: opacity 150ms ease;
         }
 
-        .contact__success-reset:hover {
+        .contact-success__reset:hover {
           opacity: 0.65;
         }
 
-        @media (max-width: 860px) {
-          .contact__layout {
+        /* ── Responsive ── */
+        @media (max-width: 960px) {
+          .contact-layout {
             grid-template-columns: 1fr;
-            gap: var(--space-6);
+            gap: var(--space-lg);
+          }
+
+          .contact-left {
+            position: static;
+          }
+        }
+
+        @media (max-width: 560px) {
+          .cf-row--2 {
+            grid-template-columns: 1fr;
           }
         }
       `}} />

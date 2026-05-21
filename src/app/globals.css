@@ -49,6 +49,8 @@
   --container-padding: clamp(1.25rem, 5vw, 5rem);
   --container-max: 1440px;
   --section-gap: clamp(4rem, 7.5vw, 7rem);
+  --inner-hero-bottom: clamp(2rem, 4vw, 3.5rem);
+  --section-top: clamp(3rem, 4.5vw, 4.5rem);
   --nav-height: 80px;
 
   --radius-pill: 999px;
@@ -439,6 +441,8 @@ section[id] {
   :root {
     --container-padding: 1.25rem;
     --section-gap: clamp(2.5rem, 8vw, 4rem);
+    --inner-hero-bottom: 2rem;
+    --section-top: 2.5rem;
     --radius-section: 18px;
   }
 
