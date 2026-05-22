@@ -45,22 +45,13 @@ export default function Navigation() {
       <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`} role="navigation" aria-label="Main navigation">
         <div className="nav__inner">
           <Link href="/" className="nav__brand" onClick={closeMenu}>
-            <span className="nav__logo-badge" aria-hidden="true">
-              <img
-                src="/images/powerscale-logo-transparent.png"
-                alt=""
-                className="nav__logo nav__logo--light"
-                width={80}
-                height={50}
-              />
-              <img
-                src="/images/powerscale-logo-on-dark.png"
-                alt=""
-                className="nav__logo nav__logo--dark"
-                width={80}
-                height={50}
-              />
-            </span>
+            <img
+              src="/images/powerscale-favicon.png"
+              alt="Powerscale"
+              className="nav__favicon"
+              width={38}
+              height={38}
+            />
             <span className="nav__brand-text">Powerscale Ventures</span>
           </Link>
 
@@ -139,41 +130,35 @@ export default function Navigation() {
       </div>
 
       <style dangerouslySetInnerHTML={{__html: `
-        .nav__logo-badge {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
+        .nav__favicon {
+          display: block;
+          width: clamp(30px, 2.5vw, 36px);
+          height: auto;
+          object-fit: contain;
           flex-shrink: 0;
         }
 
-        .nav__logo {
-          display: block;
-          height: 36px;
-          width: auto;
-        }
-
-        .nav__logo--dark {
-          display: none;
-        }
-
-        :root[data-theme='dark'] .nav__logo--light {
-          display: none;
-        }
-
-        :root[data-theme='dark'] .nav__logo--dark {
-          display: block;
+        :root[data-theme='dark'] .nav__favicon {
+          filter: brightness(0) invert(1);
+          opacity: 0.9;
         }
 
         .nav__brand-text {
-          font-size: 1.75rem;
+          font-size: clamp(0.9375rem, 1.5vw, 1.375rem);
           font-weight: 800;
           letter-spacing: -0.03em;
           color: var(--color-ink);
           white-space: nowrap;
         }
 
-        .nav__brand:hover .nav__logo-badge {
-          opacity: 0.85;
+        @media (max-width: 400px) {
+          .nav__brand-text {
+            display: none;
+          }
+        }
+
+        .nav__brand:hover .nav__favicon {
+          opacity: 0.75;
         }
 
         /* Mobile controls — hidden by default */

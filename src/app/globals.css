@@ -444,6 +444,8 @@ section[id] {
     --inner-hero-bottom: 2rem;
     --section-top: 2.5rem;
     --radius-section: 18px;
+    --text-hero: clamp(2.25rem, 11vw, 4rem);
+    --text-h2: clamp(1.75rem, 7vw, 3rem);
   }
 
   .section-card {
@@ -462,5 +464,17 @@ section[id] {
 
   .nav__cta {
     padding: 0 var(--space-2);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ── Small mobile (≤ 480px) ── */
+@media (max-width: 480px) {
+  :root {
+    --text-hero: clamp(2rem, 10vw, 3rem);
   }
 }

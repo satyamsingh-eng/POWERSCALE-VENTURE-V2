@@ -44,7 +44,7 @@ const ADVISORS = [
     linkedin: "https://www.linkedin.com/in/parthapemmaraju/",
     linkedinLabel: "LinkedIn ↗",
     slug: "partha-pemmaraju",
-    imageSrc: "/images/partha.png",
+    imageSrc: "/images/team/partha-pemmaraju.png",
   },
   {
     name: "Satya Das",
@@ -486,26 +486,41 @@ export default function AboutPage() {
             display: none;
           }
           .team-full__image-wrap {
-            position: static;
-            max-width: 300px;
-          }
-        }
-
-        @media (max-width: 600px) {
-          .team-full__image-wrap {
-            max-width: 200px;
+            position: relative;
+            top: auto;
+            width: 100%;
+            max-width: 100%;
+            aspect-ratio: auto;
+            height: 300px;
+            max-height: 300px;
           }
           .advisors__card {
             grid-template-columns: 1fr;
             gap: var(--space-md);
           }
           .advisors__image-wrap {
-            position: static;
-            max-width: 140px;
+            position: relative;
+            top: auto;
+            width: 100%;
+            max-width: 100%;
+            aspect-ratio: auto;
+            height: 220px;
+            max-height: 220px;
           }
           .beliefs__item {
             grid-template-columns: 2.5rem 1fr;
             gap: var(--space-2);
+          }
+        }
+
+        @media (max-width: 480px) {
+          .team-full__image-wrap {
+            height: 260px;
+            max-height: 260px;
+          }
+          .advisors__image-wrap {
+            height: 190px;
+            max-height: 190px;
           }
         }
 

@@ -265,7 +265,7 @@ export default function OperatorProof() {
 
           @media (max-width: 860px) {
             .team__card {
-              grid-template-columns: minmax(160px, 220px) 1fr;
+              grid-template-columns: minmax(160px, 200px) 1fr;
               gap: var(--space-lg);
             }
           }
@@ -279,19 +279,28 @@ export default function OperatorProof() {
             .team__cta-link {
               margin-top: var(--space-md);
             }
-          }
-
-          @media (max-width: 640px) {
             .team__card {
               grid-template-columns: 1fr;
               gap: var(--space-md);
             }
             .team__image-wrap {
-              position: static;
-              max-width: 240px;
+              position: relative;
+              top: auto;
+              width: 100%;
+              max-width: 100%;
+              aspect-ratio: auto;
+              height: 300px;
+              max-height: 300px;
             }
             .team__card::after {
               display: none;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .team__image-wrap {
+              height: 260px;
+              max-height: 260px;
             }
           }
 

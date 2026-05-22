@@ -195,7 +195,17 @@ export default function SanjayTolaniPage() {
         .profile-external-link:hover { opacity: 0.65; }
         @media (max-width: 860px) {
           .profile-header { grid-template-columns: 1fr; gap: var(--space-lg); }
-          .profile-image-wrap { position: static; max-width: 220px; }
+          .profile-image-wrap {
+            position: relative;
+            top: auto;
+            width: 100%;
+            max-width: 100%;
+            aspect-ratio: auto;
+            height: 340px;
+            max-height: 340px;
+            overflow: hidden;
+            border-radius: 16px;
+          }
         }
       `}} />
     </>

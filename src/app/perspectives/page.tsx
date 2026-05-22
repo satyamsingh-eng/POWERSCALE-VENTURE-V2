@@ -6,14 +6,9 @@ import Footer from '@/components/Footer';
 
 const ARTICLES = [
   {
-    category: 'Consumer Products',
-    title: 'The channel motion that breaks when the founder steps back',
-    body: 'Revenue can grow while channel quality decays. Two things keep founder-led pull looking healthy while managed distribution is already failing, and neither shows up in the top-line until the company is already committed to the wrong motion.',
-  },
-  {
-    category: 'Energy Transition',
-    title: 'When the regulatory sequence is the risk, not the technology',
-    body: 'Most energy transition companies fail on financing sequence, not on project economics. The order in which capital commitments close determines what can be built and what stays permanently exposed. Getting the sequence wrong is rarely recoverable.',
+    category: 'AI Applications and Infrastructure',
+    title: 'Why AI demos fail to become retained workflows',
+    body: 'A demo proves possibility. Retention proves operating value. The gap between the two is where most AI companies become legible, and where the business model either holds or reveals itself as novelty-dependent.',
   },
   {
     category: 'Scaling',
@@ -21,9 +16,14 @@ const ARTICLES = [
     body: 'The transition from a ten-person team to thirty is the one that breaks the operating model. What changes is not headcount. It is decision rights, inspection cadence, and the founder\'s relationship to information they used to be close to.',
   },
   {
-    category: 'AI Applications and Infrastructure',
-    title: 'Why AI demos fail to become retained workflows',
-    body: 'A demo proves possibility. Retention proves operating value. The gap between the two is where most AI companies become legible, and where the business model either holds or reveals itself as novelty-dependent.',
+    category: 'Energy Transition',
+    title: 'When the regulatory sequence is the risk, not the technology',
+    body: 'Most energy transition companies fail on financing sequence, not on project economics. The order in which capital commitments close determines what can be built and what stays permanently exposed. Getting the sequence wrong is rarely recoverable.',
+  },
+  {
+    category: 'Consumer Products',
+    title: 'The channel motion that breaks when the founder steps back',
+    body: 'Revenue can grow while channel quality decays. Two things keep founder-led pull looking healthy while managed distribution is already failing, and neither shows up in the top-line until the company is already committed to the wrong motion.',
   },
 ];
 
@@ -38,11 +38,9 @@ export default function PerspectivesPage() {
               <h1 className="persp-hero__title reveal reveal-delay-1">
                 Operator judgment, written without theatre.
               </h1>
-              <div className="persp-hero__desc-card reveal reveal-delay-2">
-                <p className="persp-hero__desc">
-                  Diagnostic notes on the problems founders face when a company has found its market and is now confronting the harder question of how to scale it. No announcement copy. No category slogans.
-                </p>
-              </div>
+              <p className="persp-hero__copy reveal reveal-delay-2">
+                Notes on the operating questions founders face after the first market is real. No announcement copy. No category slogans.
+              </p>
             </div>
           </div>
         </section>
@@ -52,15 +50,15 @@ export default function PerspectivesPage() {
         <section className="persp-articles">
           <div className="container">
             {ARTICLES.map((article, i) => (
-              <article key={i} className={`persp-article reveal reveal-delay-${i % 3 + 1}`}>
-                <div className="persp-article__left">
-                  <span className="persp-article__num">0{i + 1}</span>
-                  <span className="persp-article__category">{article.category}</span>
+              <article key={i} className={`persp-row reveal reveal-delay-${i % 3 + 1}`}>
+                <div className="persp-row__meta">
+                  <span className="persp-row__num">0{i + 1}</span>
+                  <span className="persp-row__category">{article.category}</span>
                 </div>
-                <div className="persp-article__right">
-                  <h2 className="persp-article__title">{article.title}</h2>
-                  <p className="persp-article__body">{article.body}</p>
-                  <a href="/contact" className="persp-article__cta">Talk to us about this →</a>
+                <div className="persp-row__body">
+                  <h2 className="persp-row__title">{article.title}</h2>
+                  <p className="persp-row__desc">{article.body}</p>
+                  <a href="/contact" className="persp-row__cta">Read note →</a>
                 </div>
               </article>
             ))}
@@ -74,7 +72,7 @@ export default function PerspectivesPage() {
         /* ── Hero ── */
         .persp-hero {
           padding-top: clamp(7rem, 10vw, 9rem);
-          padding-bottom: var(--inner-hero-bottom);
+          padding-bottom: clamp(4rem, 7vw, 6rem);
         }
 
         .persp-hero .section-label {
@@ -83,9 +81,9 @@ export default function PerspectivesPage() {
 
         .persp-hero__grid {
           display: grid;
-          grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.72fr);
-          gap: clamp(2rem, 5vw, 6rem);
-          align-items: start;
+          grid-template-columns: minmax(0, 1fr) minmax(320px, 0.65fr);
+          gap: clamp(3rem, 7vw, 8rem);
+          align-items: end;
         }
 
         .persp-hero__title {
@@ -97,49 +95,40 @@ export default function PerspectivesPage() {
           max-width: 14ch;
         }
 
-        .persp-hero__desc-card {
-          background: var(--color-surface);
-          border: 1px solid var(--color-divider);
-          border-radius: 20px;
-          padding: clamp(1.75rem, 3vw, 2.5rem);
-          transition: background var(--duration-fast) var(--ease-out),
-                      border-color var(--duration-fast) var(--ease-out);
-        }
-
-        .persp-hero__desc {
-          font-size: clamp(1rem, 1.3vw, 1.125rem);
-          line-height: 1.78;
+        .persp-hero__copy {
+          max-width: 52ch;
+          font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+          line-height: 1.7;
           color: var(--color-ink-secondary);
         }
 
-        /* ── Articles ── */
+        /* ── Article rows ── */
         .persp-articles {
           padding-bottom: var(--section-gap);
         }
 
-        .persp-article {
+        .persp-row {
           display: grid;
-          grid-template-columns: clamp(120px, 14%, 200px) 1fr;
-          gap: clamp(2rem, 5vw, 5rem);
-          align-items: start;
-          padding: clamp(2.5rem, 5vw, 4rem) 0;
+          grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
+          gap: clamp(2rem, 6vw, 7rem);
+          padding: clamp(2.75rem, 5vw, 4.5rem) 0;
           border-top: 1px solid var(--color-divider);
         }
 
-        .persp-article:last-child {
+        .persp-row:last-child {
           border-bottom: 1px solid var(--color-divider);
         }
 
-        .persp-article__left {
+        .persp-row__meta {
           display: flex;
           flex-direction: column;
           gap: var(--space-2);
-          padding-top: 0.25em;
+          padding-top: 0.35em;
           position: sticky;
           top: calc(var(--nav-height) + var(--space-4));
         }
 
-        .persp-article__num {
+        .persp-row__num {
           display: block;
           font-size: var(--text-meta);
           color: var(--color-signature);
@@ -147,55 +136,54 @@ export default function PerspectivesPage() {
           letter-spacing: 0.08em;
         }
 
-        .persp-article__category {
+        .persp-row__category {
           display: block;
           font-size: var(--text-meta);
           color: var(--color-muted);
           text-transform: uppercase;
-          letter-spacing: 0.08em;
+          letter-spacing: 0.07em;
           font-weight: var(--weight-medium);
+          line-height: 1.45;
         }
 
-        .persp-article__right {
+        .persp-row__body {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
         }
 
-        .persp-article__title {
-          font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+        .persp-row__title {
+          font-size: clamp(1.75rem, 3vw, 2.75rem);
           font-weight: var(--weight-semibold);
           color: var(--color-ink-primary);
-          line-height: 1.15;
-          letter-spacing: -0.025em;
-          max-width: 28ch;
+          line-height: 1.08;
+          letter-spacing: -0.035em;
+          max-width: 24ch;
+          text-wrap: balance;
           margin-bottom: var(--space-md);
         }
 
-        .persp-article__body {
-          font-size: var(--text-body);
+        .persp-row__desc {
+          font-size: clamp(1rem, 1.2vw, 1.125rem);
           color: var(--color-ink-secondary);
           line-height: 1.72;
           max-width: 62ch;
           margin-bottom: var(--space-lg);
         }
 
-        .persp-article__cta {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.375rem;
+        .persp-row__cta {
           font-size: var(--text-meta);
-          font-weight: 700;
-          color: var(--color-signature);
-          text-transform: uppercase;
-          letter-spacing: 0.08em;
-          transition: opacity 150ms ease;
-          border-bottom: 1px solid currentColor;
-          padding-bottom: 0.125rem;
+          font-weight: var(--weight-medium);
+          color: var(--color-ink-secondary);
+          letter-spacing: 0.01em;
+          transition: color 150ms ease;
+          border-bottom: 1px solid var(--color-divider);
+          padding-bottom: 0.15rem;
         }
 
-        .persp-article__cta:hover {
-          opacity: 0.65;
+        .persp-row__cta:hover {
+          color: var(--color-signature);
+          border-color: var(--color-signature);
         }
 
         /* ── Responsive ── */
@@ -207,25 +195,25 @@ export default function PerspectivesPage() {
           .persp-hero__title {
             max-width: none;
           }
-          .persp-hero__desc-card {
-            padding: var(--space-md);
-          }
         }
 
         @media (max-width: 760px) {
-          .persp-article {
+          .persp-row {
             grid-template-columns: 1fr;
-            gap: var(--space-md);
+            gap: 1rem;
           }
-          .persp-article__left {
+          .persp-row__meta {
             position: static;
             flex-direction: row;
             align-items: center;
             gap: var(--space-2);
           }
-          .persp-article__left::after {
+          .persp-row__meta::after {
             content: '·';
-            color: var(--color-divider);
+            color: var(--color-muted);
+          }
+          .persp-row__title {
+            font-size: clamp(1.5rem, 6vw, 2rem);
           }
         }
       `}} />

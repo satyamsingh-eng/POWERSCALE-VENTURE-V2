@@ -16,7 +16,7 @@ export default function ParthaPemmarajuPage() {
           <div className="profile-header">
             <div className="profile-image-wrap">
               <TiltedCard
-                imageSrc="/images/partha.png"
+                imageSrc="/images/team/partha-pemmaraju.png"
                 altText="Partha Pemmaraju"
                 rotateAmplitude={6}
                 scaleOnHover={1.04}

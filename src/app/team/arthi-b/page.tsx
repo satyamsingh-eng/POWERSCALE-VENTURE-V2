@@ -217,8 +217,15 @@ export default function ArthiBPage() {
             gap: var(--space-lg);
           }
           .profile-image-wrap {
-            position: static;
-            max-width: 220px;
+            position: relative;
+            top: auto;
+            width: 100%;
+            max-width: 100%;
+            aspect-ratio: auto;
+            height: 340px;
+            max-height: 340px;
+            overflow: hidden;
+            border-radius: 16px;
           }
         }
       `}} />

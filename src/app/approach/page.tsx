@@ -283,7 +283,8 @@ export default function ApproachPage() {
         .approach-subnav {
           display: flex;
           align-items: center;
-          gap: clamp(var(--space-lg), 4vw, var(--space-2xl));
+          flex-wrap: wrap;
+          gap: clamp(var(--space-sm), 4vw, var(--space-2xl));
           padding-top: var(--space-md);
           border-top: 1px solid var(--color-divider);
         }
