@@ -165,9 +165,9 @@ export default function Navigation() {
         }
 
         .nav__brand-text {
-          font-size: 1.0625rem;
-          font-weight: var(--weight-semibold);
-          letter-spacing: -0.02em;
+          font-size: 1.75rem;
+          font-weight: 800;
+          letter-spacing: -0.03em;
           color: var(--color-ink);
           white-space: nowrap;
         }

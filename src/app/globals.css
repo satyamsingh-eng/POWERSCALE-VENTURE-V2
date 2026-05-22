@@ -221,7 +221,7 @@ section[id] {
   padding: 0 var(--space-2);
   border-radius: var(--radius-pill);
   color: color-mix(in srgb, var(--color-ink) 62%, transparent);
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   font-weight: var(--weight-medium);
   white-space: nowrap;
   transition: color var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out);
