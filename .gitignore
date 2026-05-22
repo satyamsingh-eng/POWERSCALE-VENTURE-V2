@@ -58,12 +58,12 @@ REALISM-AUDIT.md
 # AI session state
 /.claude/
 
-# unused logo variants (only powerscale-logo-transparent.png is used in production)
+# unused logo variants
 /public/images/powerscale-logo-black.png
 /public/images/powerscale-logo-white.png
 /public/images/powerscale-logo.png
-/public/images/powerscale-logo-on-dark.png
-/public/images/powerscale-favicon.png
+# powerscale-logo-on-dark.png is tracked — required for dark mode nav and footer
+# powerscale-favicon.png is tracked — required as site favicon
 
 # large unused public assets removed from tracking
 /public/hero-bg.png
