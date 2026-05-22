@@ -7,18 +7,18 @@ import Footer from '@/components/Footer';
 const STAGES = [
   {
     num: "01",
-    title: "Early Stage Investment",
-    detail: "We look for a working market and a founder who understands that the next phase is not more of the same. The thing that got the company here will not carry it to the next order of magnitude without deliberate change. The founders who know this are the ones we want to back."
+    title: "How we evaluate",
+    detail: "After our initial understanding calls with founders, we get back within a week if there is further interest around DD and next steps. We respect founders and their time while they are in the middle of building."
   },
   {
     num: "02",
     title: "Diligence",
-    detail: "Our diligence starts with operations, not financials. We go deep on hiring velocity, channel economics, unit-level margins, working capital cycles, and management bandwidth before we price the round. The constraints that break companies at scale are almost always visible before they break, if you know what to look for."
+    detail: "We go deeper on the company, product, market, team, capital needs, and the real constraints around scale. The goal is not to slow founders down. The goal is to understand where we can be useful."
   },
   {
     num: "03",
     title: "Post-investment",
-    detail: "When we invest, we get to work. Hiring diagnostic, GTM review, working capital support, market access, customer introductions, financial structuring. Practical help from people who have navigated the same situations. We are explicit about which partner leads and what we are specifically responsible for."
+    detail: "After we invest, we work alongside founders on hiring, GTM, market access, customer introductions, financial structuring, and working capital support. Practical help from people who have navigated the same situations."
   },
   {
     num: "04",
@@ -35,18 +35,18 @@ const SUPPORT_MATRIX = [
   },
   {
     name: "Deep Tech",
-    challenge: "Technical founders are moving between product depth, field validation, commercial sales, and new institutional rounds. The structural bottleneck is usually sales repeatability without the founder in the room.",
-    support: "GTM architecture, customer access, sales process design, and preparation for the next institutional round.",
+    challenge: "Deep Tech is one of the most hyped spaces alongside AI, but not every founder can navigate this ever-changing and challenging sector. We have worked with a diverse spectrum of founders in this space, from Deep Tech detecting autism to Deep Tech helping understand a B2B sales funnel.",
+    support: "With our experience of working with Deep Tech companies, we are here to back founders who can execute through the intersection of tech, sales, new rounds, and everything in between.",
   },
   {
     name: "Energy Transition",
-    challenge: "Founders are managing projects, policy, manufacturing, and capital structure simultaneously. The sequence that breaks companies is almost always financing, not technology.",
-    support: "Market access, capital structure thinking, project finance navigation, and practical execution support through the build-out phase.",
+    challenge: "Sustainable energy is the new oil. The source of any real progress traces back to energy. At Powerscale Ventures, backing groundbreaking new energy companies is a natural extension of our ethos of creating a positive dent on society.",
+    support: "We are in while founders navigate new projects, government policies, manufacturing hiccups, infrastructure needs, and the capital support required to build for the nation.",
   },
   {
     name: "Consumer Products",
-    challenge: "Founders are scaling brands, channels, supply chains, and repeat purchase behaviour at the same time. Channel quality degrades quietly before the top-line shows it.",
-    support: "Distribution diagnostics, channel economics, founder GTM support, and capital structure for the next growth phase.",
+    challenge: "We consume every day. Consumer products sit at the core of how humans live, spend, trust, and evolve. The brands people interact with change over time, and the products at the core of that change need support to scale to larger audiences with stronger supply chain diligence.",
+    support: "Scaling a consumer product company is tough. We are here with network access, channels, and capital while founders figure out supply chain, product stickiness, and the numbers behind growth.",
   },
 ];
 
@@ -150,7 +150,7 @@ const SUPPORT_AREAS = [
   {
     area: "Market and Founder Support",
     items: [
-      "Market Access",
+      "Market Access across India, UAE, USA, EU",
       "GTM Partnerships",
       "Fundraising Support",
       "Founder-Focused Investment Team"
@@ -167,15 +167,14 @@ export default function ApproachPage() {
           <div className="container">
             <div className="section-label reveal">Investment Approach</div>
             <h1 className="approach-hero__title reveal reveal-delay-1">
-              We make the scaling work explicit.
+              We make the scaling work explicit
             </h1>
             <p className="approach-hero__desc reveal reveal-delay-2">
-              Every aspect of our engagement is structured around the operating challenge, not the product narrative.
-              We bring experience from running companies and working with founders through hard scaling moments. We commit to specific work, at specific stages, with specific partners responsible.
+              We look at the product, the market, and the operating work required to scale. The question is simple: where can Powerscale be useful after the first signs of market pull?
             </p>
             <nav className="approach-subnav reveal reveal-delay-3" aria-label="Page sections">
-              <a href="#how-we-work" className="approach-subnav__link">How We Work</a>
-              <a href="#what-we-evaluate" className="approach-subnav__link">What We Evaluate</a>
+              <a href="#how-we-work" className="approach-subnav__link">How we work</a>
+              <a href="#what-we-evaluate" className="approach-subnav__link">Where we help</a>
             </nav>
           </div>
         </section>

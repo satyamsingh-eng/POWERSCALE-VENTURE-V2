@@ -6,27 +6,27 @@ import RevealWrapper from './RevealWrapper';
 const SECTORS = [
   {
     name: "AI Applications and Infrastructure",
-    body: (<>We back ambitious founders building the next generation of autonomous systems, adaptive intelligence, and <strong className="text-highlight">foundational AI infrastructure</strong> designed for long-term impact and scale.</>),
-    imageSrc: "/images/sectors/ai-infrastructure.png",
+    body: (<>AI is still a new land for founders, customers, and investors. We back founders building <strong className="text-highlight">AI applications, agents, self-learning systems, and infrastructure</strong> that customers keep using beyond the first demo.</>),
+    imageSrc: "/images/ai-applications-infrastructure.png",
     imageAlt: "AI applications and infrastructure visual",
   },
   {
     name: "Deep Tech",
-    body: (<><strong className="text-highlight">Technical depth</strong> creates a real moat. But navigating it alongside sales repeatability and institutional capital is the harder problem. We back founders who can hold all three without letting any one of them slip.</>),
-    imageSrc: "/images/sectors/deeptech.png",
-    imageAlt: "Deep Tech",
+    body: (<>Deep Tech is hyped, but hard to navigate. We back founders working across <strong className="text-highlight">technical depth, sales, new rounds, and everything in between</strong> — from autism detection to B2B sales intelligence.</>),
+    imageSrc: "/images/deep-tech.png",
+    imageAlt: "Deep Tech visual",
   },
   {
     name: "Energy Transition",
-    body: (<><strong className="text-highlight">Policy, manufacturing, financing, and project execution</strong> move at different speeds. The companies we back understand that coordinating across those variables is the actual job, not just building the technology.</>),
-    imageSrc: "/images/sectors/energy-transition.png",
-    imageAlt: "Energy Transition",
+    body: (<>Sustainable energy is the new oil. We back founders navigating <strong className="text-highlight">new projects, government policies, manufacturing hiccups, infrastructure needs, and the capital support</strong> required to build for the nation.</>),
+    imageSrc: "/images/energy-transition.png",
+    imageAlt: "Energy Transition visual",
   },
   {
     name: "Consumer Products",
-    body: (<>Growth can mask poor channel quality until the company is already committed to the wrong motion. The brands we back have the <strong className="text-highlight">distribution architecture, supply chain thinking, and capital structure</strong> to scale beyond what the founder can personally manage.</>),
-    imageSrc: "/images/sectors/consumer-products.png",
-    imageAlt: "Consumer Products",
+    body: (<>Consumer products sit close to everyday life. We help founders scale to larger audiences with <strong className="text-highlight">network access, channels, capital, supply chain diligence, product stickiness, and the numbers</strong> behind growth.</>),
+    imageSrc: "/images/consumer-products.png",
+    imageAlt: "Consumer Products visual",
   },
 ];
 
@@ -37,7 +37,7 @@ export default function SectorFocus() {
         <div className="container">
           <div className="section-label reveal">Where we invest</div>
           <h2 className="sectors__title reveal reveal-delay-1">
-            Four sectors where execution decides the outcome
+            Four sectors where execution complexity is the moat
           </h2>
 
           <div className="sectors__grid">
@@ -53,7 +53,6 @@ export default function SectorFocus() {
                   />
                 </div>
                 <div className="sectors__card-body">
-                  <span className="sectors__card-index">0{i + 1}</span>
                   <h3 className="sectors__card-name">{sector.name}</h3>
                   <p className="sectors__card-text sectors__card-text--rich">{sector.body}</p>
                 </div>

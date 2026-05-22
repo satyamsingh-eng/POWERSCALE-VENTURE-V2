@@ -34,7 +34,7 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
             <div className="footer__cta reveal">
               <p className="section-label">Contact</p>
               <FadeContent className="footer__headline-wrapper">
-                <h2 className="footer__headline">If you&apos;re building something that fits, write to us.</h2>
+                <h2 className="footer__headline">If you&apos;re building something that fits, write to us</h2>
               </FadeContent>
               <a href="/contact" className="footer__email reveal reveal-delay-2">
                 <ShinyText

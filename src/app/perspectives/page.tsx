@@ -52,7 +52,6 @@ export default function PerspectivesPage() {
             {ARTICLES.map((article, i) => (
               <article key={i} className={`persp-row reveal reveal-delay-${i % 3 + 1}`}>
                 <div className="persp-row__meta">
-                  <span className="persp-row__num">0{i + 1}</span>
                   <span className="persp-row__category">{article.category}</span>
                 </div>
                 <div className="persp-row__body">

@@ -19,7 +19,7 @@ const PARTNERS = [
   {
     name: "Arthi B",
     role: "Partner",
-    bio: "Arthi built and ran businesses in consumer and AI before moving to the investor side. She brings a founder-first operating lens to Powerscale's work across all four focus areas. Her strength is in understanding founders, customers, GTM, brand, distribution, and the messy middle where early traction has to become a scalable company.",
+    bio: "Arthi brings a founder-first lens across customers, GTM, distribution, and the transition from early traction to a growth-phase company. Her work focuses on the point where founder-led motion has to become a repeatable system. She works across all four focus areas.",
     focus: "Founder Operating · GTM · Distribution",
     slug: "arthi-b",
     imageSrc: "/images/arthi-b.png",
@@ -27,9 +27,9 @@ const PARTNERS = [
   },
   {
     name: "Sanjay Tolani",
-    role: "Partner",
-    bio: "Sanjay brings over two decades of cross-border capital and commercial execution experience across the UAE and India. At Powerscale, he helps founders think through capital access, financial structure, market expansion, and the discipline required to scale beyond the first phase of growth.",
-    focus: "Capital Access · Commercial Strategy · Investor Relationships",
+    role: "Partner & Advisor",
+    bio: "Sanjay brings UAE–India commercial and investment experience across capital access, financial structure, investor relationships, market expansion, and portfolio development. He helps founders think through investor readiness, commercial partnerships, and the capital structure required to scale. He works across all four focus areas.",
+    focus: "Capital Access · Financial Structure · Investor Relationships · UAE–India Corridor",
     slug: "sanjay-tolani",
     imageSrc: "/images/sanjay-tolani.png",
     imagePosition: "center top",
@@ -40,7 +40,7 @@ const ADVISORS = [
   {
     name: "Partha Pemmaraju",
     area: "Deep Tech & Global Operations",
-    note: "Operator with over two decades of company-building across deeptech and consumer sectors. Brings operator-to-operator context for portfolio companies navigating the technical-to-commercial transition and global market deployment.",
+    note: "Operator with over two decades of company-building across Deep Tech and consumer sectors. Brings operator-to-operator context for portfolio companies navigating the technical-to-commercial transition and global market deployment.",
     linkedin: "https://www.linkedin.com/in/parthapemmaraju/",
     linkedinLabel: "LinkedIn ↗",
     slug: "partha-pemmaraju",
@@ -54,15 +54,6 @@ const ADVISORS = [
     linkedinLabel: "LinkedIn reference ↗",
     slug: "satya-das",
     imageSrc: "/images/satyabrata-das.png",
-  },
-  {
-    name: "Rajesh Kumar Adla",
-    area: "Founder Ecosystem & Incubation",
-    note: "CEO of AIC T-Hub Hyderabad and Mentor of Change at Atal Innovation Mission (NITI Aayog). Extends Powerscale's visibility into India's early-stage startup pipeline, before companies are in a competitive fundraising process.",
-    linkedin: "https://www.linkedin.com/in/rajeshkumaradla?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-    linkedinLabel: "LinkedIn ↗",
-    slug: "rajesh-kumar-adla",
-    imageSrc: "/images/rajesh-kumar.png",
   },
   {
     name: "Amit Mehta",
@@ -83,10 +74,10 @@ export default function AboutPage() {
           <div className="container">
             <div className="section-label reveal">Team</div>
             <h2 className="team-full__title reveal reveal-delay-1">
-              The operating background is the firm.
+              Different backgrounds. One way of working
             </h2>
             <p className="team-full__intro reveal reveal-delay-2">
-              <strong>We are building</strong> the firm we wished existed when founders are trying to move from early traction to scale. Our team brings a mixed background across company-building, capital access, commercial execution, GTM, and working closely with founders through the hard middle of growth.
+              Arthi and Sanjay bring different strengths across company building, capital access, commercial execution, GTM, and founder support. They work across all four focus areas together.
             </p>
 
             <div className="team-full__profiles">
@@ -116,7 +107,6 @@ export default function AboutPage() {
                     )}
                   </div>
                   <div className="team-full__info">
-                    <span className="team-full__index">0{i + 1}</span>
                     <h3 className="team-full__name">{partner.name}</h3>
                     <span className="team-full__role">{partner.role}</span>
                     <p className="team-full__bio">{partner.bio}</p>
@@ -137,10 +127,10 @@ export default function AboutPage() {
           <div className="container">
             <div className="section-label reveal">Advisory</div>
             <h2 className="advisors__title reveal reveal-delay-1">
-              Ecosystem depth, not decoration.
+              Ecosystem depth, not decoration
             </h2>
             <p className="advisors__intro reveal reveal-delay-2">
-              Our advisors extend the firm's operating access and sector network. They are not decorative. They work with portfolio companies on specific problems: capital introductions, regulatory navigation, market access, and the operating questions that require experience rather than pattern recognition.
+              Our advisors extend the firm's operating access and sector network. They work with portfolio companies on specific problems: capital introductions, regulatory navigation, market access, and the operating questions that require experience rather than pattern recognition.
             </p>
 
             <div className="advisors__grid">
@@ -183,6 +173,10 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
+
+            <p className="advisory-note reveal">
+              More advisors can be introduced to founders and select LPs where relevant
+            </p>
           </div>
         </section>
       </RevealWrapper>
@@ -464,6 +458,16 @@ export default function AboutPage() {
 
         .advisors__profile-link:hover {
           opacity: 0.6;
+        }
+
+        .advisory-note {
+          margin-top: clamp(1.5rem, 2vw, 2.5rem);
+          padding-top: clamp(1rem, 1.5vw, 1.5rem);
+          border-top: 1px solid var(--color-divider);
+          color: var(--color-ink-secondary);
+          font-size: clamp(1rem, 1.05vw, 1.15rem);
+          line-height: 1.5;
+          max-width: 56ch;
         }
 
         @media (max-width: 900px) {

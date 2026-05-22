@@ -34,14 +34,14 @@ export default function Hero() {
       <div className="container hero__container">
         <div className="hero__content">
           <h1 className="hero__headline">
-            We invest where execution decides the outcome.
+            We invest where execution decides the outcome
           </h1>
           <p className="hero__subhead">
-            We back ambitious founders building the next generation of companies in AI Applications and Infrastructure, Deep Tech, Energy Transition, and Consumer Products, at the stage where operating judgment matters more than capital.
+            For founders who have found their market and are now confronting the harder problem: hiring, customers, capital, supply chain, policy, and the discipline to scale without losing what made the company work.
           </p>
           <div className="hero__actions">
-            <a href="/approach" className="hero__link">How we invest</a>
             <a href="/contact" className="hero__cta">Talk to us</a>
+            <a href="/approach" className="hero__link">How we evaluate</a>
           </div>
         </div>
       </div>
@@ -147,10 +147,21 @@ export default function Hero() {
           color: rgba(245, 245, 244, 0.92);
           font-size: clamp(1.0625rem, 1.7vw, 1.25rem);
           line-height: 1.7;
-          margin-bottom: var(--space-6);
+          margin-bottom: var(--space-3);
           text-shadow: 0 1px 16px rgba(0, 0, 0, 0.5);
           animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) both;
           animation-delay: 260ms;
+        }
+
+        .hero__sectors {
+          max-width: 560px;
+          color: rgba(245, 245, 244, 0.6);
+          font-size: clamp(0.875rem, 1.3vw, 1rem);
+          line-height: 1.6;
+          margin-bottom: var(--space-6);
+          text-shadow: 0 1px 16px rgba(0, 0, 0, 0.5);
+          animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+          animation-delay: 380ms;
         }
 
         .hero__actions {
@@ -231,6 +242,7 @@ export default function Hero() {
           }
           .hero__headline,
           .hero__subhead,
+          .hero__sectors,
           .hero__actions {
             animation: none;
             opacity: 1;

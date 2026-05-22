@@ -10,7 +10,7 @@ const PARTNERS = [
   {
     name: "Arthi B",
     role: "Partner",
-    bio: "Arthi built and ran businesses in consumer and AI before moving to the investor side. She brings a founder-first operating lens to Powerscale's work across all four focus areas. Her strength is in understanding founders, customers, GTM, brand, distribution, and the messy middle where early traction has to become a scalable company.",
+    bio: "Arthi brings a founder-first lens across customers, GTM, distribution, and the transition from early traction to a growth-phase company. She works across all four focus areas.",
     focus: "Founder Operating · GTM · Distribution",
     slug: "arthi-b",
     imageSrc: "/images/arthi-b.png",
@@ -19,8 +19,8 @@ const PARTNERS = [
   {
     name: "Sanjay Tolani",
     role: "Partner",
-    bio: "Sanjay brings over two decades of cross-border capital and commercial execution experience across the UAE and India. At Powerscale, he helps founders think through capital access, financial structure, market expansion, and the discipline required to scale beyond the first phase of growth.",
-    focus: "Capital Access · Commercial Strategy · Investor Relationships",
+    bio: "Sanjay brings UAE–India commercial and investment experience across capital access, financial structure, investor relationships, market expansion, and portfolio development. He works across all four focus areas.",
+    focus: "Capital Access · Financial Structure · Investor Relationships · UAE–India Corridor",
     slug: "sanjay-tolani",
     imageSrc: "/images/sanjay-tolani.png",
     imagePosition: "center top",
@@ -36,10 +36,10 @@ export default function OperatorProof() {
             <div className="team__header-text">
               <div className="section-label reveal">Team</div>
               <h2 className="team__title reveal reveal-delay-1">
-                The operating background is the firm.
+                Different backgrounds. One way of working
               </h2>
               <p className="team__intro reveal reveal-delay-2">
-                Our partners come from a mixed background of building companies, working with founders, opening capital access, and helping companies scale. Arthi and Sanjay bring different strengths, but they work across all four of Powerscale's focus areas together.
+                Arthi and Sanjay bring different strengths across company-building, capital access, commercial execution, GTM, and founder support. They work across all four focus areas together.
               </p>
             </div>
             <Link href="/about" className="team__cta-link reveal reveal-delay-2">
@@ -74,7 +74,6 @@ export default function OperatorProof() {
                   )}
                 </div>
                 <div className="team__info">
-                  <span className="team__index">0{i + 1}</span>
                   <h3 className="team__name">{partner.name}</h3>
                   <span className="team__role">{partner.role}</span>
                   <p className="team__achievement">{partner.bio}</p>

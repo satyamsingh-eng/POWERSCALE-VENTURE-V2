@@ -29,11 +29,12 @@ export default function SanjayTolaniPage() {
               <h1 className="profile-name">Sanjay Tolani</h1>
               <div className="profile-focus-tags">
                 <span className="profile-focus-tag">Capital Access</span>
-                <span className="profile-focus-tag">Commercial Strategy</span>
-                <span className="profile-focus-tag">Cross-Border Finance</span>
+                <span className="profile-focus-tag">Financial Structure</span>
+                <span className="profile-focus-tag">Investor Relationships</span>
+                <span className="profile-focus-tag">UAE–India Corridor</span>
               </div>
               <p className="profile-summary">
-                Sanjay brings over two decades of cross-border capital and commercial execution experience across the UAE and India. At Powerscale, he helps founders think through capital access, financial structure, market expansion, and the discipline required to scale beyond the first phase of growth.
+                Sanjay brings over two decades of cross-border commercial and investment experience across the UAE and India. His work spans real-estate strategy, structured capital, investor engagement, market expansion, and portfolio development. At Powerscale, he supports founders on capital access, financial structure, commercial partnerships, and the discipline required to scale beyond the first phase of growth. He works across all four focus areas.
               </p>
             </div>
           </div>
@@ -44,10 +45,10 @@ export default function SanjayTolaniPage() {
             <div className="profile-bio">
               <span className="profile-section-label">Background</span>
               <p>
-                Sanjay Tolani has built his career across UAE and India capital corridors over more than two decades. He is currently Chief Commercial Officer at BCD Global, and has previously served as Director, Real Estate Investments at the Private Office of HH Sheikh Ahmed bin Faisal Al Qassimi.
+                Sanjay Tolani has built his career across UAE and India capital corridors over more than two decades. He is an entrepreneur at heart and has successfully run an HRtech company. He is also Chief Commercial Officer at BCD Global, and has previously served as Director, Real Estate Investments at the Private Office of HH Sheikh Ahmed bin Faisal Al Qassimi.
               </p>
               <p>
-                His work spans real estate investments, structured capital, portfolio development, investor engagement, commercial systems, and market expansion. He has worked extensively with UHNW, family office, and institutional capital relationships across borders, giving him direct access to the kind of investor networks that are relevant when founders need to think beyond early-stage VC.
+                His work spans real-estate investments, structured capital, portfolio development, investor engagement, commercial systems, and market expansion. He has worked extensively with UHNW, family office, and institutional capital relationships across borders, giving him access to investor networks that are relevant when founders need to think beyond early-stage VC.
               </p>
               <p>
                 At Powerscale, Sanjay works across all four of the firm's focus areas. His contribution is most direct when a company has moved past early traction and needs the discipline, relationships, and capital structure to scale. He helps founders think through investor readiness, financial structuring, market expansion, and the commercial systems that turn growth into something that holds.
@@ -57,17 +58,26 @@ export default function SanjayTolaniPage() {
             <div className="profile-relevance">
               <span className="profile-section-label">Operating relevance</span>
               <p>
-                Capital access is not just a function of investor interest. It requires the right relationships at the right stage, structured appropriately for each company's risk profile and growth plan. Sanjay's presence in the Powerscale network gives portfolio companies access to UAE and Gulf capital relationships that would otherwise take years to build independently.
+                Capital access is not just a function of investor interest. It requires the right relationships at the right stage, structured appropriately for each company's risk profile and growth plan.
               </p>
               <p>
-                His background in commercial strategy and CRM systems also means he understands the operating side of growth, not just the financing side. That combination is useful when a company's capital plan and its commercial plan need to move together.
+                Sanjay's presence in the Powerscale network gives portfolio companies access to UAE and Gulf capital relationships that would otherwise take years to build independently.
+              </p>
+              <p>
+                His background in commercial strategy and CRM systems also means he understands the operating side of growth, not just the financing side. That combination is useful when a company's capital plan and commercial plan need to move together.
               </p>
             </div>
 
             <div className="profile-relevance">
               <span className="profile-section-label">What this brings to Powerscale</span>
               <p>
-                The firm backs companies where capital structure is part of the operating challenge, not a separate conversation. Sanjay's relationships across financial services, family office, and structured product markets extend the firm's ability to support founders through capital-intensive phases. His experience building commercial systems and managing cross-border transactions gives the firm a direct line to that expertise for portfolio companies navigating the same problems.
+                Powerscale backs companies where capital structure is part of the operating challenge, not a separate conversation.
+              </p>
+              <p>
+                Sanjay's relationships across financial services, family office, and structured product markets extend the firm's ability to support founders through capital-intensive phases.
+              </p>
+              <p>
+                His experience building commercial systems and managing cross-border transactions gives the firm a direct line to that expertise for portfolio companies navigating similar problems.
               </p>
             </div>
 

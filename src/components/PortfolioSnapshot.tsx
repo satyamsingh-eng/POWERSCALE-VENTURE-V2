@@ -6,8 +6,8 @@ import RevealWrapper from './RevealWrapper';
 const GH2_CARD = {
   label: "Featured · Energy Transition",
   name: "GH2 Solar",
-  problem: "Green hydrogen infrastructure, backed before the category narrative became crowded. The inflection we tracked: when policy alignment, cost curves, and industrial demand moved simultaneously in India.",
-  proof: "Validated order book. Revenue base that confirms the demand thesis. Approaching public markets readiness."
+  problem: "Green hydrogen infrastructure, backed when policy alignment, cost curves, and industrial demand began to move simultaneously in India.",
+  proof: "Visible demand and practical project execution. A management team that treats capital structure as a core discipline, not an afterthought.",
 };
 
 export default function PortfolioSnapshot() {
@@ -17,13 +17,10 @@ export default function PortfolioSnapshot() {
         <div className="container">
           <div className="section-label reveal">Portfolio</div>
           <h2 className="portfolio__title reveal reveal-delay-1">
-            We back the outliers, doers and execution-focused founders
+            We back outliers, doers, and founders who execute, not founders who only impress the crowd
           </h2>
-          <p className="portfolio__intro reveal reveal-delay-1">
-            Not what impresses the crowd. What works. We do not aggregate logos. The companies we back have found their first market and are navigating the harder problem.
-          </p>
           <p className="portfolio__pipeline reveal reveal-delay-2">
-            Two more companies are in pipeline, yet to make a press release.
+            Two more companies are under review and have not been publicly announced.
           </p>
 
           <div className="portfolio__featured reveal reveal-delay-2">
@@ -45,7 +42,7 @@ export default function PortfolioSnapshot() {
           </div>
 
           <div className="portfolio__action reveal reveal-delay-3">
-            <a href="/portfolio" className="btn--outline btn">View our portfolio approach →</a>
+            <a href="/portfolio" className="btn--outline btn">View portfolio →</a>
           </div>
         </div>
 
@@ -57,15 +54,7 @@ export default function PortfolioSnapshot() {
 
           .portfolio__title {
             margin-bottom: var(--space-md);
-            max-width: 26ch;
-          }
-
-          .portfolio__intro {
-            font-size: var(--text-body);
-            color: var(--color-ink-secondary);
-            line-height: 1.7;
-            max-width: 58ch;
-            margin-bottom: var(--space-sm);
+            max-width: 30ch;
           }
 
           .portfolio__pipeline {
@@ -115,6 +104,14 @@ export default function PortfolioSnapshot() {
             font-size: clamp(1.25rem, 2vw, 2rem);
             font-weight: var(--weight-medium);
             color: #f5f5f4;
+            margin-bottom: var(--space-sm);
+          }
+
+          .portfolio__featured-note {
+            font-size: var(--text-meta);
+            color: rgba(245, 245, 244, 0.55);
+            line-height: 1.6;
+            font-style: italic;
           }
 
           .portfolio__featured-problem {

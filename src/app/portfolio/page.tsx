@@ -5,25 +5,6 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import RevealWrapper from '@/components/RevealWrapper';
 import Footer from '@/components/Footer';
 
-const SITUATIONS = [
-  {
-    sector: "AI Applications and Infrastructure",
-    description: "A company with strong demo-week numbers had weak month-six cohorts. Retention was novelty-dependent. The fix was shifting the commercial motion from demo-driven selling to workflow and agent implementation. Sales cycles became longer, but the product became part of how customers operated — and renewals held without founder involvement."
-  },
-  {
-    sector: "Deep Tech",
-    description: "A company with a working field system had closed its first three customers through founder-led sales. The fourth and fifth required the same process but the founder was now three layers removed from it. The sales architecture had to be rebuilt around the technical deployment process, not around the founder's relationships."
-  },
-  {
-    sector: "Energy Transition",
-    description: "An infrastructure company entered commissioning with a capital structure built for one timeline and a build-out reality that required another. The gap between financial close and first revenue was longer than modelled. Managing that gap required a specific kind of investor involvement: practical working capital support, not cheerleading."
-  },
-  {
-    sector: "Consumer Products",
-    description: "A company at ₹200 Cr in revenue was running sales and delivery on infrastructure designed for ₹50 Cr. The org had scaled headcount without scaling systems. The fix was rebuilding the commercial operations layer, not the product or the team, before the next growth phase was accessible."
-  },
-];
-
 
 function GH2LogoCard() {
   const ref = React.useRef<HTMLDivElement>(null);
@@ -65,20 +46,20 @@ export default function PortfolioPage() {
               We back the outliers, not what impresses the crowd
             </h1>
             <p className="port-hero__desc reveal reveal-delay-2">
-              We do not aggregate logos. The companies we back have found their first market and are confronting the harder problem. Company details surface here as approvals are confirmed. We do not list companies before they have chosen to be public.
+              The companies we back have found their first market and are confronting the harder problem: scaling what already works.
             </p>
             <p className="port-hero__volatility reveal reveal-delay-3">
-              <strong className="port-volatility-highlight">Portfolio volatility</strong> is part of the journey. What matters is whether we are useful when it counts.
+              Portfolio volatility is part of the journey. What matters is whether we are useful when it counts.
             </p>
           </div>
         </section>
       </RevealWrapper>
 
-      {/* Section 2: Conviction Signal — GH2 Solar */}
+      {/* Section 2: What we saw — GH2 Solar */}
       <RevealWrapper>
         <section className="port-conviction-section">
           <div className="container">
-            <div className="section-label reveal">Conviction Signal · Energy Transition</div>
+            <div className="section-label reveal">What we saw · Energy Transition</div>
             <div className="port-conviction-grid">
               <div className="port-conviction__visuals">
                 <GH2LogoCard />
@@ -104,35 +85,38 @@ export default function PortfolioPage() {
               <div className="port-conviction__thesis reveal reveal-delay-2">
                 <p className="port-conviction__eyebrow">GH2 Solar · Green Hydrogen Infrastructure</p>
                 <p className="port-conviction__intro">
-                  Backed before the market narrative became crowded.
+                  Powerscale saw the new wave of sustainable energy before it was obvious to the crowd. We started backing GH2 Solar eight months ago.
                 </p>
 
                 <div className="port-signal-block">
-                  <p className="port-signal-block__label">The inflection we tracked</p>
+                  <p className="port-signal-block__label">Where they are building</p>
                   <p className="port-signal-block__content">
-                    The inflection we were tracking: when policy alignment, cost curves, and demand pressure reached a point where the business case no longer required the market to be convinced. India's industrial decarbonisation created a window where the three variables moved simultaneously. We were in before the window was obvious.
+                    Green hydrogen and solar infrastructure, where policy timing, project finance, industrial demand, and execution have to move together.
                   </p>
                 </div>
 
                 <div className="port-signal-block">
-                  <p className="port-signal-block__label">What gave us conviction</p>
+                  <p className="port-signal-block__label">What made the work real</p>
                   <p className="port-signal-block__content">
-                    Validated order book before the capital markets had priced the category. A revenue base that validates the demand thesis. A management team that treats project finance as a core capability, not a capital-raising exercise. The company was backing operational infrastructure, not a technology demonstration.
+                    Visible demand and practical project execution. A management team that treats project finance as a core capability, not a capital-raising exercise.
                   </p>
                 </div>
 
                 <div className="port-signal-block">
-                  <p className="port-signal-block__label">Where the company stands</p>
+                  <p className="port-signal-block__label">Why Powerscale fits</p>
                   <p className="port-signal-block__content">
-                    The company is now in the infrastructure scaling phase, where the first project's economics become the template for the next. Approaching public markets readiness. The kind of infrastructure execution that compounds over time. We expect the work between here and a public pathway to be the most consequential phase of the investment.
+                    Energy transition companies need more than capital when projects begin to move. They need market access, financial structuring, policy awareness, and practical support through the build-out phase. That is where Powerscale expects to be useful.
                   </p>
                 </div>
 
-                <p className="port-conviction__lp-note">
-                  [Full case study available to LPs and qualified investors.]
+                <div className="port-conviction__spacer" aria-hidden="true" />
+
+                <p className="port-case-study-note">
+                  Full case study available to LPs and qualified investors
                 </p>
+
                 <p className="port-conviction__pipeline">
-                  Two more companies are in pipeline, yet to make a press release.
+                  Two more companies are under review and have not been publicly announced
                 </p>
               </div>
             </div>
@@ -140,64 +124,32 @@ export default function PortfolioPage() {
         </section>
       </RevealWrapper>
 
-      {/* Section 3: Operating Complexity — Anonymized Situations */}
-      <RevealWrapper>
-        <section className="port-situations-section">
-          <div className="container">
-            <div className="section-label reveal">Operational proof</div>
-            <h2 className="port-situations__title reveal reveal-delay-1">
-              What we work on after the cheque clears.
-            </h2>
-            <p className="port-situations__subtitle reveal reveal-delay-1">
-              Real operating situations from current portfolio work. Company names withheld.
-            </p>
-            <div className="port-situations-grid">
-              {SITUATIONS.map((situation, i) => (
-                <div key={situation.sector} className={`port-situation-card reveal reveal-delay-${Math.min(i + 2, 5)}`}>
-                  <span className="port-situation-card__tag">{situation.sector}</span>
-                  <p className="port-situation-card__desc">{situation.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </RevealWrapper>
-
-      {/* Section 6: Founder Support — Post-Investment */}
+      {/* Section 3: Post-Investment Support */}
       <RevealWrapper>
         <section className="port-support-section">
           <div className="container">
-            <div className="section-label reveal">After the cheque</div>
+            <div className="section-label reveal">Post-investment support</div>
             <h2 className="port-support__title reveal reveal-delay-1">
-              How we support founders after we invest
+              How we work alongside founders
             </h2>
-            <div className="port-support-modules">
-              <div className="port-support-module reveal reveal-delay-2">
-                <span className="port-support-module__number">01</span>
-                <div className="port-support-module__body">
-                  <p className="port-support-module__name">Hiring diagnostic</p>
-                  <p className="port-support-module__desc">
-                    Org structure at the current stage vs. what the plan requires, and where the first break will appear. Not a headcount review. A systems review.
-                  </p>
-                </div>
+            <div className="port-support-grid">
+              <div className="port-support-card reveal reveal-delay-2">
+                <h3 className="port-support-card__title">Hiring diagnostic</h3>
+                <p className="port-support-card__desc">
+                  Org structure at the current stage vs. what the plan requires, and where the first break will appear. Not a headcount review. A systems review.
+                </p>
               </div>
-              <div className="port-support-module reveal reveal-delay-3">
-                <span className="port-support-module__number">02</span>
-                <div className="port-support-module__body">
-                  <p className="port-support-module__name">Go-to-market teardown</p>
-                  <p className="port-support-module__desc">
-                    Channel mix, retention by acquisition source, and what founder dependency looks like in the numbers. The moment the founder steps back is when cohort behavior gets honest.
-                  </p>
-                </div>
+              <div className="port-support-card reveal reveal-delay-3">
+                <h3 className="port-support-card__title">Go-to-market teardown</h3>
+                <p className="port-support-card__desc">
+                  Channel mix, retention by acquisition source, and what founder dependency looks like in the numbers. The moment the founder steps back is when cohort behavior gets honest.
+                </p>
               </div>
-              <div className="port-support-module reveal reveal-delay-4">
-                <span className="port-support-module__number">03</span>
-                <div className="port-support-module__body">
-                  <p className="port-support-module__name">Working capital review</p>
-                  <p className="port-support-module__desc">
-                    Cash requirements of the growth plan, the financing path the company is committing to, and where working capital becomes the binding constraint. Practical support from people who have navigated the same situations.
-                  </p>
-                </div>
+              <div className="port-support-card reveal reveal-delay-4">
+                <h3 className="port-support-card__title">Working capital review</h3>
+                <p className="port-support-card__desc">
+                  Cash requirements of the growth plan, the financing path the company is committing to, and where working capital becomes the binding constraint. Practical support from people who have navigated the same situations.
+                </p>
               </div>
             </div>
           </div>
@@ -235,12 +187,6 @@ export default function PortfolioPage() {
           margin-top: var(--space-sm);
         }
 
-        .port-volatility-highlight {
-          font-weight: var(--weight-semibold);
-          color: var(--color-ink-primary);
-          letter-spacing: -0.01em;
-        }
-
         /* GH2 Solar logo card */
         .gh2-logo-outer {
           width: 100%;
@@ -251,8 +197,7 @@ export default function PortfolioPage() {
           background: #ffffff;
           border: 1px solid rgba(109, 174, 60, 0.25);
           border-radius: 16px;
-          padding: var(--space-6) var(--space-6) var(--space-8);
-          min-height: 180px;
+          padding: var(--space-6);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -291,7 +236,7 @@ export default function PortfolioPage() {
           100% { background-position: -200% 0; }
         }
 
-        /* Dark mode: keep white card container — logo needs white bg to read */
+        /* Dark mode: keep white card — logo needs white bg to read */
         :root[data-theme='dark'] .gh2-logo-card {
           border-color: rgba(109, 174, 60, 0.25);
         }
@@ -336,7 +281,7 @@ export default function PortfolioPage() {
           font-weight: 700;
         }
 
-        /* Conviction Signal */
+        /* What we saw */
         .port-conviction-section {
           padding-bottom: var(--inner-hero-bottom);
         }
@@ -347,15 +292,20 @@ export default function PortfolioPage() {
 
         .port-conviction-grid {
           display: grid;
-          grid-template-columns: 1fr 1.4fr;
-          gap: var(--space-xl);
-          align-items: start;
+          grid-template-columns: 1fr 1.35fr;
+          gap: clamp(3rem, 5vw, 5rem);
+          align-items: stretch;
         }
 
         .port-conviction__visuals {
           display: flex;
           flex-direction: column;
           gap: var(--space-sm);
+        }
+
+        .port-conviction__thesis {
+          display: flex;
+          flex-direction: column;
         }
 
         .port-conviction__eyebrow {
@@ -377,13 +327,13 @@ export default function PortfolioPage() {
         }
 
         .port-signal-block {
-          padding: var(--space-3) 0;
+          padding: var(--space-2) 0;
           border-top: 1px solid var(--color-divider);
         }
 
         .port-signal-block:last-of-type {
           border-bottom: 1px solid var(--color-divider);
-          margin-bottom: var(--space-3);
+          margin-bottom: var(--space-md);
         }
 
         .port-signal-block__label {
@@ -401,102 +351,59 @@ export default function PortfolioPage() {
           line-height: 1.65;
         }
 
-        .port-conviction__lp-note {
-          font-size: var(--text-meta);
-          color: var(--color-muted);
-          font-style: italic;
-          margin-top: var(--space-2);
-        }
-
-        .port-conviction__pipeline {
-          font-size: var(--text-meta);
-          color: var(--color-ink-secondary);
-          font-style: italic;
-          margin-top: var(--space-2);
-          padding-top: var(--space-2);
-          border-top: 1px solid var(--color-divider);
-        }
-
-        /* Operating Situations */
-        .port-situations-section {
-          padding-top: var(--section-top);
-          padding-bottom: var(--section-gap);
-          border-top: 1px solid var(--color-divider);
-        }
-
-        .port-situations-section .section-label {
-          margin-bottom: var(--space-lg);
-        }
-
-        .port-situations__title {
-          font-size: var(--text-h2);
-          font-weight: var(--weight-medium);
-          max-width: 28ch;
-          margin-bottom: var(--space-sm);
-        }
-
-        .port-situations__subtitle {
-          font-size: var(--text-body);
-          color: var(--color-steel);
-          line-height: 1.65;
-          max-width: 52ch;
-          margin-bottom: var(--space-xl);
-        }
-
-        .port-situations-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: clamp(1rem, 2vw, 1.5rem);
-          margin-bottom: var(--space-lg);
-        }
-
-        .port-situation-card {
-          background: var(--color-surface);
-          border: 1px solid var(--color-divider);
-          border-radius: 16px;
-          padding: clamp(1.5rem, 3vw, 2rem);
-          display: flex;
-          flex-direction: column;
-          gap: var(--space-md);
-          transition: border-color var(--duration-fast) var(--ease-out);
-        }
-
-        .port-situation-card:hover {
-          border-color: rgba(47, 111, 106, 0.3);
-        }
-
-        :root[data-theme='dark'] .port-situation-card:hover {
-          border-color: rgba(138, 187, 180, 0.25);
-        }
-
-        .port-situation-card__tag {
-          display: inline-flex;
-          align-self: flex-start;
-          font-size: 0.7rem;
-          text-transform: uppercase;
-          letter-spacing: 0.12em;
-          color: var(--color-signature);
-          font-weight: 700;
-          background: rgba(47, 111, 106, 0.08);
-          border-radius: 100px;
-          padding: 0.3em 0.875em;
-          line-height: 1.6;
-        }
-
-        :root[data-theme='dark'] .port-situation-card__tag {
-          background: rgba(138, 187, 180, 0.1);
-        }
-
-        .port-situation-card__desc {
-          font-size: var(--text-body);
-          color: var(--color-ink-secondary);
-          line-height: 1.75;
+        /* Spacer — absorbs free space so pill anchors to column bottom */
+        .port-conviction__spacer {
           flex: 1;
+          min-height: var(--space-lg);
         }
 
-        /* Post-Investment Support */
+        /* Case study access note */
+        .port-case-study-note {
+          display: inline-flex;
+          align-items: center;
+          width: fit-content;
+          max-width: 100%;
+          padding: 0.6rem 1rem;
+          border: 1px solid var(--color-divider);
+          background: var(--color-canvas-alt);
+          border-radius: 999px;
+          color: var(--color-ink-secondary);
+          font-size: clamp(0.875rem, 0.95vw, 0.9375rem);
+          line-height: 1.35;
+          align-self: flex-start;
+          margin-bottom: var(--space-2);
+        }
+
+        :root[data-theme='dark'] .port-case-study-note {
+          border-color: rgba(245, 245, 244, 0.1);
+          background: rgba(245, 245, 244, 0.04);
+        }
+
+        /* Pipeline note — pill */
+        .port-conviction__pipeline {
+          display: inline-flex;
+          align-items: center;
+          padding: 0.65rem 1.25rem;
+          border: 1px solid rgba(47, 111, 106, 0.25);
+          background: rgba(47, 111, 106, 0.06);
+          color: var(--color-ink-secondary);
+          font-size: clamp(0.875rem, 1vw, 0.9375rem);
+          line-height: 1.45;
+          border-radius: 999px;
+          align-self: flex-start;
+          max-width: 100%;
+        }
+
+        :root[data-theme='dark'] .port-conviction__pipeline {
+          border-color: rgba(138, 187, 180, 0.2);
+          background: rgba(138, 187, 180, 0.06);
+        }
+
+        /* Post-Investment Support — card grid */
         .port-support-section {
           padding-bottom: var(--section-gap);
+          border-top: 1px solid var(--color-divider);
+          padding-top: var(--section-gap);
         }
 
         .port-support-section .section-label {
@@ -510,44 +417,36 @@ export default function PortfolioPage() {
           margin-bottom: var(--space-xl);
         }
 
-        .port-support-modules {
+        .port-support-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 0 var(--space-xl);
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: clamp(1rem, 1.5vw, 1.5rem);
         }
 
-        .port-support-module {
-          display: grid;
-          grid-template-columns: 2.5rem 1fr;
-          gap: var(--space-3);
-          padding: var(--space-lg) 0;
-          border-top: 1px solid var(--color-divider);
-          align-items: start;
+        .port-support-card {
+          border: 1px solid var(--color-divider);
+          background: rgba(255, 255, 255, 0.72);
+          border-radius: 1.25rem;
+          padding: clamp(1.5rem, 2vw, 2rem);
         }
 
-        .port-support-module:first-child {
-          border-top: 1px solid var(--color-divider);
+        :root[data-theme='dark'] .port-support-card {
+          background: rgba(14, 14, 13, 0.5);
+          border-color: rgba(245, 245, 244, 0.09);
         }
 
-        .port-support-module__number {
-          font-size: var(--text-meta);
-          color: var(--color-muted);
-          font-weight: var(--weight-medium);
-          letter-spacing: 0.05em;
-          padding-top: 0.2em;
+        .port-support-card__title {
+          font-size: clamp(1.125rem, 1.4vw, 1.375rem);
+          line-height: 1.15;
+          font-weight: 700;
+          color: var(--color-ink-primary);
+          margin-bottom: 0.75rem;
         }
 
-        .port-support-module__name {
-          font-size: clamp(1.125rem, 1.8vw, 1.375rem);
-          font-weight: var(--weight-medium);
-          color: var(--color-ink);
-          margin-bottom: var(--space-1);
-        }
-
-        .port-support-module__desc {
+        .port-support-card__desc {
           font-size: var(--text-body);
-          color: var(--color-steel);
           line-height: 1.65;
+          color: var(--color-ink-secondary);
         }
 
         /* Responsive */
@@ -556,20 +455,18 @@ export default function PortfolioPage() {
             grid-template-columns: 1fr;
             gap: var(--space-lg);
           }
+          .port-support-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
         }
 
-        @media (max-width: 700px) {
-          .port-situations-grid {
+        @media (max-width: 640px) {
+          .port-support-grid {
             grid-template-columns: 1fr;
           }
-          .port-support-modules {
-            grid-template-columns: 1fr;
-          }
-
-          .port-support-module {
-            grid-template-columns: 2.5rem 1fr;
-            gap: var(--space-3);
-            border-bottom: 1px solid var(--color-divider);
+          .port-conviction__pipeline,
+          .port-case-study-note {
+            border-radius: 1rem;
           }
         }
       `}} />

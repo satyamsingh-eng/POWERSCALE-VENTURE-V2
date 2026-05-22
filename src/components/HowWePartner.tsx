@@ -7,18 +7,18 @@ import BorderGlow from '@/components/ui/BorderGlow';
 const MODULES = [
   {
     num: "01",
-    title: "Early Stage Investment",
-    text: "After the first market is real, we look for founders who see that the next phase is fundamentally different. The thing that got the company here will not carry it to the next order of magnitude without deliberate change. We back founders who know how to navigate that change."
+    title: "How we evaluate",
+    text: "After the first understanding call, we get back within a week if there is further interest around DD and next steps. We respect founders' time while they are in the middle of building."
   },
   {
     num: "02",
     title: "Diligence",
-    text: "Before we invest, we go deep on the operating plan: hiring, channel economics, cash timing, management bandwidth. The constraints that break companies at scale are almost always visible before they break. We find them early and work with founders to address them."
+    text: "We go deeper on the company, product, market, team, capital needs, and the real constraints around scale. The goal is to understand where we can be useful."
   },
   {
     num: "03",
     title: "Post-investment",
-    text: "When we invest, we get to work alongside founders. Hiring diagnostic, GTM review, working capital support, market access, customer introductions, financial structuring. Practical help from people who have navigated the same problems. We stay in through the hard parts."
+    text: "After we invest, we work alongside founders on hiring, GTM, market access, customer introductions, financial structuring, and working capital support."
   }
 ];
 
@@ -33,8 +33,11 @@ export default function HowWePartner() {
           <div className="approach__header">
             <div className="section-label reveal">How we partner</div>
             <h2 className="approach__title reveal reveal-delay-1">
-              <strong>We are building</strong> the firm we wished existed when we were running companies.
+              We partner with founders through the hard middle of scale
             </h2>
+            <p className="approach__subhead reveal reveal-delay-2">
+              Fast evaluation, practical diligence, and support that stays useful after the cheque clears
+            </p>
           </div>
 
           <div className="approach__cards">
@@ -71,19 +74,28 @@ export default function HowWePartner() {
           }
 
           .approach__header {
-            margin-bottom: var(--space-xl);
+            margin-bottom: clamp(2rem, 4vw, 4rem);
           }
 
           .approach__title {
             color: var(--color-ink-primary);
             font-size: clamp(1.75rem, 3.5vw, 3rem);
             max-width: 22ch;
-            margin-bottom: var(--space-md);
+            margin-bottom: var(--space-sm);
+            letter-spacing: -0.02em;
+            line-height: 1.1;
           }
 
           .approach__title strong {
             color: var(--color-signature);
             font-weight: inherit;
+          }
+
+          .approach__subhead {
+            font-size: clamp(1rem, 1.2vw, 1.175rem);
+            color: var(--color-ink-secondary);
+            line-height: 1.55;
+            max-width: 52ch;
           }
 
           .approach__cards {
@@ -104,11 +116,10 @@ export default function HowWePartner() {
           }
 
           .approach__module {
-            padding: var(--space-lg);
+            padding: clamp(1.5rem, 2.2vw, 2.25rem);
             display: flex;
             flex-direction: column;
             height: 100%;
-            min-height: 280px;
           }
 
           .approach__num {
@@ -117,23 +128,24 @@ export default function HowWePartner() {
             color: #8abbb4;
             font-weight: 700;
             letter-spacing: 0.08em;
-            margin-bottom: var(--space-md);
+            margin-bottom: var(--space-sm);
           }
 
           .approach__module-title {
-            font-size: clamp(1.25rem, 2vw, 1.75rem);
+            font-size: clamp(1.35rem, 1.8vw, 1.85rem);
             font-weight: var(--weight-semibold);
             color: #f5f5f4;
-            line-height: 1.15;
+            line-height: 1.1;
             letter-spacing: -0.02em;
-            margin-bottom: var(--space-md);
+            margin-bottom: var(--space-sm);
           }
 
           .approach__module-text {
             color: #cac6be;
-            font-size: var(--text-body);
-            line-height: 1.65;
+            font-size: clamp(1rem, 1vw, 1.125rem);
+            line-height: 1.55;
             flex: 1;
+            max-width: 34ch;
           }
 
           @media (max-width: 900px) {
@@ -142,8 +154,8 @@ export default function HowWePartner() {
               gap: var(--space-sm);
             }
 
-            .approach__module {
-              min-height: unset;
+            .approach__module-text {
+              max-width: none;
             }
           }
 
