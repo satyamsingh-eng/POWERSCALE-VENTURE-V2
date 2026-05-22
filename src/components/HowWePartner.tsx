@@ -116,36 +116,38 @@ export default function HowWePartner() {
           }
 
           .approach__module {
-            padding: clamp(1.5rem, 2.2vw, 2.25rem);
+            padding: clamp(2.25rem, 3vw, 3.25rem);
             display: flex;
             flex-direction: column;
             height: 100%;
+            min-height: clamp(320px, 28vw, 420px);
           }
 
           .approach__num {
             display: block;
-            font-size: var(--text-meta);
-            color: #8abbb4;
+            font-size: clamp(0.95rem, 1vw, 1.1rem);
+            color: #8ff1dc;
             font-weight: 700;
             letter-spacing: 0.08em;
-            margin-bottom: var(--space-sm);
+            margin-bottom: 2rem;
           }
 
           .approach__module-title {
-            font-size: clamp(1.35rem, 1.8vw, 1.85rem);
-            font-weight: var(--weight-semibold);
-            color: #f5f5f4;
-            line-height: 1.1;
+            font-size: clamp(1.65rem, 1.9vw, 2.15rem);
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.08;
             letter-spacing: -0.02em;
-            margin-bottom: var(--space-sm);
+            margin-bottom: 1.25rem;
           }
 
           .approach__module-text {
-            color: #cac6be;
-            font-size: clamp(1rem, 1vw, 1.125rem);
+            color: #ffffff;
+            opacity: 0.92;
+            font-size: clamp(1.12rem, 1.22vw, 1.35rem);
             line-height: 1.55;
+            font-weight: 400;
             flex: 1;
-            max-width: 34ch;
           }
 
           @media (max-width: 900px) {
@@ -153,15 +155,16 @@ export default function HowWePartner() {
               grid-template-columns: 1fr;
               gap: var(--space-sm);
             }
-
-            .approach__module-text {
-              max-width: none;
-            }
           }
 
           @media (max-width: 600px) {
             .approach__module {
-              padding: var(--space-md);
+              padding: 2rem;
+              min-height: auto;
+            }
+
+            .approach__module-text {
+              font-size: clamp(1.05rem, 4vw, 1.18rem);
             }
           }
         `}} />
