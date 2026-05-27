@@ -482,35 +482,99 @@ export default function AboutPage() {
         }
 
         @media (max-width: 760px) {
+          /* Section top — reduce excessive top padding on mobile */
+          .team-full {
+            padding-top: clamp(4rem, 10vw, 5.5rem);
+          }
+
+          /* Section intro text — more readable on mobile */
+          .team-full__intro,
+          .advisors__intro {
+            font-size: 1rem;
+            line-height: 1.7;
+          }
+
+          /* Partner profiles — stack, tighten */
           .team-full__profile {
             grid-template-columns: 1fr;
-            gap: var(--space-md);
+            gap: 1.5rem;
+            padding: 2rem 0;
           }
           .team-full__profile::after {
             display: none;
           }
+
+          /* Partner image — square crop on mobile */
           .team-full__image-wrap {
             position: relative;
             top: auto;
-            width: 100%;
+            width: min(100%, 300px);
             max-width: 100%;
-            aspect-ratio: auto;
-            height: 300px;
-            max-height: 300px;
+            margin: 0 auto;
+            aspect-ratio: 1/1;
+            height: auto;
+            max-height: none;
+            overflow: hidden;
           }
+          .team-full__image-wrap .tc-inner {
+            aspect-ratio: 1/1 !important;
+          }
+
+          /* Partner name — clear hierarchy */
+          .team-full__name {
+            font-size: 1.375rem;
+            font-weight: 600;
+          }
+
+          /* Partner bio — more readable */
+          .team-full__bio {
+            font-size: 1rem;
+            line-height: 1.7;
+          }
+
+          /* Advisor cards — stack, tighten spacing */
           .advisors__card {
             grid-template-columns: 1fr;
-            gap: var(--space-md);
+            gap: 1.25rem;
+            padding: 1.75rem 0;
           }
+          .advisors__card:last-of-type {
+            border-bottom: 1px solid var(--color-divider);
+          }
+
+          /* Advisor image — square crop on mobile */
           .advisors__image-wrap {
             position: relative;
             top: auto;
             width: 100%;
             max-width: 100%;
-            aspect-ratio: auto;
-            height: 220px;
-            max-height: 220px;
+            aspect-ratio: 1/1;
+            height: auto;
+            max-height: none;
+            overflow: hidden;
           }
+          .advisors__image-wrap .tc-inner {
+            aspect-ratio: 1/1 !important;
+          }
+
+          /* Advisor name — stronger weight */
+          .advisors__name {
+            font-size: 1.25rem;
+            font-weight: 600;
+          }
+
+          /* Advisor note — slightly smaller but readable */
+          .advisors__note {
+            font-size: 0.9375rem;
+            line-height: 1.65;
+          }
+
+          /* Advisory note — full width on mobile */
+          .advisory-note {
+            max-width: none;
+            font-size: 0.9375rem;
+          }
+
           .beliefs__item {
             grid-template-columns: 2.5rem 1fr;
             gap: var(--space-2);
@@ -518,13 +582,23 @@ export default function AboutPage() {
         }
 
         @media (max-width: 480px) {
-          .team-full__image-wrap {
-            height: 260px;
-            max-height: 260px;
+          .team-full {
+            padding-top: 4rem;
           }
-          .advisors__image-wrap {
-            height: 190px;
-            max-height: 190px;
+          .team-full__image-wrap {
+            width: 100%;
+          }
+          .team-full__name {
+            font-size: 1.25rem;
+          }
+          .advisors__name {
+            font-size: 1.125rem;
+          }
+        }
+
+        @media (max-width: 375px) {
+          .team-full__name {
+            font-size: 1.125rem;
           }
         }
 
