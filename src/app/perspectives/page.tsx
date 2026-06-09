@@ -10,21 +10,21 @@ const PERSPECTIVES = [
     category: "Consumer Products",
     tags: ["FMCG", "India"],
     title: "The pantry is shifting. The repeat purchase is the harder problem.",
-    preview: "India's mid-aspirational consumer — double-income suburban households, corporate professionals, Gen Z city-dwellers — is retiring the deep-fried bhujia dabba. This segment is inflation-fatigued and health-aware at the same time. Quick commerce has collapsed the barrier to trial. The brand that wins the repeat purchase cracks the ₹10–₹30 entry format first. Taste and digestive comfort close the second purchase. Everything else is marketing.",
+    preview: "India's mid-aspirational consumer — double-income suburban households, corporate professionals, Gen Z city-dwellers — is retiring the deep-fried bhujia dabba. Inflation-fatigued and health-aware at the same time, they refuse to pay ₹300 for an imported granola bar but won't compromise on functional nutrition. The brand that wins the repeat purchase cracks the ₹10–₹30 entry format first.",
   },
   {
     num: "02",
     category: "AI Infrastructure",
     tags: ["Deep Tech", "Sustainability"],
     title: "₹40–45 Cr per megawatt. The cost the AI build-out isn't accounting for.",
-    preview: "A data centre in India costs ₹40–45 Cr per megawatt — most of it going to energy, cooling, and infrastructure, not compute. The ecosystem is moving fast on the compute side. A smaller group of founders is rebuilding the thermal stack and energy source from the ground up rather than optimising around a broken default. Waterless cooling, dielectric fluids, and green energy sourcing are no longer edge bets. They are where the cost curve breaks.",
+    preview: "A data centre in India costs ₹40–45 Cr per megawatt — most of it energy, cooling, and infrastructure, not compute. The AI build-out is moving fast on the compute side. A smaller group of founders is rebuilding the thermal stack from the ground up rather than optimising around a broken default.",
   },
   {
     num: "03",
     category: "Energy Transition",
     tags: ["Green Hydrogen", "Infrastructure"],
     title: "India's 5 MMT hydrogen target. The constraint is logistics, not the mission.",
-    preview: "Hydrogen is the lightest molecule in the universe — and a logistical nightmare to move at scale. Extreme compression or cryogenic storage is required to transport it anywhere, which is why most commercial applications convert it to green ammonia or methanol first. India's National Green Hydrogen Mission carries a ₹19,744 Cr outlay targeting 5 MMT per annum by 2030. The window for mid-size companies is open. But it is defined by financing sequence and policy timing, not technology readiness.",
+    preview: "Hydrogen is the lightest molecule in the universe — and a logistical nightmare to move at scale, which is why most commercial applications convert it to green ammonia or methanol before it reaches the end market. India's ₹19,744 Cr National Green Hydrogen Mission targets 5 MMT per annum by 2030. The window for mid-size companies is shaped more by financing sequence than technology readiness.",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function PerspectivesPage() {
         <section className="persp-articles">
           <div className="container">
             {PERSPECTIVES.map((p, i) => (
-              <article key={i} className={`persp-row reveal reveal-delay-${i % 3 + 1}`}>
+              <article key={i} className={`persp-row reveal reveal-delay-${(i % 3) + 1}`}>
                 <div className="persp-row__meta">
                   <span className="persp-row__num">{p.num}</span>
                   <span className="persp-row__category">{p.category}</span>
@@ -67,10 +67,10 @@ export default function PerspectivesPage() {
                 <div className="persp-row__body">
                   <h2 className="persp-row__title">{p.title}</h2>
                   <p className="persp-row__desc">{p.preview}</p>
-                  <a href="/contact" className="persp-row__cta">Read note →</a>
                 </div>
               </article>
             ))}
+            <p className="persp-more reveal">More perspectives will be added as we publish.</p>
           </div>
         </section>
       </RevealWrapper>
@@ -227,24 +227,14 @@ export default function PerspectivesPage() {
           color: var(--color-steel);
           line-height: 1.75;
           max-width: 62ch;
-          margin-bottom: var(--space-lg);
+          margin-bottom: 0;
         }
 
-        .persp-row__cta {
-          display: inline-flex;
-          align-items: center;
+        .persp-more {
+          margin-top: var(--space-xl);
           font-size: var(--text-meta);
-          font-weight: var(--weight-semibold);
-          color: var(--color-ink-secondary);
+          color: var(--color-muted);
           letter-spacing: 0.03em;
-          text-transform: uppercase;
-          border-bottom: 1px solid currentColor;
-          padding-bottom: 0.15rem;
-          transition: color 150ms ease;
-        }
-
-        .persp-row__cta:hover {
-          color: var(--color-signature);
         }
 
         /* ── Responsive ── */
