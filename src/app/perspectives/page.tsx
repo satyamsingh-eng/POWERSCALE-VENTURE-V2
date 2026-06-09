@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import RevealWrapper from '@/components/RevealWrapper';
 import Footer from '@/components/Footer';
 
@@ -9,6 +10,7 @@ const PERSPECTIVES = [
     num: "01",
     category: "Consumer Products",
     tags: ["FMCG", "India"],
+    slug: "consumer-shift",
     title: "The pantry is shifting. The repeat purchase is the harder problem.",
     preview: "India's mid-aspirational consumer — double-income suburban households, corporate professionals, Gen Z city-dwellers — is retiring the deep-fried bhujia dabba. Inflation-fatigued and health-aware at the same time, they refuse to pay ₹300 for an imported granola bar but won't compromise on functional nutrition. The brand that wins the repeat purchase cracks the ₹10–₹30 entry format first.",
   },
@@ -16,6 +18,7 @@ const PERSPECTIVES = [
     num: "02",
     category: "AI Infrastructure",
     tags: ["Deep Tech", "Sustainability"],
+    slug: "ai-infrastructure",
     title: "₹40–45 Cr per megawatt. The cost the AI build-out isn't accounting for.",
     preview: "A data centre in India costs ₹40–45 Cr per megawatt — most of it energy, cooling, and infrastructure, not compute. The AI build-out is moving fast on the compute side. A smaller group of founders is rebuilding the thermal stack from the ground up rather than optimising around a broken default.",
   },
@@ -23,6 +26,7 @@ const PERSPECTIVES = [
     num: "03",
     category: "Energy Transition",
     tags: ["Green Hydrogen", "Infrastructure"],
+    slug: "green-hydrogen",
     title: "India's 5 MMT hydrogen target. The constraint is logistics, not the mission.",
     preview: "Hydrogen is the lightest molecule in the universe — and a logistical nightmare to move at scale, which is why most commercial applications convert it to green ammonia or methanol before it reaches the end market. India's ₹19,744 Cr National Green Hydrogen Mission targets 5 MMT per annum by 2030. The window for mid-size companies is shaped more by financing sequence than technology readiness.",
   },
@@ -67,6 +71,7 @@ export default function PerspectivesPage() {
                 <div className="persp-row__body">
                   <h2 className="persp-row__title">{p.title}</h2>
                   <p className="persp-row__desc">{p.preview}</p>
+                  <Link href={`/perspectives/${p.slug}`} className="persp-row__cta">Read note →</Link>
                 </div>
               </article>
             ))}
@@ -227,7 +232,24 @@ export default function PerspectivesPage() {
           color: var(--color-steel);
           line-height: 1.75;
           max-width: 62ch;
-          margin-bottom: 0;
+          margin-bottom: var(--space-lg);
+        }
+
+        .persp-row__cta {
+          display: inline-flex;
+          align-items: center;
+          font-size: var(--text-meta);
+          font-weight: var(--weight-semibold);
+          color: var(--color-ink-secondary);
+          letter-spacing: 0.03em;
+          text-transform: uppercase;
+          border-bottom: 1px solid currentColor;
+          padding-bottom: 0.15rem;
+          transition: color 150ms ease;
+        }
+
+        .persp-row__cta:hover {
+          color: var(--color-signature);
         }
 
         .persp-more {
