@@ -4,26 +4,27 @@ import React from 'react';
 import RevealWrapper from '@/components/RevealWrapper';
 import Footer from '@/components/Footer';
 
-const ARTICLES = [
+const PERSPECTIVES = [
   {
-    category: 'AI Applications and Infrastructure',
-    title: 'Why AI demos fail to become retained workflows',
-    body: 'A demo proves possibility. Retention proves operating value. The gap between the two is where most AI companies become legible, and where the business model either holds or reveals itself as novelty-dependent.',
+    num: "01",
+    category: "Consumer Products",
+    tags: ["FMCG", "India"],
+    title: "The pantry is shifting. The repeat purchase is the harder problem.",
+    preview: "India's mid-aspirational consumer — double-income suburban households, corporate professionals, Gen Z city-dwellers — is retiring the deep-fried bhujia dabba. This segment is inflation-fatigued and health-aware at the same time. Quick commerce has collapsed the barrier to trial. The brand that wins the repeat purchase cracks the ₹10–₹30 entry format first. Taste and digestive comfort close the second purchase. Everything else is marketing.",
   },
   {
-    category: 'Scaling',
-    title: 'The management layer that makes a company harder to run',
-    body: 'The transition from a ten-person team to thirty is the one that breaks the operating model. What changes is not headcount. It is decision rights, inspection cadence, and the founder\'s relationship to information they used to be close to.',
+    num: "02",
+    category: "AI Infrastructure",
+    tags: ["Deep Tech", "Sustainability"],
+    title: "₹40–45 Cr per megawatt. The cost the AI build-out isn't accounting for.",
+    preview: "A data centre in India costs ₹40–45 Cr per megawatt — most of it going to energy, cooling, and infrastructure, not compute. The ecosystem is moving fast on the compute side. A smaller group of founders is rebuilding the thermal stack and energy source from the ground up rather than optimising around a broken default. Waterless cooling, dielectric fluids, and green energy sourcing are no longer edge bets. They are where the cost curve breaks.",
   },
   {
-    category: 'Energy Transition',
-    title: 'When the regulatory sequence is the risk, not the technology',
-    body: 'Most energy transition companies fail on financing sequence, not on project economics. The order in which capital commitments close determines what can be built and what stays permanently exposed. Getting the sequence wrong is rarely recoverable.',
-  },
-  {
-    category: 'Consumer Products',
-    title: 'The channel motion that breaks when the founder steps back',
-    body: 'Revenue can grow while channel quality decays. Two things keep founder-led pull looking healthy while managed distribution is already failing, and neither shows up in the top-line until the company is already committed to the wrong motion.',
+    num: "03",
+    category: "Energy Transition",
+    tags: ["Green Hydrogen", "Infrastructure"],
+    title: "India's 5 MMT hydrogen target. The constraint is logistics, not the mission.",
+    preview: "Hydrogen is the lightest molecule in the universe — and a logistical nightmare to move at scale. Extreme compression or cryogenic storage is required to transport it anywhere, which is why most commercial applications convert it to green ammonia or methanol first. India's National Green Hydrogen Mission carries a ₹19,744 Cr outlay targeting 5 MMT per annum by 2030. The window for mid-size companies is open. But it is defined by financing sequence and policy timing, not technology readiness.",
   },
 ];
 
@@ -38,9 +39,12 @@ export default function PerspectivesPage() {
               <h1 className="persp-hero__title reveal reveal-delay-1">
                 Operator judgment, written without theatre.
               </h1>
-              <p className="persp-hero__copy reveal reveal-delay-2">
-                Notes on the operating questions founders face after the first market is real. No announcement copy. No category slogans.
-              </p>
+              <div className="persp-hero__aside reveal reveal-delay-2">
+                <p className="persp-hero__copy">
+                  Notes on the operating questions founders face after the first market is real. No announcement copy. No category slogans.
+                </p>
+                <span className="persp-hero__count">{PERSPECTIVES.length} notes</span>
+              </div>
             </div>
           </div>
         </section>
@@ -49,14 +53,20 @@ export default function PerspectivesPage() {
       <RevealWrapper>
         <section className="persp-articles">
           <div className="container">
-            {ARTICLES.map((article, i) => (
+            {PERSPECTIVES.map((p, i) => (
               <article key={i} className={`persp-row reveal reveal-delay-${i % 3 + 1}`}>
                 <div className="persp-row__meta">
-                  <span className="persp-row__category">{article.category}</span>
+                  <span className="persp-row__num">{p.num}</span>
+                  <span className="persp-row__category">{p.category}</span>
+                  <div className="persp-row__tags">
+                    {p.tags.map((tag, j) => (
+                      <span key={j} className="persp-tag">{tag}</span>
+                    ))}
+                  </div>
                 </div>
                 <div className="persp-row__body">
-                  <h2 className="persp-row__title">{article.title}</h2>
-                  <p className="persp-row__desc">{article.body}</p>
+                  <h2 className="persp-row__title">{p.title}</h2>
+                  <p className="persp-row__desc">{p.preview}</p>
                   <a href="/contact" className="persp-row__cta">Read note →</a>
                 </div>
               </article>
@@ -86,12 +96,19 @@ export default function PerspectivesPage() {
         }
 
         .persp-hero__title {
-          font-size: clamp(2.25rem, 4.5vw, 3.75rem);
-          font-weight: var(--weight-semibold);
+          font-size: clamp(2.5rem, 5vw, 4.25rem);
+          font-weight: var(--weight-bold);
           color: var(--color-ink-primary);
-          line-height: 1.06;
+          line-height: 1.04;
           letter-spacing: -0.03em;
           max-width: 14ch;
+        }
+
+        .persp-hero__aside {
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-md);
+          align-items: flex-start;
         }
 
         .persp-hero__copy {
@@ -99,6 +116,22 @@ export default function PerspectivesPage() {
           font-size: clamp(1.05rem, 1.3vw, 1.25rem);
           line-height: 1.7;
           color: var(--color-ink-secondary);
+        }
+
+        .persp-hero__count {
+          display: inline-flex;
+          align-items: center;
+          padding: 0.4rem 0.9rem;
+          border: 1px solid var(--color-divider);
+          border-radius: 999px;
+          font-size: var(--text-meta);
+          font-weight: var(--weight-medium);
+          color: var(--color-muted);
+          letter-spacing: 0.05em;
+        }
+
+        :root[data-theme='dark'] .persp-hero__count {
+          border-color: rgba(245, 245, 244, 0.1);
         }
 
         /* ── Article rows ── */
@@ -118,21 +151,23 @@ export default function PerspectivesPage() {
           border-bottom: 1px solid var(--color-divider);
         }
 
+        /* Left column — sticky meta */
         .persp-row__meta {
           display: flex;
           flex-direction: column;
-          gap: var(--space-2);
-          padding-top: 0.35em;
+          gap: 0.5rem;
+          padding-top: 0.5rem;
           position: sticky;
           top: calc(var(--nav-height) + var(--space-4));
         }
 
         .persp-row__num {
           display: block;
-          font-size: var(--text-meta);
+          font-size: clamp(0.875rem, 0.95vw, 1rem);
           color: var(--color-signature);
           font-weight: 700;
           letter-spacing: 0.08em;
+          margin-bottom: 0.25rem;
         }
 
         .persp-row__category {
@@ -142,9 +177,34 @@ export default function PerspectivesPage() {
           text-transform: uppercase;
           letter-spacing: 0.07em;
           font-weight: var(--weight-medium);
-          line-height: 1.45;
+          line-height: 1.4;
         }
 
+        .persp-row__tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.35rem;
+          margin-top: 0.35rem;
+        }
+
+        .persp-tag {
+          display: inline-block;
+          padding: 0.2rem 0.55rem;
+          border: 1px solid var(--color-divider);
+          border-radius: 999px;
+          font-size: 0.6875rem;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          font-weight: var(--weight-medium);
+          color: var(--color-muted);
+          white-space: nowrap;
+        }
+
+        :root[data-theme='dark'] .persp-tag {
+          border-color: rgba(245, 245, 244, 0.1);
+        }
+
+        /* Right column — body */
         .persp-row__body {
           display: flex;
           flex-direction: column;
@@ -152,37 +212,39 @@ export default function PerspectivesPage() {
         }
 
         .persp-row__title {
-          font-size: clamp(1.75rem, 3vw, 2.75rem);
-          font-weight: var(--weight-semibold);
+          font-size: clamp(1.875rem, 3.2vw, 3rem);
+          font-weight: var(--weight-bold);
           color: var(--color-ink-primary);
-          line-height: 1.08;
+          line-height: 1.06;
           letter-spacing: -0.035em;
-          max-width: 24ch;
+          max-width: 26ch;
           text-wrap: balance;
           margin-bottom: var(--space-md);
         }
 
         .persp-row__desc {
           font-size: clamp(1rem, 1.2vw, 1.125rem);
-          color: var(--color-ink-secondary);
-          line-height: 1.72;
+          color: var(--color-steel);
+          line-height: 1.75;
           max-width: 62ch;
           margin-bottom: var(--space-lg);
         }
 
         .persp-row__cta {
+          display: inline-flex;
+          align-items: center;
           font-size: var(--text-meta);
-          font-weight: var(--weight-medium);
+          font-weight: var(--weight-semibold);
           color: var(--color-ink-secondary);
-          letter-spacing: 0.01em;
-          transition: color 150ms ease;
-          border-bottom: 1px solid var(--color-divider);
+          letter-spacing: 0.03em;
+          text-transform: uppercase;
+          border-bottom: 1px solid currentColor;
           padding-bottom: 0.15rem;
+          transition: color 150ms ease;
         }
 
         .persp-row__cta:hover {
           color: var(--color-signature);
-          border-color: var(--color-signature);
         }
 
         /* ── Responsive ── */
@@ -205,14 +267,20 @@ export default function PerspectivesPage() {
             position: static;
             flex-direction: row;
             align-items: center;
-            gap: var(--space-2);
+            flex-wrap: wrap;
+            gap: 0.5rem;
           }
-          .persp-row__meta::after {
-            content: '·';
-            color: var(--color-muted);
+          .persp-row__num {
+            margin-bottom: 0;
+          }
+          .persp-row__tags {
+            margin-top: 0;
           }
           .persp-row__title {
             font-size: clamp(1.5rem, 6vw, 2rem);
+          }
+          .persp-row__desc {
+            font-size: 1rem;
           }
         }
       `}} />
