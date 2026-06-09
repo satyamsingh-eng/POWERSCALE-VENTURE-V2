@@ -13,7 +13,7 @@ export default function AIInfrastructurePage() {
           <div className="container">
             <Link href="/perspectives" className="blog-back">← Perspectives</Link>
             <div className="blog-detail__header">
-              <div className="section-label reveal">AI Infrastructure</div>
+              <div className="blog-detail__cat">AI Infrastructure</div>
               <h1 className="blog-detail__title reveal reveal-delay-1">
                 India&rsquo;s AI Infrastructure challenge, needs a sustainable approach
               </h1>
@@ -87,8 +87,25 @@ export default function AIInfrastructurePage() {
           padding-top: clamp(7rem, 10vw, 9rem);
           padding-bottom: clamp(3rem, 4vw, 4rem);
         }
-        .blog-detail .section-label {
-          margin-bottom: var(--space-md);
+        .blog-detail__cat {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.6rem;
+          font-size: var(--text-meta);
+          color: var(--color-muted);
+          text-transform: uppercase;
+          letter-spacing: 0.07em;
+          font-weight: var(--weight-medium);
+          margin-bottom: var(--space-sm);
+        }
+        .blog-detail__cat::before {
+          content: '';
+          display: inline-block;
+          width: 1.25rem;
+          height: 1px;
+          background: currentColor;
+          border-radius: 999px;
+          flex-shrink: 0;
         }
         .blog-detail__title {
           font-size: clamp(2rem, 4.5vw, 3.5rem);
@@ -107,9 +124,9 @@ export default function AIInfrastructurePage() {
           max-width: 68ch;
         }
         .blog-prose p {
-          font-size: clamp(1rem, 1.2vw, 1.125rem);
-          color: var(--color-steel);
-          line-height: 1.82;
+          font-size: clamp(1.0625rem, 1.35vw, 1.1875rem);
+          color: var(--color-ink-secondary);
+          line-height: 1.85;
           margin-bottom: var(--space-md);
         }
         .blog-section-head {
@@ -130,8 +147,8 @@ export default function AIInfrastructurePage() {
           gap: 0.75rem;
         }
         .blog-list li {
-          font-size: clamp(1rem, 1.2vw, 1.125rem);
-          color: var(--color-steel);
+          font-size: clamp(1.0625rem, 1.35vw, 1.1875rem);
+          color: var(--color-ink-secondary);
           line-height: 1.75;
           padding-left: 1.5rem;
           position: relative;

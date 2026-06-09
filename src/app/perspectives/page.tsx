@@ -38,7 +38,7 @@ export default function PerspectivesPage() {
       <RevealWrapper>
         <section className="persp-hero">
           <div className="container">
-            <div className="section-label reveal">Perspectives</div>
+            <span className="persp-hero__label reveal">Perspectives</span>
             <div className="persp-hero__grid">
               <h1 className="persp-hero__title reveal reveal-delay-1">
                 Operator judgment, written without theatre.
@@ -89,19 +89,36 @@ export default function PerspectivesPage() {
           padding-bottom: clamp(4rem, 7vw, 6rem);
         }
 
-        .persp-hero .section-label {
-          margin-bottom: clamp(2rem, 3vw, 3rem);
+        .persp-hero__label {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.6rem;
+          font-size: var(--text-meta);
+          color: var(--color-signature);
+          font-weight: var(--weight-semibold);
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          margin-bottom: clamp(1.5rem, 2.5vw, 2.5rem);
+        }
+        .persp-hero__label::before {
+          content: '';
+          display: inline-block;
+          width: 1.25rem;
+          height: 1px;
+          background: currentColor;
+          border-radius: 999px;
+          flex-shrink: 0;
         }
 
         .persp-hero__grid {
           display: grid;
           grid-template-columns: minmax(0, 1fr) minmax(320px, 0.65fr);
           gap: clamp(3rem, 7vw, 8rem);
-          align-items: end;
+          align-items: start;
         }
 
         .persp-hero__title {
-          font-size: clamp(2.5rem, 5vw, 4.25rem);
+          font-size: clamp(2.75rem, 5.5vw, 4.75rem);
           font-weight: var(--weight-bold);
           color: var(--color-ink-primary);
           line-height: 1.04;
