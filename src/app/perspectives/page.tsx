@@ -50,7 +50,6 @@ export default function PerspectivesPage() {
       <RevealWrapper>
         <section className="persp-hero">
           <div className="container">
-            <span className="persp-hero__label reveal">Perspectives</span>
             <div className="persp-hero__grid">
               <h1 className="persp-hero__title reveal reveal-delay-1">
                 Operator judgment, written without theatre.
@@ -105,31 +104,10 @@ export default function PerspectivesPage() {
           padding-bottom: clamp(4rem, 7vw, 6rem);
         }
 
-        .persp-hero__label {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.6rem;
-          font-size: var(--text-meta);
-          color: var(--color-signature);
-          font-weight: var(--weight-semibold);
-          letter-spacing: 0.06em;
-          text-transform: uppercase;
-          margin-bottom: clamp(1.5rem, 2.5vw, 2.5rem);
-        }
-        .persp-hero__label::before {
-          content: '';
-          display: inline-block;
-          width: 1.25rem;
-          height: 1px;
-          background: currentColor;
-          border-radius: 999px;
-          flex-shrink: 0;
-        }
-
         .persp-hero__grid {
           display: grid;
-          grid-template-columns: minmax(0, 1fr) minmax(320px, 0.65fr);
-          gap: clamp(3rem, 7vw, 8rem);
+          grid-template-columns: 2fr 1fr;
+          gap: 3rem;
           align-items: start;
         }
 
@@ -139,7 +117,7 @@ export default function PerspectivesPage() {
           color: var(--color-ink-primary);
           line-height: 1.04;
           letter-spacing: -0.03em;
-          max-width: 14ch;
+          max-width: none;
         }
 
         .persp-hero__aside {
@@ -150,7 +128,7 @@ export default function PerspectivesPage() {
         }
 
         .persp-hero__copy {
-          max-width: 52ch;
+          max-width: 100%;
           font-size: clamp(1.05rem, 1.3vw, 1.25rem);
           line-height: 1.7;
           color: var(--color-ink-secondary);
@@ -299,13 +277,16 @@ export default function PerspectivesPage() {
         }
 
         /* ── Responsive ── */
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
           .persp-hero__grid {
             grid-template-columns: 1fr;
             gap: var(--space-lg);
           }
           .persp-hero__title {
             max-width: none;
+          }
+          .persp-hero__copy {
+            max-width: 100%;
           }
         }
 

@@ -34,7 +34,11 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
             <div className="footer__cta reveal">
               <p className="section-label">Contact</p>
               <FadeContent className="footer__headline-wrapper">
-                <h2 className="footer__headline">If you&apos;re building something that fits, write to us</h2>
+                <h2 className="footer__headline">
+                  If you&apos;re building something that fits,{' '}
+                  <span className="footer__headline-break"><br /></span>
+                  write to us
+                </h2>
               </FadeContent>
               <a href="/contact" className="footer__email reveal reveal-delay-2">
                 <ShinyText
@@ -127,7 +131,7 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
           }
 
           .footer__cta {
-            padding-bottom: clamp(3rem, 6vw, 5rem);
+            padding-bottom: clamp(2rem, 3vw, 2.5rem);
           }
 
           .footer__headline-wrapper {
@@ -140,7 +144,18 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
             color: var(--color-ink-primary);
             line-height: 1.1;
             letter-spacing: -0.02em;
-            max-width: 16ch;
+            max-width: none;
+          }
+          .footer__headline-break {
+            display: none;
+          }
+          @media (min-width: 640px) {
+            .footer__headline {
+              max-width: fit-content;
+            }
+            .footer__headline-break {
+              display: inline;
+            }
           }
 
           .footer__email {
@@ -161,21 +176,21 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
           }
 
           .footer__rule {
-            margin-bottom: clamp(3rem, 6vw, 5rem);
+            margin-bottom: 2rem;
           }
 
           /* Main body — brand + nav */
           .footer__body {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: var(--space-8);
-            padding-bottom: clamp(4rem, 6vw, 6rem);
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: clamp(3rem, 6vw, 5rem);
+            align-items: start;
+            padding-bottom: clamp(2.5rem, 4vw, 4rem);
           }
 
           /* Brand column */
           .footer__brand-col {
-            flex-shrink: 0;
+            /* width controlled by grid */
           }
 
           .footer__logo-link {
@@ -220,8 +235,10 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
 
           /* Nav groups */
           .footer__nav-cols {
-            display: flex;
-            gap: clamp(3rem, 6vw, 7rem);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
           }
 
           .footer__nav-group {
@@ -305,12 +322,13 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
           /* Responsive */
           @media (max-width: 720px) {
             .footer__body {
-              flex-direction: column;
+              grid-template-columns: 1fr;
               gap: var(--space-8);
             }
 
             .footer__nav-cols {
-              gap: var(--space-8);
+              grid-template-columns: 1fr 1fr;
+              gap: var(--space-6);
             }
           }
 
