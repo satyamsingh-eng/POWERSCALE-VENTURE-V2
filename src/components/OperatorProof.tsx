@@ -36,7 +36,7 @@ export default function OperatorProof() {
             <div className="team__header-text">
               <div className="section-label reveal">Team</div>
               <h2 className="team__title reveal reveal-delay-1">
-                Different backgrounds. One way of working
+                Different backgrounds. One way of working!
               </h2>
               <p className="team__intro reveal reveal-delay-2">
                 Arthi and Sanjay bring different strengths across company-building, capital access, commercial execution, GTM, and founder support. They work across all four focus areas together.

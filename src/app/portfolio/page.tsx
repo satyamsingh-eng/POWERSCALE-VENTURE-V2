@@ -43,7 +43,7 @@ export default function PortfolioPage() {
           <div className="container">
             <div className="section-label reveal">Portfolio</div>
             <h1 className="port-hero__title reveal reveal-delay-1">
-              We back the outliers, not what impresses the crowd
+              We back the capital, not what impresses the crowd
             </h1>
             <p className="port-hero__desc reveal reveal-delay-2">
               The companies we back have found their first market and are confronting the harder problem: scaling what already works.

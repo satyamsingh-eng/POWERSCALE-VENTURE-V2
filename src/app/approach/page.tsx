@@ -31,12 +31,12 @@ const SUPPORT_MATRIX = [
   {
     name: "AI Applications and Infrastructure",
     challenge: "Founders are moving from AI demos to agents, workflow automation, self-learning systems, and real customer adoption. The companies that hold are the ones where the product becomes part of how customers operate, not just something they evaluated.",
-    support: "GTM architecture, customer access, agent and workflow implementation framing, investor readiness, and the execution work needed to turn AI innovation into retained usage.",
+    support: "GTM strategy — architecture, customer access, investor readiness.",
   },
   {
     name: "Deep Tech",
     challenge: "Deep Tech is one of the most hyped spaces alongside AI, but not every founder can navigate this ever-changing and challenging sector. We have worked with a diverse spectrum of founders in this space, from Deep Tech detecting autism to Deep Tech helping understand a B2B sales funnel.",
-    support: "With our experience of working with Deep Tech companies, we are here to back founders who can execute through the intersection of tech, sales, new rounds, and everything in between.",
+    support: "With our experience of working with Deep Tech companies, we support founders to navigate through the intersection of tech, sales, new rounds, and everything in between.",
   },
   {
     name: "Energy Transition",
