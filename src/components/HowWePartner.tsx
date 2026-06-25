@@ -159,12 +159,22 @@ export default function HowWePartner() {
 
           @media (max-width: 600px) {
             .approach__module {
-              padding: 2rem;
+              padding: 1.75rem 1.5rem;
               min-height: auto;
             }
 
             .approach__module-text {
-              font-size: clamp(1.05rem, 4vw, 1.18rem);
+              font-size: clamp(1rem, 4vw, 1.125rem);
+            }
+
+            .approach__module-title {
+              font-size: clamp(1.375rem, 6vw, 1.75rem);
+            }
+          }
+
+          @media (max-width: 360px) {
+            .approach__module {
+              padding: 1.5rem 1.25rem;
             }
           }
         `}} />

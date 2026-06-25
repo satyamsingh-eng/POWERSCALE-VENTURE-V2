@@ -277,6 +277,9 @@ export default function OperatorProof() {
             }
             .team__cta-link {
               margin-top: var(--space-md);
+              min-height: 44px;
+              display: inline-flex;
+              align-items: center;
             }
             .team__card {
               grid-template-columns: 1fr;
@@ -294,12 +297,25 @@ export default function OperatorProof() {
             .team__card::after {
               display: none;
             }
+            .team__achievement {
+              font-size: clamp(0.9375rem, 4vw, 1.0625rem);
+            }
           }
 
           @media (max-width: 480px) {
             .team__image-wrap {
               height: 260px;
               max-height: 260px;
+            }
+            .team__title {
+              font-size: clamp(1.375rem, 7vw, 2rem);
+            }
+          }
+
+          @media (max-width: 360px) {
+            .team__image-wrap {
+              height: 220px;
+              max-height: 220px;
             }
           }
 

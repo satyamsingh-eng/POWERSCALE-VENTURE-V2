@@ -315,7 +315,7 @@ export default function PrivacyPolicyPage() {
 
         @media (max-width: 768px) {
           .legal-page {
-            padding-top: 6rem;
+            padding-top: clamp(5rem, 14vw, 7rem);
           }
 
           .legal-meta {
@@ -330,6 +330,29 @@ export default function PrivacyPolicyPage() {
 
           .legal-contact-block {
             padding: var(--space-sm) var(--space-md);
+          }
+        }
+
+        @media (max-width: 480px) {
+          .legal-h1 {
+            font-size: clamp(2rem, 9vw, 3rem);
+          }
+          .legal-page {
+            padding-top: clamp(4rem, 15vw, 5.5rem);
+          }
+          .legal-section p,
+          .legal-intro p,
+          .legal-section li {
+            max-width: none;
+          }
+        }
+
+        @media (max-width: 360px) {
+          .legal-page {
+            padding-top: 4rem;
+          }
+          .legal-h1 {
+            font-size: clamp(1.75rem, 9vw, 2.25rem);
           }
         }
       `}} />

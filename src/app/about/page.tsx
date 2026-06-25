@@ -546,8 +546,7 @@ export default function AboutPage() {
           .advisors__image-wrap {
             position: relative;
             top: auto;
-            width: 100%;
-            max-width: 100%;
+            width: min(100%, 260px);
             aspect-ratio: 1/1;
             height: auto;
             max-height: none;

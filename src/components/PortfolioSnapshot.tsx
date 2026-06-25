@@ -136,6 +136,25 @@ export default function PortfolioSnapshot() {
             .portfolio__featured {
               grid-template-columns: 1fr;
               gap: var(--space-sm);
+              padding: var(--space-md);
+            }
+          }
+
+          @media (max-width: 480px) {
+            .portfolio__title {
+              font-size: clamp(1.5rem, 7vw, 2.5rem);
+            }
+            .portfolio__featured {
+              padding: 1.25rem;
+            }
+            .portfolio__featured-logo {
+              height: 36px;
+            }
+          }
+
+          @media (max-width: 360px) {
+            .portfolio__featured {
+              padding: 1rem;
             }
           }
         `}} />

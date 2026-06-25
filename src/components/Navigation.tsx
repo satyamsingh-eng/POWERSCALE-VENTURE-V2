@@ -292,6 +292,22 @@ export default function Navigation() {
             display: none !important;
           }
         }
+
+        /* ── Mobile nav spacing ── */
+        @media (max-width: 480px) {
+          .nav__brand-text {
+            font-size: clamp(0.875rem, 4.5vw, 1rem);
+          }
+          .nav-overlay__link {
+            font-size: clamp(1.25rem, 7vw, 1.75rem);
+          }
+        }
+
+        @media (max-width: 360px) {
+          .nav__brand-text {
+            display: none;
+          }
+        }
       `}} />
     </>
   );

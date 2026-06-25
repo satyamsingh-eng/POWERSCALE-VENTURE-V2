@@ -211,10 +211,45 @@ export default function SanjayTolaniPage() {
             width: 100%;
             max-width: 100%;
             aspect-ratio: auto;
-            height: 340px;
+            height: clamp(240px, 55vw, 340px);
             max-height: 340px;
             overflow: hidden;
             border-radius: 16px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .profile-page {
+            padding-top: clamp(4rem, 14vw, 5.5rem);
+          }
+          .profile-name {
+            font-size: clamp(1.75rem, 7vw, 2.5rem);
+          }
+          .profile-summary {
+            max-width: none;
+            font-size: clamp(0.9375rem, 4vw, 1.0625rem);
+          }
+          .profile-image-wrap {
+            height: clamp(220px, 55vw, 300px);
+          }
+          .profile-focus-tags {
+            gap: 0.375rem;
+          }
+        }
+
+        @media (max-width: 360px) {
+          .profile-page {
+            padding-top: 3.75rem;
+          }
+          .profile-name {
+            font-size: clamp(1.5rem, 7.5vw, 2rem);
+          }
+          .profile-focus-tag {
+            font-size: 0.6875rem;
+            padding: 0.2rem 0.5rem;
+          }
+          .profile-image-wrap {
+            height: 200px;
           }
         }
       `}} />

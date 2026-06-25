@@ -45,8 +45,8 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
                   text="Start a founder note"
                   speed={1.4}
                   delay={5}
-                  color="var(--color-ink-primary)"
-                  shineColor="var(--color-signature)"
+                  color="#ffffff"
+                  shineColor="rgba(255,255,255,0.55)"
                   spread={115}
                   direction="left"
                 />
@@ -64,22 +64,12 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
             <div className="footer__brand-col">
               <a href="/" className="footer__logo-link" aria-label="Powerscale Ventures — home">
                 <img
-                  src="/images/powerscale-logo-transparent.png"
-                  alt="Powerscale Ventures"
-                  className="footer__logo-img footer__logo-img--light"
-                  width={160}
-                  height={100}
-                />
-                <img
                   src="/images/powerscale-logo-on-dark.png"
                   alt="Powerscale Ventures"
-                  className="footer__logo-img footer__logo-img--dark"
-                  width={160}
-                  height={100}
+                  className="footer__logo-img"
+                  width={220}
+                  height={140}
                 />
-              </a>
-              <a href="mailto:support@powerscaleventures.com" className="footer__contact-email">
-                support@powerscaleventures.com
               </a>
             </div>
 
@@ -105,6 +95,9 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
           <div className="hairline footer__bottom-rule" />
           <div className="footer__copyright-bar">
             <span className="footer__copyright">© {new Date().getFullYear()} Powerscale Ventures. All rights reserved</span>
+            <a href="mailto:support@powerscaleventures.com" className="footer__copyright-email">
+              support@powerscaleventures.com
+            </a>
             <div className="footer__legal-links">
               <a href="/privacy-policy" className="footer__legal-link">Privacy Policy</a>
               <span className="footer__legal-sep" aria-hidden="true">·</span>
@@ -115,33 +108,60 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
         </div>
 
         <style dangerouslySetInnerHTML={{__html: `
+          /* ── Aurora background footer ── */
           .footer {
+            position: relative;
             width: 100%;
             padding: var(--section-gap) 0 var(--space-4);
-            background-color: var(--color-canvas);
-            color: var(--color-ink-primary);
+            /*
+              Gradient overlay darkens the aurora so text is always readable.
+              Top is lighter (aurora glow visible), bottom is near-opaque (copyright bar legible).
+            */
+            background-image:
+              linear-gradient(
+                to bottom,
+                rgba(4, 10, 24, 0.18) 0%,
+                rgba(4, 10, 24, 0.32) 28%,
+                rgba(4, 10, 24, 0.60) 62%,
+                rgba(4, 10, 24, 0.88) 100%
+              ),
+              url('/images/footer-aurora.png');
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+            /* Force dark context regardless of site theme */
+            color: rgba(245, 245, 244, 0.88);
           }
 
+          /* Section label override — aurora bg is always dark, shrink to small label size */
           .footer .section-label {
-            color: var(--color-ink-secondary);
+            color: rgba(245, 245, 244, 0.5);
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1;
           }
-
           .footer .section-label::before {
-            background-color: var(--color-ink-secondary);
+            background-color: rgba(245, 245, 244, 0.35);
+            height: 2px;
+            width: 1rem;
           }
 
           .footer__cta {
-            padding-bottom: clamp(2rem, 3vw, 2.5rem);
+            padding-top: clamp(1rem, 2vw, 1.5rem);
+            padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
           }
 
           .footer__headline-wrapper {
-            margin-bottom: var(--space-xl);
+            margin-top: clamp(1rem, 1.5vw, 1.5rem);
+            margin-bottom: clamp(1.5rem, 2.5vw, 2.5rem);
           }
 
           .footer__headline {
             font-size: clamp(2.25rem, 5vw, 4.25rem);
             font-weight: var(--weight-semibold);
-            color: var(--color-ink-primary);
+            color: #f5f5f4;
             line-height: 1.1;
             letter-spacing: -0.02em;
             max-width: none;
@@ -160,26 +180,26 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
 
           .footer__email {
             font-size: clamp(1rem, 1.4vw, 1.25rem);
-            color: var(--color-ink-primary);
+            color: #ffffff;
             display: inline-block;
-            border-bottom: 1px solid var(--color-ink-primary);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.45);
             padding-bottom: 0.25rem;
-            transition: opacity 200ms ease;
+            transition: border-color 200ms ease;
+            text-decoration: none;
           }
-
           .footer__email:hover {
-            opacity: 0.7;
+            border-bottom-color: #ffffff;
           }
 
+          /* Hairlines */
           .footer .hairline {
-            background-color: var(--color-divider);
+            background-color: rgba(245, 245, 244, 0.12);
           }
-
           .footer__rule {
-            margin-bottom: 2rem;
+            margin-bottom: clamp(1.5rem, 2.5vw, 2.5rem);
           }
 
-          /* Main body — brand + nav */
+          /* Main body */
           .footer__body {
             display: grid;
             grid-template-columns: 3fr 2fr;
@@ -188,49 +208,19 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
             padding-bottom: clamp(2.5rem, 4vw, 4rem);
           }
 
-          /* Brand column */
-          .footer__brand-col {
-            /* width controlled by grid */
-          }
-
+          /* Logo */
           .footer__logo-link {
             display: inline-block;
             margin-bottom: var(--space-3);
             transition: opacity 200ms ease;
           }
-
           .footer__logo-link:hover {
             opacity: 0.8;
           }
-
           .footer__logo-img {
             display: block;
-            width: clamp(160px, 16vw, 280px);
+            width: clamp(200px, 20vw, 320px);
             height: auto;
-          }
-
-          .footer__logo-img--dark {
-            display: none;
-          }
-
-          :root[data-theme='dark'] .footer__logo-img--light {
-            display: none;
-          }
-
-          :root[data-theme='dark'] .footer__logo-img--dark {
-            display: block;
-          }
-
-          .footer__contact-email {
-            display: block;
-            font-size: 0.875rem;
-            color: var(--color-muted);
-            transition: color 200ms ease;
-            word-break: break-all;
-          }
-
-          .footer__contact-email:hover {
-            color: var(--color-signature);
           }
 
           /* Nav groups */
@@ -240,46 +230,40 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
             gap: 3rem;
             align-items: start;
           }
-
           .footer__nav-group {
             display: flex;
             flex-direction: column;
           }
-
           .footer__nav-label {
             display: block;
             font-size: 0.75rem;
-            color: var(--color-signature);
+            color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 0.12em;
             font-weight: 700;
             margin-bottom: var(--space-4);
           }
-
           .footer__nav-col {
             list-style: none;
             display: flex;
             flex-direction: column;
             gap: 1.1rem;
           }
-
           .footer__nav-link {
             font-size: clamp(1rem, 1.15vw, 1.125rem);
-            color: var(--color-ink-secondary);
+            color: #ffffff;
             font-weight: 500;
-            transition: color 200ms ease;
+            transition: opacity 200ms ease;
             white-space: nowrap;
           }
-
           .footer__nav-link:hover {
-            color: var(--color-ink-primary);
+            opacity: 0.7;
           }
 
-          /* Copyright bar */
+          /* Copyright bar — 3-item row: copyright · email · legal */
           .footer__bottom-rule {
             margin-bottom: var(--space-3);
           }
-
           .footer__copyright-bar {
             display: flex;
             align-items: center;
@@ -288,35 +272,40 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
             gap: var(--space-sm);
             padding-bottom: var(--space-3);
           }
-
           .footer__copyright {
             font-size: var(--text-meta);
-            color: var(--color-ink-secondary);
+            color: #ffffff;
             font-weight: 500;
           }
-
+          .footer__copyright-email {
+            font-size: var(--text-meta);
+            color: #ffffff;
+            font-weight: 500;
+            transition: opacity 200ms ease;
+            text-decoration: none;
+          }
+          .footer__copyright-email:hover {
+            opacity: 0.7;
+          }
           .footer__legal-links {
             display: flex;
             align-items: center;
             gap: 0.75rem;
           }
-
           .footer__legal-sep {
             font-size: var(--text-meta);
-            color: var(--color-muted);
+            color: rgba(255, 255, 255, 0.45);
             user-select: none;
           }
-
           .footer__legal-link {
             font-size: var(--text-meta);
-            color: var(--color-ink-secondary);
+            color: #ffffff;
             font-weight: 500;
-            transition: color 200ms ease;
+            transition: opacity 200ms ease;
             white-space: nowrap;
           }
-
           .footer__legal-link:hover {
-            color: var(--color-ink-primary);
+            opacity: 0.7;
           }
 
           /* Responsive */
@@ -325,16 +314,49 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
               grid-template-columns: 1fr;
               gap: var(--space-8);
             }
-
             .footer__nav-cols {
               grid-template-columns: 1fr 1fr;
               gap: var(--space-6);
+            }
+            .footer__headline {
+              font-size: clamp(1.875rem, 7vw, 3rem);
+            }
+          }
+
+          @media (max-width: 540px) {
+            .footer__copyright-bar {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: var(--space-1);
+            }
+            .footer__legal-links {
+              flex-wrap: wrap;
+            }
+            .footer__copyright-email {
+              word-break: break-all;
+            }
+            .footer__logo-img {
+              width: clamp(160px, 55vw, 220px);
             }
           }
 
           @media (max-width: 480px) {
             .footer__headline {
               max-width: none;
+              font-size: clamp(1.75rem, 7.5vw, 2.5rem);
+            }
+            .footer__nav-link {
+              font-size: 1rem;
+            }
+          }
+
+          @media (max-width: 360px) {
+            .footer__nav-cols {
+              grid-template-columns: 1fr;
+              gap: var(--space-4);
+            }
+            .footer__headline {
+              font-size: clamp(1.5rem, 8vw, 2rem);
             }
           }
         `}} />

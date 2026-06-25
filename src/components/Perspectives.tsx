@@ -95,12 +95,14 @@ export default function Perspectives() {
           }
 
           .perspectives__card-title {
-            font-size: clamp(1.25rem, 2.2vw, 1.875rem);
+            font-size: clamp(1.125rem, 2.2vw, 1.875rem);
             font-weight: var(--weight-semibold);
             line-height: 1.22;
             max-width: 46ch;
             margin-bottom: var(--space-sm);
             transition: color var(--duration-fast) var(--ease-out);
+            overflow-wrap: break-word;
+            word-break: break-word;
           }
 
           .perspectives__card-excerpt {
@@ -112,6 +114,20 @@ export default function Perspectives() {
 
           .perspectives__action {
             padding-top: var(--space-lg);
+          }
+
+          @media (max-width: 480px) {
+            .perspectives__card {
+              padding: 1.5rem 0;
+            }
+            .perspectives__card-title {
+              font-size: clamp(1rem, 5vw, 1.375rem);
+              max-width: none;
+            }
+            .perspectives__card-excerpt {
+              font-size: clamp(0.9375rem, 4vw, 1.0625rem);
+              max-width: none;
+            }
           }
         `}} />
       </section>

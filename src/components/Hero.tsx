@@ -275,6 +275,36 @@ export default function Hero() {
             max-width: 320px;
           }
         }
+
+        @media (max-width: 480px) {
+          .hero__container {
+            padding-top: clamp(4rem, 16vw, 6rem);
+            padding-bottom: clamp(3rem, 10vw, 5rem);
+          }
+
+          .hero__headline {
+            font-size: clamp(1.75rem, 9vw, 2.5rem);
+          }
+
+          .hero__subhead {
+            font-size: clamp(0.9375rem, 4.5vw, 1.125rem);
+          }
+
+          .hero__scroll {
+            bottom: var(--space-4);
+          }
+        }
+
+        @media (max-width: 360px) {
+          .hero__container {
+            padding-top: 3.5rem;
+            padding-bottom: 2.5rem;
+          }
+          .hero__headline {
+            font-size: clamp(1.625rem, 9vw, 2rem);
+            letter-spacing: -0.015em;
+          }
+        }
       `}} />
     </section>
   );

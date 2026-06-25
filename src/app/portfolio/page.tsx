@@ -461,12 +461,45 @@ export default function PortfolioPage() {
         }
 
         @media (max-width: 640px) {
+          .port-hero {
+            padding-top: clamp(5rem, 16vw, 7rem);
+          }
+          .port-hero__title {
+            font-size: clamp(1.75rem, 7.5vw, 2.75rem);
+          }
           .port-support-grid {
             grid-template-columns: 1fr;
           }
           .port-conviction__pipeline,
           .port-case-study-note {
             border-radius: 1rem;
+            align-self: stretch;
+            width: 100%;
+          }
+          .port-conviction__intro {
+            font-size: clamp(1rem, 5vw, 1.25rem);
+            max-width: none;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .port-hero__title {
+            font-size: clamp(1.5rem, 7.5vw, 2.25rem);
+          }
+          .port-support__title {
+            font-size: clamp(1.5rem, 7vw, 2.25rem);
+          }
+          .gh2-logo-card {
+            padding: var(--space-4);
+          }
+          .gh2-logo-img {
+            max-width: 240px;
+          }
+        }
+
+        @media (max-width: 360px) {
+          .port-hero {
+            padding-top: 4rem;
           }
         }
       `}} />

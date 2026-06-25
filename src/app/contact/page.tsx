@@ -343,7 +343,7 @@ export default function ContactPage() {
 
         .contact-layout {
           display: grid;
-          grid-template-columns: minmax(320px, 0.9fr) minmax(480px, 1.1fr);
+          grid-template-columns: minmax(min(100%, 320px), 0.9fr) minmax(min(100%, 400px), 1.1fr);
           gap: clamp(2.5rem, 5vw, 5rem);
           align-items: start;
         }
@@ -676,9 +676,45 @@ export default function ContactPage() {
           }
         }
 
+        @media (max-width: 640px) {
+          .contact-section {
+            padding-top: clamp(4rem, 14vw, 5.5rem);
+          }
+          .contact-headline {
+            font-size: clamp(1.375rem, 5.5vw, 1.75rem);
+          }
+          .intent-btn {
+            padding: 0.7rem 0.875rem;
+          }
+        }
+
         @media (max-width: 560px) {
           .cf-row--2 {
             grid-template-columns: 1fr;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .contact-form {
+            padding: 1.5rem 1.25rem;
+          }
+          .contact-form__title {
+            font-size: clamp(1.125rem, 5.5vw, 1.5rem);
+          }
+          .contact-success {
+            padding: 1.5rem 1.25rem;
+          }
+        }
+
+        @media (max-width: 360px) {
+          .contact-section {
+            padding-top: 4rem;
+          }
+          .contact-form {
+            padding: 1.25rem 1rem;
+          }
+          .intent-btn__helper {
+            font-size: 0.75rem;
           }
         }
       `}} />
