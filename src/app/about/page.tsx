@@ -70,7 +70,7 @@ export default function AboutPage() {
   return (
     <>
       <RevealWrapper>
-        <section className="team-full">
+        <section className="team-full page-hero">
           <div className="container">
             <div className="section-label reveal">Team</div>
             <h2 className="team-full__title reveal reveal-delay-1">
@@ -221,12 +221,12 @@ export default function AboutPage() {
         }
 
         .team-full {
-          padding: clamp(6rem, 10vw, 8rem) 0 var(--section-gap);
+          padding-bottom: var(--section-gap);
           background-color: transparent;
         }
 
         .team-full__title {
-          margin-bottom: var(--space-md);
+          margin-bottom: clamp(1.25rem, 2vw, 1.75rem);
           max-width: 22ch;
         }
 
@@ -482,11 +482,6 @@ export default function AboutPage() {
         }
 
         @media (max-width: 760px) {
-          /* Section top — reduce excessive top padding on mobile */
-          .team-full {
-            padding-top: clamp(4rem, 10vw, 5.5rem);
-          }
-
           /* Section intro text — more readable on mobile */
           .team-full__intro,
           .advisors__intro {
@@ -581,9 +576,6 @@ export default function AboutPage() {
         }
 
         @media (max-width: 480px) {
-          .team-full {
-            padding-top: 4rem;
-          }
           .team-full__image-wrap {
             width: 100%;
           }

@@ -53,7 +53,7 @@
   --section-gap: clamp(4rem, 7.5vw, 7rem);
   --inner-hero-bottom: clamp(2rem, 4vw, 3.5rem);
   --section-top: clamp(3rem, 4.5vw, 4.5rem);
-  --nav-height: 80px;
+  --nav-height: 60px;
 
   --radius-pill: 999px;
   --radius-section: 24px;
@@ -357,6 +357,42 @@ section[id] {
   .section-label::before {
     width: clamp(1rem, 5vw, 1.5rem);
     height: 0.2em;
+  }
+}
+
+/* ─── Inner-page hero — unified vertical rhythm ─────────────────────────────
+ * All non-homepage page heroes use this class alongside their own class.
+ * It owns padding-top only; each page controls padding-bottom independently
+ * to preserve section relationships. Guarantees consistent nav clearance
+ * (nav bottom: 84px desktop / 76px mobile) across every inner page.
+ * ─────────────────────────────────────────────────────────────────────────── */
+.page-hero {
+  padding-top: clamp(6.5rem, 10vw, 8.5rem);
+}
+
+.page-hero .section-label {
+  margin-bottom: clamp(1rem, 1.5vw, 1.5rem);
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding-top: clamp(5.25rem, 13vw, 7rem);
+  }
+
+  .page-hero .section-label {
+    margin-bottom: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding-top: clamp(5.25rem, 18vw, 6rem);
+  }
+}
+
+@media (max-width: 360px) {
+  .page-hero {
+    padding-top: 5.25rem;
   }
 }
 

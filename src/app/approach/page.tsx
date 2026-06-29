@@ -182,7 +182,7 @@ export default function ApproachPage() {
     <>
       {/* ── Section 1: Hero ── */}
       <RevealWrapper>
-        <section className="approach-hero">
+        <section className="approach-hero page-hero">
           <div className="container approach-hero__inner">
             {/* Left — label + headline only */}
             <div className="approach-hero__left">
@@ -378,7 +378,6 @@ export default function ApproachPage() {
 
         /* ── Hero ─────────────────────────────── */
         .approach-hero {
-          padding-top: clamp(6rem, 10vw, 7.5rem);
           padding-bottom: clamp(4rem, 6vw, 5rem);
           border-bottom: 1px solid var(--color-divider);
         }
@@ -679,9 +678,6 @@ export default function ApproachPage() {
         }
 
         @media (max-width: 480px) {
-          .approach-hero {
-            padding-top: clamp(4.5rem, 14vw, 6rem);
-          }
           .approach-hero__title {
             font-size: clamp(2rem, 9vw, 2.75rem);
           }

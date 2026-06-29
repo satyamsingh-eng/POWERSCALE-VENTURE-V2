@@ -37,7 +37,7 @@ export default function Hero() {
             We invest where execution decides the outcome
           </h1>
           <p className="hero__subhead">
-            For founders who have found their market and are now confronting the harder problem: hiring, customers, capital, supply chain, policy, and the discipline to scale without losing what made the company work.
+            We are here to invest in companies which lead the civilization towards a better and positive tomorrow!
           </p>
           <div className="hero__actions">
             <a href="/contact" className="hero__cta">Talk to us</a>

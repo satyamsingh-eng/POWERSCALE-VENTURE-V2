@@ -39,7 +39,7 @@ export default function PortfolioPage() {
     <>
       {/* Section 1: Hero */}
       <RevealWrapper>
-        <section className="port-hero">
+        <section className="port-hero page-hero">
           <div className="container">
             <div className="section-label reveal">Portfolio</div>
             <h1 className="port-hero__title reveal reveal-delay-1">
@@ -161,13 +161,12 @@ export default function PortfolioPage() {
       <style dangerouslySetInnerHTML={{__html: `
         /* Hero */
         .port-hero {
-          padding-top: clamp(7rem, 10vw, 9rem);
           padding-bottom: var(--inner-hero-bottom);
         }
 
         .port-hero__title {
           font-weight: var(--weight-medium);
-          margin-bottom: var(--space-lg);
+          margin-bottom: clamp(1.25rem, 2vw, 1.75rem);
           max-width: 22ch;
         }
 
@@ -461,9 +460,6 @@ export default function PortfolioPage() {
         }
 
         @media (max-width: 640px) {
-          .port-hero {
-            padding-top: clamp(5rem, 16vw, 7rem);
-          }
           .port-hero__title {
             font-size: clamp(1.75rem, 7.5vw, 2.75rem);
           }
@@ -497,11 +493,6 @@ export default function PortfolioPage() {
           }
         }
 
-        @media (max-width: 360px) {
-          .port-hero {
-            padding-top: 4rem;
-          }
-        }
       `}} />
     </>
   );

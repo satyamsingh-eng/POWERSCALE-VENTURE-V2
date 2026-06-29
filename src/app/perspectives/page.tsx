@@ -51,7 +51,7 @@ export default function PerspectivesPage() {
   return (
     <>
       <RevealWrapper>
-        <section className="persp-hero">
+        <section className="persp-hero page-hero">
           <div className="container">
             <div className="persp-hero__grid">
               <h1 className="persp-hero__title reveal reveal-delay-1">
@@ -114,7 +114,6 @@ export default function PerspectivesPage() {
       <style dangerouslySetInnerHTML={{__html: `
         /* ── Hero ── */
         .persp-hero {
-          padding-top: clamp(7rem, 10vw, 9rem);
           padding-bottom: clamp(4rem, 7vw, 6rem);
         }
 
@@ -341,9 +340,6 @@ export default function PerspectivesPage() {
 
         /* ── Responsive ── */
         @media (max-width: 768px) {
-          .persp-hero {
-            padding-top: clamp(5rem, 14vw, 8rem);
-          }
           .persp-hero__grid {
             grid-template-columns: 1fr;
             gap: var(--space-lg);

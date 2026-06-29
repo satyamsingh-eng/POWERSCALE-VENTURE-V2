@@ -228,7 +228,7 @@ export default function ContactPage() {
   return (
     <>
       <RevealWrapper>
-        <section className="contact-section">
+        <section className="contact-section page-hero">
           <div className="container">
             <div className="contact-layout">
 
@@ -337,7 +337,6 @@ export default function ContactPage() {
 
       <style dangerouslySetInnerHTML={{__html: `
         .contact-section {
-          padding-top: clamp(5rem, 7vw, 7rem);
           padding-bottom: clamp(3rem, 6vw, 5rem);
         }
 
@@ -677,9 +676,6 @@ export default function ContactPage() {
         }
 
         @media (max-width: 640px) {
-          .contact-section {
-            padding-top: clamp(4rem, 14vw, 5.5rem);
-          }
           .contact-headline {
             font-size: clamp(1.375rem, 5.5vw, 1.75rem);
           }
@@ -707,9 +703,6 @@ export default function ContactPage() {
         }
 
         @media (max-width: 360px) {
-          .contact-section {
-            padding-top: 4rem;
-          }
           .contact-form {
             padding: 1.25rem 1rem;
           }
