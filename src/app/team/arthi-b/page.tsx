@@ -26,7 +26,7 @@ export default function ArthiBPage() {
               />
             </div>
             <div className="profile-info">
-              <span className="profile-role">Partner</span>
+              <span className="profile-role">Managing Partner</span>
               <h1 className="profile-name">Arthi B</h1>
               <div className="profile-focus-tags">
                 <span className="profile-focus-tag">Founder Operating</span>

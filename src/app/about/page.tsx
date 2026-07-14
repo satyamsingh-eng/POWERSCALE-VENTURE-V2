@@ -18,7 +18,7 @@ const BELIEFS = [
 const PARTNERS = [
   {
     name: "Arthi B",
-    role: "Partner",
+    role: "Managing Partner",
     bio: "Arthi brings a founder-first lens across customers, GTM, distribution, and the transition from early traction to a growth-phase company. Her work focuses on the point where founder-led motion has to become a repeatable system. She works across all four focus areas.",
     focus: "Founder Operating · GTM · Distribution",
     slug: "arthi-b",
@@ -27,7 +27,7 @@ const PARTNERS = [
   },
   {
     name: "Sanjay Tolani",
-    role: "Partner & Advisor",
+    role: "General Partner",
     bio: "Sanjay brings UAE–India commercial and investment experience across capital access, financial structure, investor relationships, market expansion, and portfolio development. He helps founders think through investor readiness, commercial partnerships, and the capital structure required to scale. He works across all four focus areas.",
     focus: "Capital Access · Financial Structure · Investor Relationships · UAE–India Corridor",
     slug: "sanjay-tolani",
@@ -125,7 +125,7 @@ export default function AboutPage() {
       <RevealWrapper>
         <section className="advisors">
           <div className="container">
-            <div className="section-label reveal">Advisory</div>
+            <div className="section-label reveal">Advisors</div>
             <h2 className="advisors__title reveal reveal-delay-1">
               Ecosystem depth, not decoration
             </h2>

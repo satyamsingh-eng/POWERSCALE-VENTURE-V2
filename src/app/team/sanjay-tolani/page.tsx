@@ -25,7 +25,7 @@ export default function SanjayTolaniPage() {
               />
             </div>
             <div className="profile-info">
-              <span className="profile-role">Partner & Advisor</span>
+              <span className="profile-role">General Partner</span>
               <h1 className="profile-name">Sanjay Tolani</h1>
               <div className="profile-focus-tags">
                 <span className="profile-focus-tag">Capital Access</span>
